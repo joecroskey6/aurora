@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-15",
+  "buildCommit": "edb160bb96c38176b2fca037550e9cc8a137b11f",
+  "buildRun": "https://github.com/joecroskey6/aurora/actions/runs/38705922324",
+  "hostRun": "https://github.com/joecroskey6/aurora/actions/runs/38708547248",
+  "nativeCTest": {
+    "passed": 8,
+    "failed": 0,
+    "seconds": 12.71,
+    "log": "Start testing: Oct 15 08:39 Coordinated Universal Time\n----------------------------------------------------------\n1/8 Testing: analysis\n1/8 Test: analysis\nCommand: \"D:/a/aurora/aurora/build-windows/Release/AnalysisTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"analysis\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nPASS silence, invalid input, and bounded output\nPASS FFT amplitude, edge bins, RMS, and anti-phase stereo\nPASS K weighting at four rates and 400 ms / 3 s timing\nPASS callback independence, reset, and sample-rate changes\nPASS relative and absolute loudness gating\nPASS concurrent worker, reset, and UI snapshots\nPASS exact peak holds, mono loudness, and channel-count reset\nPASS log-spectrum frequency edges, interpolation, and valid zero/positive dBFS\nPASS custom spectral ranges against frequency-domain oracle, Nyquist and outside-band peaks\nPASS every visible narrow-bin peak on 128-cell GPU and 200-cell graph grids at five rates\nPASS continuous stereo PCM extrema, RMS, complete sample coverage, and delta polling\nPASS frequency-derived waveform colour, independent stereo bands, and mono duplication\nPASS waveform ring wrap, reset and format generations, low-rate duration, invalid and extreme PCM\nPASS additive PCM/filter sufficient statistics against independent reference at five rates\nPASS final partial-bucket impulses, promotion, exact extrema timing, and stable tie handling\nPASS exact PCM amplitude occupancy, polarity symmetry, saturation, silence/DC and partial/reset conservation\nAll analysis tests passed.\n<end of output>\nTest time =   2.28 sec\n----------------------------------------------------------\nTest Passed.\n\"analysis\" end time: Oct 15 08:39 Coordinated Universal Time\n\"analysis\" time elapsed: 00:00:02\n----------------------------------------------------------\n\n2/8 Testing: visual_framing\n2/8 Test: visual_framing\nCommand: \"D:/a/aurora/aurora/build-windows/Release/VisualFramingTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"visual_framing\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nPASS 8640 framing cases, every envelope corner and 1805760 independent shader vertices\nPASS aspect adaptation, invalid input and overloaded waveform bounds\nPASS 1176 360-degree camera framing cases\n<end of output>\nTest time =   0.74 sec\n----------------------------------------------------------\nTest Passed.\n\"visual_framing\" end time: Oct 15 08:39 Coordinated Universal Time\n\"visual_framing\" time elapsed: 00:00:00\n----------------------------------------------------------\n\n3/8 Testing: visual_reactivity\n3/8 Test: visual_reactivity\nCommand: \"D:/a/aurora/aurora/build-windows/Release/VisualReactivityTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"visual_reactivity\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nPASS real PCM tune/drums: quiet and loud attacks agree within 1.4171e-05\nVisual reactivity tests passed\n<end of output>\nTest time =   0.27 sec\n----------------------------------------------------------\nTest Passed.\n\"visual_reactivity\" end time: Oct 15 08:39 Coordinated Universal Time\n\"visual_reactivity\" time elapsed: 00:00:00\n----------------------------------------------------------\n\n4/8 Testing: waveform_clock\n4/8 Test: waveform_clock\nCommand: \"D:/a/aurora/aurora/build-windows/Release/WaveformClockTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"waveform_clock\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nWaveform clock tests passed (24324 checks)\n<end of output>\nTest time =   0.01 sec\n----------------------------------------------------------\nTest Passed.\n\"waveform_clock\" end time: Oct 15 08:39 Coordinated Universal Time\n\"waveform_clock\" time elapsed: 00:00:00\n----------------------------------------------------------\n\n5/8 Testing: waveform_projection\n5/8 Test: waveform_projection\nCommand: \"D:/a/aurora/aurora/build-windows/Release/WaveformProjectionTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"waveform_projection\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nWaveform projection tests passed (538983 checks)\n<end of output>\nTest time =   2.11 sec\n----------------------------------------------------------\nTest Passed.\n\"waveform_projection\" end time: Oct 15 08:39 Coordinated Universal Time\n\"waveform_projection\" time elapsed: 00:00:02\n----------------------------------------------------------\n\n6/8 Testing: waveform_ribbon\n6/8 Test: waveform_ribbon\nCommand: \"D:/a/aurora/aurora/build-windows/WaveformRibbonTests_artefacts/Release/WaveformRibbonTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"waveform_ribbon\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nPASS unchanged/fractional\nPASS tails/invalidation\nPASS gaps/fragments/wraps\nPASS silence/DC/bounds\nPASS scaled fragment bounds\nRibbon software timing 1x: first=61.108 ms, steady median=6.0496 ms, p95=6.6962 ms\nRibbon software timing 2x: first=129.155 ms, steady median=23.3513 ms, p95=23.6304 ms\nPASS cache timings\nPASS customization/freeze\nPASS channel views\nWaveform ribbon tests: 459292 checks, 0 failed suites\n<end of output>\nTest time =   1.96 sec\n----------------------------------------------------------\nTest Passed.\n\"waveform_ribbon\" end time: Oct 15 08:39 Coordinated Universal Time\n\"waveform_ribbon\" time elapsed: 00:00:01\n----------------------------------------------------------\n\n7/8 Testing: processor\n7/8 Test: processor\nCommand: \"D:/a/aurora/aurora/build-windows/ProcessorTests_artefacts/Release/ProcessorTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"processor\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nProcessor tests passed: 26976 checks\n<end of output>\nTest time =   3.31 sec\n----------------------------------------------------------\nTest Passed.\n\"processor\" end time: Oct 15 08:39 Coordinated Universal Time\n\"processor\" time elapsed: 00:00:03\n----------------------------------------------------------\n\n8/8 Testing: editor_performance\n8/8 Test: editor_performance\nCommand: \"D:/a/aurora/aurora/build-windows/EditorPerformanceTests_artefacts/Release/EditorPerformanceTests.exe\"\nDirectory: D:/a/aurora/aurora/build-windows\n\"editor_performance\" start time: Oct 15 08:39 Coordinated Universal Time\nOutput:\n----------------------------------------------------------\nstereo-raster: 16.2404 ms -> 1.9677 ms\nspectrogram-full-rebuild: 73.8341 ms -> 15.5729 ms\nspectrogram-unchanged-appearance: 15.5729 ms -> 0.0011052 ms\nEditor performance regression: 94 checks, exit 0\n<end of output>\nTest time =   2.04 sec\n----------------------------------------------------------\nTest Passed.\n\"editor_performance\" end time: Oct 15 08:39 Coordinated Universal Time\n\"editor_performance\" time elapsed: 00:00:02\n----------------------------------------------------------\n\nEnd testing: Oct 15 08:39 Coordinated Universal Time\n"
+  },
+  "packagingTests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "artifactVerification": {
+    "checksums": {
+      "Aurora-0.1.0-windows-x64.zip": "8ff8893a4f136f9b89b87e7ca4c01fb0070b77c9e49204a341385c4f0fe03cbb",
+      "Aurora-0.1.0-windows-source.zip": "6b1acbcb401ce266a52e4f5ab2647594e3cff221ef67afcc2af3f594f4e7da47",
+      "Aurora-0.1.0-windows-MANIFEST.json": "d26e5c6fb3c3baa9ba1f2fbadfe0a9e65292aca6f77ce85b5b36b303683c2ffe"
+    },
+    "zipEntries": {
+      "Aurora-0.1.0-windows-x64.zip": 30,
+      "Aurora-0.1.0-windows-source.zip": 4339
+    },
+    "sourceManifestFiles": 4339,
+    "binary": {
+      "format": "PE32+",
+      "machine": "AMD64",
+      "vst3FactoryExport": true,
+      "sha256": "1ab427d5eba30307b5ee0490d80aec286099da0778b23bd88e98bc479a4432e9",
+      "bytes": 5184512
+    },
+    "trackedSourceFiles": 117,
+    "juceFiles": 4222,
+    "errors": [],
+    "passed": true
+  },
+  "sourceComparison": {
+    "byteIdenticalAuroraFiles": 36,
+    "crlfOnlyAuroraFiles": 81,
+    "juceFilesMatchingOfficialGitBlobs": 4222,
+    "juceCommit": "51a8a6d7aeae7326956d747737ccf1575e61e209"
+  },
+  "hostValidation": {
+    "result": {
+      "randomSeed": 123456,
+      "exitCode": 0,
+      "strictnessLevel": 5,
+      "inactivityTimeoutMs": 30000,
+      "guiTestsEnabled": false,
+      "completedValidationLogVerified": true,
+      "passed": true
+    },
+    "binary": {
+      "archiveSha256": "8ff8893a4f136f9b89b87e7ca4c01fb0070b77c9e49204a341385c4f0fe03cbb",
+      "binarySha256": "1ab427d5eba30307b5ee0490d80aec286099da0778b23bd88e98bc479a4432e9",
+      "archive": "Aurora-0.1.0-windows-x64.zip"
+    },
+    "build": {
+      "buildRunId": "38705922324",
+      "buildRunUrl": "https://github.com/joecroskey6/aurora/actions/runs/38705922324",
+      "sourceCommit": "edb160bb96c38176b2fca037550e9cc8a137b11f",
+      "validationScope": "Native Windows VST3 host tests with GUI tests disabled; not a GPU or DAW playback test",
+      "artifact": "aurora-windows-x64-preview"
+    },
+    "validator": {
+      "source": "https://github.com/Tracktion/pluginval/releases/download/v1.0.4/pluginval_Windows.zip",
+      "archiveSha256": "c08e61ce3b96db41636f8ec7e76f4c7e2c13ebdac7fa1b5a1f52b4f32ec715ab",
+      "version": "1.0.4"
+    },
+    "log": "Random seed: 0x1e240\nValidation started\nStrictness level: 5\n-----------------------------------------------------------------\nStarting tests in: pluginval / Scan for plugins located in: D:\\a\\aurora\\aurora\\unpacked-preview\\Aurora\\VST3\\Aurora.vst3...\nNum plugins found: 1\n\nTesting plugin: VST3-Aurora-6f0b53b7-7d148e0d\nSoft Club: Aurora v0.1.0\nCompleted tests in pluginval / Scan for plugins located in: D:\\a\\aurora\\aurora\\unpacked-preview\\Aurora\\VST3\\Aurora.vst3\n-----------------------------------------------------------------\nStarting tests in: pluginval / Open plugin (cold)...\nCompleted tests in pluginval / Open plugin (cold)\n-----------------------------------------------------------------\nStarting tests in: pluginval / Open plugin (warm)...\nRunning tests 1 times\nCompleted tests in pluginval / Open plugin (warm)\n-----------------------------------------------------------------\nStarting tests in: pluginval / Plugin info...\n\nPlugin name: Aurora\nAlternative names: Aurora\nSupportsDoublePrecision: no\nReported latency: 0\nReported taillength: 0\nCompleted tests in pluginval / Plugin info\n-----------------------------------------------------------------\nStarting tests in: pluginval / Plugin programs...\nNum programs: 0\nAll program names checked\nCompleted tests in pluginval / Plugin programs\n-----------------------------------------------------------------\nStarting tests in: pluginval / Audio processing...\nTesting with sample rate [44100] and block size [64]\nTesting with sample rate [44100] and block size [128]\nTesting with sample rate [44100] and block size [256]\nTesting with sample rate [44100] and block size [512]\nTesting with sample rate [44100] and block size [1024]\nTesting with sample rate [48000] and block size [64]\nTesting with sample rate [48000] and block size [128]\nTesting with sample rate [48000] and block size [256]\nTesting with sample rate [48000] and block size [512]\nTesting with sample rate [48000] and block size [1024]\nTesting with sample rate [96000] and block size [64]\nTesting with sample rate [96000] and block size [128]\nTesting with sample rate [96000] and block size [256]\nTesting with sample rate [96000] and block size [512]\nTesting with sample rate [96000] and block size [1024]\nCompleted tests in pluginval / Audio processing\n-----------------------------------------------------------------\nStarting tests in: pluginval / Plugin state...\nCompleted tests in pluginval / Plugin state\n-----------------------------------------------------------------\nStarting tests in: pluginval / Automation...\nTesting with sample rate [44100] and block size [64] and sub-block size [32]\nTesting with sample rate [44100] and block size [128] and sub-block size [32]\nTesting with sample rate [44100] and block size [256] and sub-block size [32]\nTesting with sample rate [44100] and block size [512] and sub-block size [32]\nTesting with sample rate [44100] and block size [1024] and sub-block size [32]\nTesting with sample rate [48000] and block size [64] and sub-block size [32]\nTesting with sample rate [48000] and block size [128] and sub-block size [32]\nTesting with sample rate [48000] and block size [256] and sub-block size [32]\nTesting with sample rate [48000] and block size [512] and sub-block size [32]\nTesting with sample rate [48000] and block size [1024] and sub-block size [32]\nTesting with sample rate [96000] and block size [64] and sub-block size [32]\nTesting with sample rate [96000] and block size [128] and sub-block size [32]\nTesting with sample rate [96000] and block size [256] and sub-block size [32]\nTesting with sample rate [96000] and block size [512] and sub-block size [32]\nTesting with sample rate [96000] and block size [1024] and sub-block size [32]\nCompleted tests in pluginval / Automation\n-----------------------------------------------------------------\nStarting tests in: pluginval / Automatable Parameters...\nCompleted tests in pluginval / Automatable Parameters\n-----------------------------------------------------------------\nStarting tests in: pluginval / auval...\nCompleted tests in pluginval / auval\n-----------------------------------------------------------------\nStarting tests in: pluginval / vst3 validator...\nINFO: Skipping vst3 validator as validator path hasn't been set\nCompleted tests in pluginval / vst3 validator\n-----------------------------------------------------------------\nStarting tests in: pluginval / Basic bus...\nCompleted tests in pluginval / Basic bus\n-----------------------------------------------------------------\nStarting tests in: pluginval / Listing available buses...\nInputs:\n\tNamed layouts: Mono, Stereo\n\tDiscrete layouts: Discrete #1\nOutputs:\n\tNamed layouts: Mono, Stereo\n\tDiscrete layouts: Discrete #1\nMain bus num input channels: 2\nMain bus num output channels: 2\nCompleted tests in pluginval / Listing available buses\n-----------------------------------------------------------------\nStarting tests in: pluginval / Enabling all buses...\nCompleted tests in pluginval / Enabling all buses\n-----------------------------------------------------------------\nStarting tests in: pluginval / Disabling non-main busses...\nCompleted tests in pluginval / Disabling non-main busses\n-----------------------------------------------------------------\nStarting tests in: pluginval / Restoring default layout...\nMain bus num input channels: 2\nMain bus num output channels: 2\nCompleted tests in pluginval / Restoring default layout\nSUCCESS\n"
+  },
+  "limits": [
+    "Windows GUI tests disabled",
+    "Windows GPU rendering not tested",
+    "Actual DAW playback not tested",
+    "High-DPI interaction and long-session stability not tested",
+    "No metering-standards certification"
+  ]
+}

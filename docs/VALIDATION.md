@@ -1,5 +1,49 @@
 # Validation record
 
+## Windows x64 preview — 15 October 2026
+
+The Windows VST3 was built from commit
+`edb160bb96c38176b2fca037550e9cc8a137b11f` on GitHub's Windows Server 2022
+runner using Visual Studio 2022/MSVC, CMake 3.31.6, a static C++ runtime and
+JUCE 8.0.6 at `51a8a6d7aeae7326956d747737ccf1575e61e209`.
+The [build and native test run](https://github.com/joecroskey6/aurora/actions/runs/38705922324)
+completed successfully. The Windows source and binary are a separate preview;
+the existing macOS release is unchanged.
+
+- All **8 native CTest suites passed (12.71 s)**: analysis, visual framing,
+  visual reactivity, waveform clock, waveform projection, waveform ribbon,
+  processor and editor performance. This includes 26,976 processor checks,
+  94 CPU editor checks and more than one million waveform checks.
+- All **8 packaging regressions passed** on Windows. The packager verified an
+  AMD64 PE32+ DLL with the VST3 `GetPluginFactory` export, archive integrity,
+  matching source hashes and the exact JUCE dependency. The distribution is
+  unsigned and includes complete corresponding source, notices and checksums.
+- The exact downloadable VST3 passed **pluginval 1.0.4 at strictness level 5**
+  in a [separate Windows host run](https://github.com/joecroskey6/aurora/actions/runs/38708547248).
+  Scanning, cold/warm loading, processing at 44.1/48/96 kHz with 64–1024-sample
+  blocks, state and bus checks completed with exit code 0 and a verified
+  `SUCCESS` log. GUI tests were explicitly disabled; no external Steinberg
+  validator was supplied. [Retained evidence](windows-preview-validation.json)
+  includes the exact binary hash and test logs.
+- Independent archive verification matched all **4,339 source file hashes**:
+  117 Aurora files match the build commit (81 use Windows CRLF line endings),
+  and all 4,222 JUCE files byte-match the official pinned Git tree. Both ZIPs
+  passed CRC and path checks. Uploaded GitHub asset digests match local files.
+- The Windows port uses native Windows fonts and platform temporary directories.
+  It rejects unsupported OpenGL contexts before accessing shader entry points;
+  native meters remain available with a scene fallback. The headless editor
+  suite exercises initialization and cleanup with unavailable GL functions.
+- The same source also passed a universal macOS build and all **8 CTest suites
+  (6.05 s)**. A production GPU smoke test on Apple M2 Max rendered all six scenes
+  with zero GL errors; Pearl Cloud evolved and inactive fluid resources remained
+  unchanged for the other five scenes. This is Mac GPU evidence only.
+
+Windows graphics-driver compatibility, actual DAW playback, visible editor
+interactions, high-DPI scaling and long sessions remain unverified. The
+[installation guide](../release-docs/WINDOWS-INSTALLATION.txt) includes a desktop
+test checklist. Automated headless results do not establish those checks or
+metering-standards compliance.
+
 ## Inline controls and rendering performance — 14 October 2026
 
 Customise now expands inside the editor and closes with its header button or

@@ -7,8 +7,9 @@ An original, free, open-source audio meter and reactive visual plug-in. The defa
 **AU and VST3 on macOS; VST3 on Windows.** Aurora is an audio effect. Put it on a track or the master bus; its audio output is bit-for-bit unchanged. It adds zero algorithmic latency, does not generate sound, and makes no network requests.
 
 The macOS developer preview requires macOS 13.3+ and includes Apple Silicon and
-Intel code. Windows x64 support is being validated through the automated build;
-the Windows installation guide is [here](release-docs/WINDOWS-INSTALLATION.txt).
+Intel code. The [Windows x64 VST3 preview](https://github.com/joecroskey6/aurora/releases/tag/v0.1.0-windows-preview.1)
+includes the plug-in, installation instructions, matching source and checksums.
+Read the [Windows installation guide](release-docs/WINDOWS-INSTALLATION.txt).
 These are development previews, not certified across every host or graphics
 driver. Download the explicit matching source asset alongside each binary;
 GitHub's automatic source ZIP does not include the pinned JUCE dependency.
@@ -46,7 +47,7 @@ On macOS, install Apple's Command Line Tools (`xcode-select --install`) and Pyth
 ./scripts/build.sh
 ```
 
-The script downloads the official JUCE 8.0.6 release into `third_party/JUCE`, installs pinned CMake/Ninja in the project-local `.tools` environment, builds universal Apple Silicon/Intel binaries, and runs the test suite. Nothing is automatically installed into your DAW. Internet is needed for the first dependency download. Rebuilds use the local files. For another platform, use the CMake project with a suitable native compiler; only macOS is validated here.
+The script downloads the official JUCE 8.0.6 release into `third_party/JUCE`, installs pinned CMake/Ninja in the project-local `.tools` environment, builds universal Apple Silicon/Intel binaries, and runs the test suite. Nothing is automatically installed into your DAW. Internet is needed for the first dependency download. Rebuilds use the local files. Use the dedicated instructions below for Windows; other platforms remain unvalidated.
 
 Outputs:
 
@@ -73,6 +74,12 @@ Output: `build-windows/Aurora_artefacts/Release/VST3/Aurora.vst3`.
 Packaging produces a Windows binary ZIP, complete corresponding-source ZIP,
 manifest and checksums. The GitHub Actions workflow runs these same commands on
 `windows-2022` and retains the resulting download artifacts.
+
+The published preview passed all eight native suites, eight packaging tests and
+pluginval 1.0.4 at strictness level 5 with GUI tests disabled. The separate
+[host-check workflow](.github/workflows/windows-host-check.yml) validates an
+existing successful build's exact downloadable VST3 without rebuilding it.
+See the [validation record](docs/VALIDATION.md) for evidence and test limits.
 
 Add `-GuiTests` when building on a Windows desktop to compile the interactive
 preview and GPU/UI test apps. Actual Windows DAW scanning, graphics-driver
@@ -247,7 +254,7 @@ export itself is unaffected. No incoming samples are written to disk.
 
 Aurora's original source is licensed under **GNU Affero General Public License v3.0 or later**; see [LICENSE](LICENSE). This matches the open-source route used for JUCE 8. JUCE is pinned to 8.0.6, commit `51a8a6d7aeae7326956d747737ccf1575e61e209`. Its bundled dependencies retain their own notices, including the VST3 SDK and Apple AudioUnitSDK. See [THIRD_PARTY.md](THIRD_PARTY.md).
 
-Ghost and MiniMeters were studied as functional references. No vendor plug-in binaries, source code, graphics, presets or branding were copied into Aurora. The interface and DSP are original. This repository has not been published to an external service.
+Ghost and MiniMeters were studied as functional references. No vendor plug-in binaries, source code, graphics, presets or branding were copied into Aurora. The interface and DSP are original. Aurora's source and development previews are published in this repository.
 
 ## GPU visual validation and preview
 

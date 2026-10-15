@@ -12,3 +12,8 @@ design/**/renders/
 __pycache__/
 *.pyc
 *.sb-*
+
+# Local preview media is distributed separately from the source repository.
+design/pearl-cloud-preview.mp4
+design/pearl-flow-preview.mp4
+release-docs/media/
