@@ -46,7 +46,7 @@ $buildPath = if ([IO.Path]::IsPathRooted($BuildDirectory)) {
     [IO.Path]::GetFullPath((Join-Path $projectDirectory $BuildDirectory))
 }
 
-$gitCommand = Get-Command git -CommandType Application -ErrorAction SilentlyContinue
+$gitCommand = Get-Command git -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
 if (-not $gitCommand) {
     throw 'Git for Windows is required. Install it and reopen your terminal.'
 }
@@ -65,13 +65,13 @@ if ($visualStudio.Count -eq 0) {
     throw 'Visual Studio 2022 C++ tools were not found. Add Desktop development with C++ and a Windows SDK in Visual Studio Installer.'
 }
 
-$pythonLauncher = Get-Command py -CommandType Application -ErrorAction SilentlyContinue
+$pythonLauncher = Get-Command py -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
 $pythonPrefix = @()
 if ($pythonLauncher) {
     $python = $pythonLauncher.Source
     $pythonPrefix = @('-3')
 } else {
-    $pythonCommand = Get-Command python -CommandType Application -ErrorAction SilentlyContinue
+    $pythonCommand = Get-Command python -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
     if (-not $pythonCommand) {
         throw 'Python 3.10 or newer is required. Install Python with its command-line launcher, then reopen your terminal.'
     }
