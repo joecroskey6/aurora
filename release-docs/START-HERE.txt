@@ -1,0 +1,57 @@
+AURORA 0.1.0 — WEBSITE DOWNLOAD KIT
+
+This folder contains download files for your own Aurora page. No website or
+hosting configuration is included, and nothing has been published.
+
+1. Read GITHUB-UPLOAD.txt.
+2. Attach the files in downloads/ to a GitHub Release marked as a pre-release.
+3. Copy the uploaded asset links into the download buttons on your website.
+4. Offer the plug-in ZIP and the corresponding source ZIP alongside each other.
+
+THE FILES
+
+downloads/Aurora-0.1.0-macOS-universal.zip
+  The download for musicians. Includes Aurora.vst3, Aurora.component, an
+  installation guide, the full stack document, and license notices.
+
+downloads/Aurora-0.1.0-source.zip
+  The matching buildable source, including the exact vendored JUCE dependency,
+  build scripts, native tests, shader design files, documentation, and notices.
+  Use this file for your Source download, not GitHub's automatic repository ZIP.
+
+downloads/TECHNICAL-STACK.pdf and TECHNICAL-STACK.html
+  The full stack document: native runtime, audio analysis, graphics, interface,
+  tools, dependencies, design workflow, build, validation, and release limits.
+
+downloads/INSTALLATION.html
+  A standalone installation guide that opens in a browser and can be printed.
+
+downloads/SHA256SUMS.txt and RELEASE-MANIFEST.json
+  Download checksums and machine-readable release/build information.
+
+media/
+  Actual Aurora screenshots you can use on your page, plus caption notes.
+  No commercial reference-product screenshots are included.
+
+RELEASE-NOTES.txt
+  Public-facing text you can paste into the release description or adapt for
+  your page. GITHUB-UPLOAD.txt explains the GitHub steps.
+
+IMPORTANT RELEASE DETAILS
+
+This is a free, open-source development release for macOS 13.3 or later.
+The download includes Apple Silicon and Intel code, in AU and VST3 formats.
+There is no Windows, Linux, AAX, or standalone monitoring download.
+
+The binaries are ad hoc signed and are not Apple Developer ID signed or
+notarized. macOS or a DAW may block a downloaded copy. State this beside the
+download, and link the installation guide. The present package has passed
+native tests and Apple's Audio Unit validator; this is not a claim of testing
+every DAW, Intel runtime, or every supported macOS release.
+
+No Apple signing identity or GitHub account is required to store these files.
+Publishing a future Developer ID signed/notarized build requires the project's
+own Apple developer credentials and a separate signing/release step.
+
+The outer website-kit ZIP is for you. Visitors should download the smaller
+macOS plug-in ZIP or source ZIP from downloads/ instead.

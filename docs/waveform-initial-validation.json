@@ -1,0 +1,1296 @@
+{
+  "passed": true,
+  "failures": 0,
+  "checks": [
+    {
+      "name": "Prefilled 24 seconds of stereo PCM",
+      "passed": true
+    },
+    {
+      "name": "waveform-12s-bands PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-12s-bands visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-6s-palette PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-6s-palette visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-24s-bands PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-24s-bands visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-frozen-a PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-frozen-a visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-frozen-b PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-frozen-b visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "Freeze holds identical rendered pixels while PCM continues",
+      "passed": true
+    },
+    {
+      "name": "waveform-resumed PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-resumed visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "Resume changes the rendered waveform",
+      "passed": true
+    },
+    {
+      "name": "waveform-scope PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-scope visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "studio-minimum PNG saved",
+      "passed": true
+    },
+    {
+      "name": "studio-minimum visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "strip-minimum PNG saved",
+      "passed": true
+    },
+    {
+      "name": "strip-minimum visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-compact PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-compact visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-stopped-a PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-stopped-a visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "waveform-stopped-b PNG saved",
+      "passed": true
+    },
+    {
+      "name": "waveform-stopped-b visible controls fit inside the editor",
+      "passed": true
+    },
+    {
+      "name": "Stopped input holds identical rendered pixels after its real tail",
+      "passed": true
+    }
+  ],
+  "captures": [
+    {
+      "name": "waveform-12s-bands",
+      "file": "/tmp/aurora-waveform-qa/waveform-12s-bands.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 5.53600001335144,
+      "layout": 2,
+      "waveformWindow": 1,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1170400,
+      "elapsedSeconds": 0.643440166769832,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "82bdaedbe0a28d5f"
+    },
+    {
+      "name": "waveform-6s-palette",
+      "file": "/tmp/aurora-waveform-qa/waveform-6s-palette.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 4.816291689872742,
+      "layout": 2,
+      "waveformWindow": 0,
+      "waveformColour": 1,
+      "frozen": false,
+      "totalSamples": 1200000,
+      "elapsedSeconds": 1.350974625049442,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "abcbefeb76d12ca0"
+    },
+    {
+      "name": "waveform-24s-bands",
+      "file": "/tmp/aurora-waveform-qa/waveform-24s-bands.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 6.00724995136261,
+      "layout": 2,
+      "waveformWindow": 2,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1227200,
+      "elapsedSeconds": 1.997606416760296,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "342a07354eba3be9"
+    },
+    {
+      "name": "waveform-frozen-a",
+      "file": "/tmp/aurora-waveform-qa/waveform-frozen-a.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 5.609291672706604,
+      "layout": 2,
+      "waveformWindow": 2,
+      "waveformColour": 0,
+      "frozen": true,
+      "totalSamples": 1248800,
+      "elapsedSeconds": 2.50947483342728,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "66848d2e4403490"
+    },
+    {
+      "name": "waveform-frozen-b",
+      "file": "/tmp/aurora-waveform-qa/waveform-frozen-b.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 5.460333228111267,
+      "layout": 2,
+      "waveformWindow": 2,
+      "waveformColour": 0,
+      "frozen": true,
+      "totalSamples": 1262400,
+      "elapsedSeconds": 2.851170208392948,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "66848d2e4403490"
+    },
+    {
+      "name": "waveform-resumed",
+      "file": "/tmp/aurora-waveform-qa/waveform-resumed.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 5.375333309173584,
+      "layout": 2,
+      "waveformWindow": 2,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1278400,
+      "elapsedSeconds": 3.24586495846352,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "877 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "17640b8b33dbb8fd"
+    },
+    {
+      "name": "waveform-scope",
+      "file": "/tmp/aurora-waveform-qa/waveform-scope.png",
+      "width": 1280,
+      "height": 570,
+      "snapshotMilliseconds": 6.990666627883911,
+      "layout": 2,
+      "waveformWindow": 3,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1297600,
+      "elapsedSeconds": 3.708846041737408,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "937 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "1079 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "1166 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "966 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1262 552 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "dba2c68daa57f872"
+    },
+    {
+      "name": "studio-minimum",
+      "file": "/tmp/aurora-waveform-qa/studio-minimum.png",
+      "width": 1100,
+      "height": 620,
+      "snapshotMilliseconds": 6.075416684150696,
+      "layout": 0,
+      "waveformWindow": 1,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1316800,
+      "elapsedSeconds": 4.451671958385319,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "757 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "899 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "986 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "579 433 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "490 433 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "22 118 629 298",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1082 602 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "4aa36f5d42debde4"
+    },
+    {
+      "name": "strip-minimum",
+      "file": "/tmp/aurora-waveform-qa/strip-minimum.png",
+      "width": 1100,
+      "height": 390,
+      "snapshotMilliseconds": 5.699708342552185,
+      "layout": 1,
+      "waveformWindow": 1,
+      "waveformColour": 0,
+      "frozen": false,
+      "totalSamples": 1341600,
+      "elapsedSeconds": 5.043199666796536,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "757 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "899 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "986 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "576 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "508 346 84 21",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1082 372 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "5af200ddad4ba08f"
+    },
+    {
+      "name": "waveform-compact",
+      "file": "/tmp/aurora-waveform-qa/waveform-compact.png",
+      "width": 1100,
+      "height": 390,
+      "snapshotMilliseconds": 5.379291653633118,
+      "layout": 2,
+      "waveformWindow": 0,
+      "waveformColour": 1,
+      "frozen": false,
+      "totalSamples": 1367200,
+      "elapsedSeconds": 5.643148000059933,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "757 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "899 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "986 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "817 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "728 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1082 372 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "e22cb95877f38e27"
+    },
+    {
+      "name": "waveform-stopped-a",
+      "file": "/tmp/aurora-waveform-qa/waveform-stopped-a.png",
+      "width": 1100,
+      "height": 390,
+      "snapshotMilliseconds": 4.232208371162415,
+      "layout": 2,
+      "waveformWindow": 0,
+      "waveformColour": 1,
+      "frozen": false,
+      "totalSamples": 1405600,
+      "elapsedSeconds": 7.136633333383411,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "757 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "899 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "986 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "817 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "728 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1082 372 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "9b32deca499fa977"
+    },
+    {
+      "name": "waveform-stopped-b",
+      "file": "/tmp/aurora-waveform-qa/waveform-stopped-b.png",
+      "width": 1100,
+      "height": 390,
+      "snapshotMilliseconds": 5.255208253860474,
+      "layout": 2,
+      "waveformWindow": 0,
+      "waveformColour": 1,
+      "frozen": false,
+      "totalSamples": 1405600,
+      "elapsedSeconds": 7.637753125129551,
+      "visibleControls": [
+        {
+          "title": "Reactive visual",
+          "name": "",
+          "bounds": "20 65 178 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Material theme",
+          "name": "",
+          "bounds": "208 65 142 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Colour palette",
+          "name": "",
+          "bounds": "360 65 150 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Layout",
+          "name": "",
+          "bounds": "757 17 126 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Freeze",
+          "bounds": "899 17 77 28",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "Reset",
+          "bounds": "986 17 94 28",
+          "insideEditor": true
+        },
+        {
+          "title": "Visual intensity",
+          "name": "",
+          "bounds": "660 65 120 30",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform time window",
+          "name": "",
+          "bounds": "817 116 64 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Waveform colour mode",
+          "name": "",
+          "bounds": "728 116 83 24",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 1",
+          "name": "",
+          "bounds": "532 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 2",
+          "name": "",
+          "bounds": "564 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "Gradient colour 3",
+          "name": "",
+          "bounds": "596 65 28 23",
+          "insideEditor": true
+        },
+        {
+          "title": "",
+          "name": "",
+          "bounds": "1082 372 18 18",
+          "insideEditor": true
+        }
+      ],
+      "pixelHash": "9b32deca499fa977"
+    }
+  ],
+  "audioDeviceOpened": false,
+  "audioSampleRate": 48000.0,
+  "inputBlockSamples": 800,
+  "prefillSeconds": 24,
+  "prefillMilliseconds": 176.56212508678436,
+  "timerHzRequested": 60,
+  "timerIntervals": {
+    "count": 397,
+    "meanMilliseconds": 20.152827771145954,
+    "p95Milliseconds": 21.140541648492217,
+    "maxMilliseconds": 288.7890833662823
+  },
+  "analysisFeedTiming": {
+    "count": 317,
+    "meanMilliseconds": 0.165840563337886,
+    "p95Milliseconds": 0.228458285331726,
+    "maxMilliseconds": 0.640291690826416
+  },
+  "componentSnapshotTiming": {
+    "count": 12,
+    "meanMilliseconds": 5.53641664981842,
+    "p95Milliseconds": 6.990666627883911,
+    "maxMilliseconds": 6.990666627883911
+  },
+  "captureMethod": "Real JUCE editor component snapshots at 1x logical size; validates raster waveform and UI. The Studio OpenGL child is not captured by this method.",
+  "timingLimit": "Developer GUI-thread feed and PNG captures affect timer intervals; these are QA observations, not real-time audio or DAW performance measurements.",
+  "revision": "Continuous waveform / 2026-10-13",
+  "ctest": {
+    "passed": true,
+    "suites": 5,
+    "seconds": 3.43
+  },
+  "clockChecks": 24324,
+  "sourceSha256": {
+    "Source/Analysis.h": "9d1d2abf7f532bac5432a76f823a0ef04eb21213e0e9686746b871cb36274c2a",
+    "Source/Analysis.cpp": "efd54a35cccb675c76c13276753f9b246722db8be6a2ec4e2c453df39f60b784",
+    "Source/WaveformClock.h": "220a64c24b269415d7e6ad537caa05866fa107291f02f1324ce09dd5814161aa",
+    "Source/PluginEditor.cpp": "2e070d9e327c6286f37f3bceb34d1e35dedd910398163d6f3907737fc47e9aaf",
+    "Source/PluginEditor.h": "4a5b2e307f101b6ffb16777d48fd67b69d17b71a6eb91d2c736d45aceaf19ff7",
+    "Source/PluginProcessor.cpp": "5d70e9fdf7ec3a19d11d49fc8fbcb1cfb32eb66d476d41f1e92b65625458f051",
+    "Source/PluginProcessor.h": "73b4dd34b0d7bdcc1fca1f5db4db18cd8e62e971b01e5991614307134e443022",
+    "Tests/AnalysisTests.cpp": "79c2ee0610aa379cb3cd634b92a39a80fde9aa26c7f4628eb43b588405765cce",
+    "Tests/WaveformClockTests.cpp": "74cc817fac3b78c81d8e3c6df839b1e5a8f17d2f39fdfa514a7de98f65c20ec3",
+    "Tests/ProcessorTests.cpp": "71808b05f8e6e4dbf7af38630e66557e4ebef03ce32def205d105ee63e1a14eb",
+    "Tests/WaveformRenderingTests.cpp": "d5012f7eb606c81d21fdfa4c88949b1efbdf77904da16b72e140c0c12879792f",
+    "CMakeLists.txt": "0073943c780d0d778454e6ac4561cb98fb7eba495ac425f23e0e311457a0b8d7"
+  },
+  "audioUnitValidationPassed": true
+}

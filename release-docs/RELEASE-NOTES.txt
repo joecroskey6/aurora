@@ -1,0 +1,49 @@
+# Aurora 0.1.0 — Developer Preview
+
+Aurora is a free, open-source audio meter and music-responsive visual plug-in.
+It combines detailed stereo waveform history, spectrum, spectrogram, stereo
+density, sample-peak/RMS levels and LUFS estimates with six interactive scenes.
+
+## In this preview
+
+- 24 complete looks, four interface themes and editable RGB/hex palettes.
+- Pearl Cloud's layered fluid visuals and five additional reactive scenes.
+- Studio, Meter strip, wide Waveform and custom dashboard layouts.
+- Detailed waveform materials, adjustable history windows and triggered Scope.
+- Inline customization for each meter, saved appearance presets and camera
+  orbit/zoom controls.
+- Audio passes through unchanged. No account, activation or network connection
+  is required to use the plug-in.
+
+## Download
+
+Choose **Aurora-0.1.0-macOS-universal.zip** for the AUv2 and VST3 plug-ins.
+Read **INSTALLATION.html** before copying either bundle into your plug-in folder.
+The matching **Aurora-0.1.0-source.zip**, **TECHNICAL-STACK.pdf** and
+**SHA256SUMS.txt** are attached to this release.
+
+**macOS 13.3 or later.** Universal arm64/x86_64 binaries; an OpenGL 3.2 graphics
+context is required for the creative scenes. No Windows, Linux, AAX or
+standalone monitoring build is included.
+
+**This is an ad hoc signed, non-notarized developer preview.** macOS may block
+a downloaded copy. The installation guide explains Apple's selective approval
+option where available, and the local source-build alternative. A Developer ID
+signed and notarized distribution is not included in this release.
+
+## Validation and limits
+
+Eight automated test suites, native UI/preset checks and Apple's Audio Unit
+validator passed locally. Validation used an Apple M2 Max; actual Ableton
+playback, Intel runtime, older macOS versions and other GPU configurations
+remain unverified. Performance varies with the host and display workload.
+
+Levels are sample peaks, not true peaks. LUFS values are estimates; no
+metering-standards certification is claimed. The waveform's 80 ms display
+buffer affects visuals only. Aurora does not record audio or monitor system
+audio outside a DAW.
+
+Aurora's original source is licensed under GNU AGPL v3.0 or later. Third-party
+components retain their own licences; see LICENSE.txt in the plug-in download
+(LICENSE in the source archive) and THIRD_PARTY.md. The source archive includes
+pinned JUCE source and build scripts.

@@ -1,0 +1,365 @@
+{
+  "glVendor": "Apple",
+  "glRenderer": "Apple M2 Max",
+  "glVersion": "4.1 Metal - 90.5",
+  "contextDefaultFramebuffer": 0,
+  "renderTargetFramebuffer": 0,
+  "dyeMeanAbsoluteChange": 0.048092533982098,
+  "longRun": {
+    "steps": 900,
+    "dt": 0.016666666666667,
+    "minDensity": 0.0,
+    "maxDensity": 1.0,
+    "meanDensity": 0.221678203721323,
+    "densityVariance": 0.062204395398486,
+    "occupiedPixels": 247085
+  },
+  "timingMethod": "30 full fluid/material/bloom frames; dt=1/30 (two solver substeps); glFinish wall time; milliseconds",
+  "timedInputDt": 0.033333333333333,
+  "frameMilliseconds": [
+    8.248291611671448,
+    11.042041659355164,
+    10.311291575431824,
+    7.646041750907898,
+    4.873333334922791,
+    7.225041627883911,
+    6.859625101089478,
+    6.640499949455261,
+    8.227333307266235,
+    8.17312490940094,
+    8.109125018119812,
+    7.835958361625671,
+    9.628958344459534,
+    8.812833309173584,
+    8.775166630744934,
+    8.65779173374176,
+    6.995291709899902,
+    8.748666763305664,
+    7.63658332824707,
+    8.697499990463257,
+    8.025583267211914,
+    7.519041657447815,
+    7.767666697502136,
+    8.23604166507721,
+    5.609583377838135,
+    7.868250012397766,
+    8.472750067710876,
+    7.110249996185303,
+    8.033291578292847,
+    6.243000030517578
+  ],
+  "meanMilliseconds": 7.934331945578257,
+  "medianMilliseconds": 8.02943742275238,
+  "p95Milliseconds": 10.311291575431824,
+  "maxMilliseconds": 11.042041659355164,
+  "checks": [
+    {
+      "name": "OpenGL 3.2 or newer",
+      "passed": true,
+      "detail": "4.1 Metal - 90.5"
+    },
+    {
+      "name": "PearlFlow shaders compile",
+      "passed": true
+    },
+    {
+      "name": "Post-process shaders compile",
+      "passed": true
+    },
+    {
+      "name": "PearlFlow material compiles",
+      "passed": true
+    },
+    {
+      "name": "Readback and fullscreen resources exist",
+      "passed": true
+    },
+    {
+      "name": "Initialization has no GL errors",
+      "passed": true
+    },
+    {
+      "name": "Drawable covers representative readback",
+      "passed": true,
+      "detail": "2400 x 1440"
+    },
+    {
+      "name": "Flow targets allocated",
+      "passed": true
+    },
+    {
+      "name": "Seed dye is finite",
+      "passed": true
+    },
+    {
+      "name": "Seed pigment is nonnegative and bounded",
+      "passed": true,
+      "detail": "max RGB sum 0.999939"
+    },
+    {
+      "name": "Seed alpha matches RGB concentration",
+      "passed": true,
+      "detail": "max error 0.000732"
+    },
+    {
+      "name": "Post-process floating point target ready",
+      "passed": true
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "before output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/before.png"
+    },
+    {
+      "name": "before PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/before.png"
+    },
+    {
+      "name": "Seed frame and readback has no GL errors",
+      "passed": true
+    },
+    {
+      "name": "180-step dye is finite",
+      "passed": true
+    },
+    {
+      "name": "Evolved pigment is nonnegative and bounded",
+      "passed": true,
+      "detail": "max RGB sum 0.999878"
+    },
+    {
+      "name": "Evolved alpha matches RGB concentration",
+      "passed": true,
+      "detail": "max error 0.000732"
+    },
+    {
+      "name": "Dye evolves over 180 fixed steps",
+      "passed": true,
+      "detail": "0.04809253"
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "after output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/after.png"
+    },
+    {
+      "name": "after PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/after.png"
+    },
+    {
+      "name": "Composited pixels change",
+      "passed": true
+    },
+    {
+      "name": "Composited frame has spatial detail",
+      "passed": true,
+      "detail": "322623 pixels differ from the corner"
+    },
+    {
+      "name": "Evolution and material composition has no GL errors",
+      "passed": true
+    },
+    {
+      "name": "Frozen dye remains bit exact",
+      "passed": true
+    },
+    {
+      "name": "Frozen composited pixels remain bit exact",
+      "passed": true
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "orbit-side output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/orbit-side.png"
+    },
+    {
+      "name": "orbit-side PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/orbit-side.png"
+    },
+    {
+      "name": "Side orbit reveals volumetric depth",
+      "passed": true
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "orbit-back output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/orbit-back.png"
+    },
+    {
+      "name": "orbit-back PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/orbit-back.png"
+    },
+    {
+      "name": "Back orbit differs from front and side",
+      "passed": true
+    },
+    {
+      "name": "Zoom changes projection",
+      "passed": true
+    },
+    {
+      "name": "Camera reset returns exact original pixels",
+      "passed": true
+    },
+    {
+      "name": "Camera controls leave fluid unchanged",
+      "passed": true
+    },
+    {
+      "name": "Inactive dye remains bit exact",
+      "passed": true
+    },
+    {
+      "name": "Silent active dye remains bit exact",
+      "passed": true
+    },
+    {
+      "name": "Reset restores deterministic seed bit exact",
+      "passed": true
+    },
+    {
+      "name": "Repeated 180-step run is deterministic",
+      "passed": true
+    },
+    {
+      "name": "Freeze silence and deterministic reset has no GL errors",
+      "passed": true
+    },
+    {
+      "name": "900-step dye is finite",
+      "passed": true
+    },
+    {
+      "name": "Long-run pigment is nonnegative and bounded",
+      "passed": true,
+      "detail": "max RGB sum 0.999878"
+    },
+    {
+      "name": "Long-run alpha matches RGB concentration",
+      "passed": true,
+      "detail": "max error 0.000610"
+    },
+    {
+      "name": "900-step pigment is nonzero",
+      "passed": true,
+      "detail": "247085 occupied pixels"
+    },
+    {
+      "name": "900-step pigment retains spatial variation",
+      "passed": true,
+      "detail": "range 1.000000, variance 0.06220440"
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "long-run output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/long-run.png"
+    },
+    {
+      "name": "long-run PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/long-run.png"
+    },
+    {
+      "name": "Palette stop 1 independently changes pixels",
+      "passed": true
+    },
+    {
+      "name": "Palette stop 2 independently changes pixels",
+      "passed": true
+    },
+    {
+      "name": "Palette stop 3 independently changes pixels",
+      "passed": true
+    },
+    {
+      "name": "Palette edits do not change dye",
+      "passed": true
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "afterhours output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/afterhours.png"
+    },
+    {
+      "name": "afterhours PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/afterhours.png"
+    },
+    {
+      "name": "Afterhours changes composited pixels",
+      "passed": true
+    },
+    {
+      "name": "QA output directory",
+      "passed": true
+    },
+    {
+      "name": "custom output stream opens",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/custom.png"
+    },
+    {
+      "name": "custom PNG written",
+      "passed": true,
+      "detail": "/tmp/aurora-flow-qa/custom.png"
+    },
+    {
+      "name": "Custom palette output differs",
+      "passed": true
+    },
+    {
+      "name": "Long run and independent palette edits has no GL errors",
+      "passed": true
+    },
+    {
+      "name": "Timed final dye remains finite",
+      "passed": true
+    },
+    {
+      "name": "Timed rendering has no GL errors",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "passed": true,
+  "outputWidth": 1200,
+  "outputHeight": 720,
+  "audioDeviceOpened": false,
+  "sourceSha256": {
+    "Source/PearlFlow.h": "57909cc0f72204b7793e992474382de74426ed0955c04a5826e369d41e134ae0",
+    "Source/PearlFlowMaterial.h": "fea82ec79b3117f8a4ae8d67ce9e6697f2bb9d0fdb827d7d25f2f74a5bb719ad",
+    "Source/VisualPostProcess.h": "aa4b531981555d37b75eefb1f19f0f84c09540f343e46e8b7759a1bfd4e61a02",
+    "Source/SceneMaterial.h": "e8b6918da960d2977a976353dbd5544a568879b744c0fa2cd616c8b576e95249",
+    "Source/VisualReactivity.h": "9a2713185a419ca2a41e76cd58e52b9e7137a97d403d8f83ddc793319f112bdd",
+    "Source/VisualSurface.cpp": "83f93cc7237fb36a8f5ef7738104f46a3c13f8cf1a0ecf1a0573fc62718549c5",
+    "Tests/RenderingTests.cpp": "75a4bbd07e17deeb63b6bf92d59f13015d446ac1374dc0ebfea5498d05da91c0"
+  }
+}

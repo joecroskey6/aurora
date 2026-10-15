@@ -1,0 +1,83 @@
+AURORA 0.1.0 — WEBSITE / GITHUB HANDOFF
+Prepared 14 October 2026
+
+You build the page. This kit supplies the downloadable plug-ins, matching
+source, installation guide, technical stack and checksums. Nothing has been
+published to your GitHub account or website.
+
+RECOMMENDED DELIVERY
+
+Unzip this handoff kit locally. Its downloads/ folder contains the individual
+release assets. Upload those to a public GitHub Release, then point your
+website's buttons to them.
+Keep the large ZIPs out of the website's regular Git history. GitHub's browser
+repository uploader limits individual files to 25 MiB; Releases are intended
+for distributing downloadable binaries and source bundles.
+
+1. Open the public repository that will host the downloads. Choose Releases
+   and Draft a new release.
+2. Use tag v0.1.0 and title "Aurora 0.1.0 — Developer Preview". If that tag is
+   already used, inspect the existing release instead of overwriting it.
+3. Paste RELEASE-NOTES.txt into the release description.
+4. Attach these files from downloads/ before publishing:
+   - downloads/Aurora-0.1.0-macOS-universal.zip
+   - downloads/Aurora-0.1.0-source.zip
+   - downloads/TECHNICAL-STACK.pdf
+   - downloads/TECHNICAL-STACK.html
+   - downloads/INSTALLATION.html
+   - downloads/RELEASE-MANIFEST.json
+   - downloads/SHA256SUMS.txt
+5. Select "This is a pre-release", review the attached files, then publish
+   when you are ready. Use a draft until all assets are present.
+6. Copy the actual asset links from the published release. Use those exact
+   links on your website. Check the links while signed out of GitHub.
+
+GitHub instructions:
+https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+File-size guidance:
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+WHAT YOUR WEBSITE SHOULD OFFER
+
+Primary button: Download for macOS
+  Link: Aurora-0.1.0-macOS-universal.zip release asset
+  Nearby text: "Developer preview · macOS 13.3+ · AUv2 + VST3 · Universal
+  Apple Silicon / Intel binary · Ad hoc signed; not Apple notarized."
+
+Additional links:
+  Installation guide  -> INSTALLATION.html
+  Source code         -> Aurora-0.1.0-source.zip
+  Technical stack     -> TECHNICAL-STACK.pdf
+  Checksums           -> SHA256SUMS.txt
+
+TECHNICAL-STACK.html is an accessible browser-readable copy of the stack
+document. RELEASE-MANIFEST.json records the build and packaged assets.
+
+You may also copy INSTALLATION.html into your website folder and link to that
+local page; it has no external fonts, scripts or required assets. A GitHub
+release asset may download the HTML instead of displaying it in the browser.
+
+Keep the exact corresponding source ZIP publicly accessible beside the binary
+download, including its LICENSE, THIRD_PARTY.md and vendored JUCE. GitHub's
+automatically generated "Source code (zip)" is not a substitute unless you
+have separately verified that it contains this complete corresponding source.
+This matters especially if the release lives in your website repository,
+whose automatic source archive will contain the website instead of Aurora.
+
+The outer handoff ZIP is for you. Website visitors should download the macOS
+plug-in ZIP directly, without unpacking the entire publisher kit first.
+
+BEFORE YOU ANNOUNCE IT
+
+Keep the developer-preview and notarization status visible before download.
+Do not describe the current build as notarized or universally DAW-tested.
+If you later sign/notarize or rebuild the binaries, produce new archives and
+matching checksums rather than retaining this release's checksums.
+
+The SHA256SUMS.txt file verifies download integrity, not publisher identity.
+Open macOS Terminal in the downloads/ folder, keeping its files together:
+
+  shasum -a 256 -c SHA256SUMS.txt
+
+Choose a published feedback/contact destination on your page. No support
+address, repository URL or download URL has been invented in this kit.

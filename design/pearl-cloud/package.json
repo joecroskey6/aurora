@@ -1,0 +1,30 @@
+{
+  "name": "pearl-cloud",
+  "displayName": "Pearl Cloud",
+  "private": true,
+  "type": "module",
+  "main": "index.tsx",
+  "scripts": {
+    "open": "diffusion open .",
+    "capture": "diffusion capture pearl-cloud -t 0 3 6 9 --per-sheet 2",
+    "check": "diffusion check pearl-cloud"
+  },
+  "devDependencies": {},
+  "diffusion": {
+    "export": {
+      "pearl-cloud": {
+        "format": "mp4",
+        "video": {
+          "enabled": true,
+          "codec": "avc",
+          "bitrate": 12000000,
+          "fps": 30,
+          "resolution": 1080
+        },
+        "audio": {
+          "enabled": false
+        }
+      }
+    }
+  }
+}

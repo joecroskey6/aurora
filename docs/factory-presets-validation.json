@@ -1,0 +1,4778 @@
+{
+  "recordedAt": "2026-10-13T13:49:19.255135+00:00",
+  "revision": "24 factory appearance presets",
+  "native": {
+    "passed": true,
+    "failures": 0,
+    "checks": [
+      {
+        "name": "Factory XML 0 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 1 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 2 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 3 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 4 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 5 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 6 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 7 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 8 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 9 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 10 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 11 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 12 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 13 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 14 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 15 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 16 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 17 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 18 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 19 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 20 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 21 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 22 loads",
+        "passed": true
+      },
+      {
+        "name": "Factory XML 23 loads",
+        "passed": true
+      },
+      {
+        "name": "Production preset selector exists",
+        "passed": true
+      },
+      {
+        "name": "Production selector includes every factory look",
+        "passed": true
+      },
+      {
+        "name": "Measured music and spectrogram warmed before preset browsing",
+        "passed": true
+      },
+      {
+        "name": "Selected look Pearl Cloud exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Pearl Cloud",
+        "passed": true
+      },
+      {
+        "name": "Selecting Pearl Cloud preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "00-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Black Opal exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Black Opal",
+        "passed": true
+      },
+      {
+        "name": "Selecting Black Opal preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "01-black-opal-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Sea Glass exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Sea Glass",
+        "passed": true
+      },
+      {
+        "name": "Selecting Sea Glass preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "02-sea-glass-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Rose Quartz exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Rose Quartz",
+        "passed": true
+      },
+      {
+        "name": "Selecting Rose Quartz preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "03-rose-quartz-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Amber Archive exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Amber Archive",
+        "passed": true
+      },
+      {
+        "name": "Selecting Amber Archive preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "04-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Cobalt Night exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Cobalt Night",
+        "passed": true
+      },
+      {
+        "name": "Selecting Cobalt Night preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "05-cobalt-night-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Ultraviolet exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Ultraviolet",
+        "passed": true
+      },
+      {
+        "name": "Selecting Ultraviolet preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "06-ultraviolet-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Afterglow exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Afterglow",
+        "passed": true
+      },
+      {
+        "name": "Selecting Afterglow preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "07-afterglow-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Glacier exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Glacier",
+        "passed": true
+      },
+      {
+        "name": "Selecting Glacier preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "08-glacier-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Verdigris exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Verdigris",
+        "passed": true
+      },
+      {
+        "name": "Selecting Verdigris preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "09-verdigris-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Supernova exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Supernova",
+        "passed": true
+      },
+      {
+        "name": "Selecting Supernova preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "10-supernova-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Velvet Static exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Velvet Static",
+        "passed": true
+      },
+      {
+        "name": "Selecting Velvet Static preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "11-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Citrus Circuit exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Citrus Circuit",
+        "passed": true
+      },
+      {
+        "name": "Selecting Citrus Circuit preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "12-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Moonstone exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Moonstone",
+        "passed": true
+      },
+      {
+        "name": "Selecting Moonstone preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "13-moonstone-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Porcelain exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Porcelain",
+        "passed": true
+      },
+      {
+        "name": "Selecting Porcelain preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "14-porcelain-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Infrared exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Infrared",
+        "passed": true
+      },
+      {
+        "name": "Selecting Infrared preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "15-infrared-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Abyss exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Abyss",
+        "passed": true
+      },
+      {
+        "name": "Selecting Abyss preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "16-abyss-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Honeycomb exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Honeycomb",
+        "passed": true
+      },
+      {
+        "name": "Selecting Honeycomb preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "17-honeycomb-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Sakura exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Sakura",
+        "passed": true
+      },
+      {
+        "name": "Selecting Sakura preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "18-sakura-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Magnetic Tape exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Magnetic Tape",
+        "passed": true
+      },
+      {
+        "name": "Selecting Magnetic Tape preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "19-magnetic-tape-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Blue Hour exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Blue Hour",
+        "passed": true
+      },
+      {
+        "name": "Selecting Blue Hour preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "20-blue-hour-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Mercury exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Mercury",
+        "passed": true
+      },
+      {
+        "name": "Selecting Mercury preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "21-mercury-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Laser Bloom exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Laser Bloom",
+        "passed": true
+      },
+      {
+        "name": "Selecting Laser Bloom preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "22-laser-bloom-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Selected look Quiet Geometry exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Quiet Geometry",
+        "passed": true
+      },
+      {
+        "name": "Selecting Quiet Geometry preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "23-quiet-geometry-editor visibly changes meter or layout pixels",
+        "passed": true
+      },
+      {
+        "name": "Next look button exists",
+        "passed": true
+      },
+      {
+        "name": "Selected look Pearl Cloud exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Pearl Cloud",
+        "passed": true
+      },
+      {
+        "name": "Selecting Pearl Cloud preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Previous look button exists",
+        "passed": true
+      },
+      {
+        "name": "Selected look Quiet Geometry exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Quiet Geometry",
+        "passed": true
+      },
+      {
+        "name": "Selecting Quiet Geometry preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Modifying a look clears its exact-match selection",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "modified-look-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Quiet Geometry exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Quiet Geometry",
+        "passed": true
+      },
+      {
+        "name": "Selecting Quiet Geometry preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Selected look Pearl Cloud exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Pearl Cloud",
+        "passed": true
+      },
+      {
+        "name": "Selecting Pearl Cloud preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Black Opal exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Black Opal",
+        "passed": true
+      },
+      {
+        "name": "Selecting Black Opal preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-black-opal-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Amber Archive exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Amber Archive",
+        "passed": true
+      },
+      {
+        "name": "Selecting Amber Archive preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-amber-archive-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Selected look Velvet Static exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Velvet Static",
+        "passed": true
+      },
+      {
+        "name": "Selecting Velvet Static preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "compact-velvet-static-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "Customise button exists",
+        "passed": true
+      },
+      {
+        "name": "Real editor opens its customization panel",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation button exists",
+        "passed": true
+      },
+      {
+        "name": "Presets opens the bundled factory gallery",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Pearl Cloud",
+        "passed": true
+      },
+      {
+        "name": "Factory card 0 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Black Opal",
+        "passed": true
+      },
+      {
+        "name": "Factory card 1 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Sea Glass",
+        "passed": true
+      },
+      {
+        "name": "Factory card 2 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Rose Quartz",
+        "passed": true
+      },
+      {
+        "name": "Factory card 3 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Amber Archive",
+        "passed": true
+      },
+      {
+        "name": "Factory card 4 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Cobalt Night",
+        "passed": true
+      },
+      {
+        "name": "Factory card 5 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Ultraviolet",
+        "passed": true
+      },
+      {
+        "name": "Factory card 6 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Afterglow",
+        "passed": true
+      },
+      {
+        "name": "Factory card 7 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Glacier",
+        "passed": true
+      },
+      {
+        "name": "Factory card 8 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Verdigris",
+        "passed": true
+      },
+      {
+        "name": "Factory card 9 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Supernova",
+        "passed": true
+      },
+      {
+        "name": "Factory card 10 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Velvet Static",
+        "passed": true
+      },
+      {
+        "name": "Factory card 11 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Citrus Circuit",
+        "passed": true
+      },
+      {
+        "name": "Factory card 12 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Moonstone",
+        "passed": true
+      },
+      {
+        "name": "Factory card 13 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Porcelain",
+        "passed": true
+      },
+      {
+        "name": "Factory card 14 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Infrared",
+        "passed": true
+      },
+      {
+        "name": "Factory card 15 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Abyss",
+        "passed": true
+      },
+      {
+        "name": "Factory card 16 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Honeycomb",
+        "passed": true
+      },
+      {
+        "name": "Factory card 17 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Sakura",
+        "passed": true
+      },
+      {
+        "name": "Factory card 18 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Magnetic Tape",
+        "passed": true
+      },
+      {
+        "name": "Factory card 19 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Blue Hour",
+        "passed": true
+      },
+      {
+        "name": "Factory card 20 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Mercury",
+        "passed": true
+      },
+      {
+        "name": "Factory card 21 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Laser Bloom",
+        "passed": true
+      },
+      {
+        "name": "Factory card 22 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "Gallery contains Quiet Geometry",
+        "passed": true
+      },
+      {
+        "name": "Factory card 23 fits its scroll content",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-top settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-top-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Factory card 0 button exists",
+        "passed": true
+      },
+      {
+        "name": "Selected look Pearl Cloud exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Pearl Cloud",
+        "passed": true
+      },
+      {
+        "name": "Selecting Pearl Cloud preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 0 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 1 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 2 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 3 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 4 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 5 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 6 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 7 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 8 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 9 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 10 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 11 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 12 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 13 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 14 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 15 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 16 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 17 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 18 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 19 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 20 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 21 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 22 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 23 follows look 0",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor GL readback completed without errors",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor GL front buffer contains a detailed rendered scene",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-pearl-cloud-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Factory card 12 button exists",
+        "passed": true
+      },
+      {
+        "name": "Selected look Citrus Circuit exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Citrus Circuit",
+        "passed": true
+      },
+      {
+        "name": "Selecting Citrus Circuit preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 0 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 1 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 2 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 3 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 4 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 5 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 6 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 7 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 8 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 9 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 10 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 11 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 12 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 13 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 14 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 15 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 16 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 17 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 18 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 19 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 20 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 21 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 22 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 23 follows look 12",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-citrus-circuit-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Factory card 23 button exists",
+        "passed": true
+      },
+      {
+        "name": "Selected look Quiet Geometry exactly applied",
+        "passed": true
+      },
+      {
+        "name": "Preset header follows Quiet Geometry",
+        "passed": true
+      },
+      {
+        "name": "Selecting Quiet Geometry preserves freeze and measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 0 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 1 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 2 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 3 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 4 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 5 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 6 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 7 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 8 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 9 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 10 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 11 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 12 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 13 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 14 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 15 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 16 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 17 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 18 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 19 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 20 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 21 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 22 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "Gallery selected state 23 follows look 23",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Reactive visual",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Material theme",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Colour palette",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Layout",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Customise Aurora",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Visual intensity",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Waveform time window",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Waveform colour mode",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Waveform material",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Waveform amplitude zoom",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: factoryPresetChoice",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: factoryPresetPrevious",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: factoryPresetNext",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Gradient colour 1",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Gradient colour 2",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: Gradient colour 3",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor control fits: ",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "gallery-select-quiet-geometry-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Saved tab button exists",
+        "passed": true
+      },
+      {
+        "name": "Saved preset library remains accessible separately",
+        "passed": true
+      },
+      {
+        "name": "saved-presets-tab settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "saved-presets-tab-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Factory tab button exists",
+        "passed": true
+      },
+      {
+        "name": "Returning to Factory preserves the selected look",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-return settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-return-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Compact gallery remains visible",
+        "passed": true
+      },
+      {
+        "name": "Compact gallery cards become a readable single column",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-compact settings panel available for capture",
+        "passed": true
+      },
+      {
+        "name": "factory-gallery-compact-gallery native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "Browsing finishes without modifying measured audio",
+        "passed": true
+      },
+      {
+        "name": "At least one production OpenGL surface was captured",
+        "passed": true
+      }
+    ],
+    "captures": [
+      {
+        "name": "00-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/00-pearl-cloud-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 0,
+        "elapsedSeconds": 13.518219416774356
+      },
+      {
+        "name": "01-black-opal-editor",
+        "file": "/tmp/aurora-factory-presets-qa/01-black-opal-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 1,
+        "elapsedSeconds": 14.631964083350741
+      },
+      {
+        "name": "02-sea-glass-editor",
+        "file": "/tmp/aurora-factory-presets-qa/02-sea-glass-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 2,
+        "elapsedSeconds": 15.59306204179629
+      },
+      {
+        "name": "03-rose-quartz-editor",
+        "file": "/tmp/aurora-factory-presets-qa/03-rose-quartz-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 3,
+        "elapsedSeconds": 16.578228000081623
+      },
+      {
+        "name": "04-amber-archive-editor",
+        "file": "/tmp/aurora-factory-presets-qa/04-amber-archive-editor.png",
+        "width": 1280,
+        "height": 390,
+        "gallery": false,
+        "layout": 1,
+        "factoryPresetId": 4,
+        "elapsedSeconds": 17.266583416737163
+      },
+      {
+        "name": "05-cobalt-night-editor",
+        "file": "/tmp/aurora-factory-presets-qa/05-cobalt-night-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 5,
+        "elapsedSeconds": 18.330023416794383
+      },
+      {
+        "name": "06-ultraviolet-editor",
+        "file": "/tmp/aurora-factory-presets-qa/06-ultraviolet-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 6,
+        "elapsedSeconds": 19.31610766676768
+      },
+      {
+        "name": "07-afterglow-editor",
+        "file": "/tmp/aurora-factory-presets-qa/07-afterglow-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 7,
+        "elapsedSeconds": 20.45339283338889
+      },
+      {
+        "name": "08-glacier-editor",
+        "file": "/tmp/aurora-factory-presets-qa/08-glacier-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 8,
+        "elapsedSeconds": 21.54658308342799
+      },
+      {
+        "name": "09-verdigris-editor",
+        "file": "/tmp/aurora-factory-presets-qa/09-verdigris-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 9,
+        "elapsedSeconds": 22.263046250022494
+      },
+      {
+        "name": "10-supernova-editor",
+        "file": "/tmp/aurora-factory-presets-qa/10-supernova-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 10,
+        "elapsedSeconds": 23.432340833462323
+      },
+      {
+        "name": "11-velvet-static-editor",
+        "file": "/tmp/aurora-factory-presets-qa/11-velvet-static-editor.png",
+        "width": 1280,
+        "height": 570,
+        "gallery": false,
+        "layout": 2,
+        "factoryPresetId": 11,
+        "elapsedSeconds": 24.144919083393656
+      },
+      {
+        "name": "12-citrus-circuit-editor",
+        "file": "/tmp/aurora-factory-presets-qa/12-citrus-circuit-editor.png",
+        "width": 1280,
+        "height": 390,
+        "gallery": false,
+        "layout": 1,
+        "factoryPresetId": 12,
+        "elapsedSeconds": 24.821658916748607
+      },
+      {
+        "name": "13-moonstone-editor",
+        "file": "/tmp/aurora-factory-presets-qa/13-moonstone-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 13,
+        "elapsedSeconds": 25.961857208407963
+      },
+      {
+        "name": "14-porcelain-editor",
+        "file": "/tmp/aurora-factory-presets-qa/14-porcelain-editor.png",
+        "width": 1280,
+        "height": 570,
+        "gallery": false,
+        "layout": 2,
+        "factoryPresetId": 14,
+        "elapsedSeconds": 26.66210416678294
+      },
+      {
+        "name": "15-infrared-editor",
+        "file": "/tmp/aurora-factory-presets-qa/15-infrared-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 15,
+        "elapsedSeconds": 27.38121654168471
+      },
+      {
+        "name": "16-abyss-editor",
+        "file": "/tmp/aurora-factory-presets-qa/16-abyss-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 16,
+        "elapsedSeconds": 28.83549500004157
+      },
+      {
+        "name": "17-honeycomb-editor",
+        "file": "/tmp/aurora-factory-presets-qa/17-honeycomb-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 17,
+        "elapsedSeconds": 29.798068583406057
+      },
+      {
+        "name": "18-sakura-editor",
+        "file": "/tmp/aurora-factory-presets-qa/18-sakura-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 18,
+        "elapsedSeconds": 30.86483825007781
+      },
+      {
+        "name": "19-magnetic-tape-editor",
+        "file": "/tmp/aurora-factory-presets-qa/19-magnetic-tape-editor.png",
+        "width": 1280,
+        "height": 390,
+        "gallery": false,
+        "layout": 1,
+        "factoryPresetId": 19,
+        "elapsedSeconds": 31.539667000092113
+      },
+      {
+        "name": "20-blue-hour-editor",
+        "file": "/tmp/aurora-factory-presets-qa/20-blue-hour-editor.png",
+        "width": 1280,
+        "height": 570,
+        "gallery": false,
+        "layout": 2,
+        "factoryPresetId": 20,
+        "elapsedSeconds": 32.25064770845279
+      },
+      {
+        "name": "21-mercury-editor",
+        "file": "/tmp/aurora-factory-presets-qa/21-mercury-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 21,
+        "elapsedSeconds": 33.157494208372675
+      },
+      {
+        "name": "22-laser-bloom-editor",
+        "file": "/tmp/aurora-factory-presets-qa/22-laser-bloom-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 22,
+        "elapsedSeconds": 34.10020162502631
+      },
+      {
+        "name": "23-quiet-geometry-editor",
+        "file": "/tmp/aurora-factory-presets-qa/23-quiet-geometry-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 34.81238437501296
+      },
+      {
+        "name": "modified-look-editor",
+        "file": "/tmp/aurora-factory-presets-qa/modified-look-editor.png",
+        "width": 1280,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": -1,
+        "elapsedSeconds": 36.7977819583784
+      },
+      {
+        "name": "compact-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-pearl-cloud-editor.png",
+        "width": 1100,
+        "height": 620,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 0,
+        "elapsedSeconds": 38.48505762509211
+      },
+      {
+        "name": "compact-black-opal-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-black-opal-editor.png",
+        "width": 1100,
+        "height": 620,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 1,
+        "elapsedSeconds": 39.37348083344802
+      },
+      {
+        "name": "compact-amber-archive-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-amber-archive-editor.png",
+        "width": 1100,
+        "height": 390,
+        "gallery": false,
+        "layout": 1,
+        "factoryPresetId": 4,
+        "elapsedSeconds": 40.04926708344325
+      },
+      {
+        "name": "compact-velvet-static-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-velvet-static-editor.png",
+        "width": 1100,
+        "height": 570,
+        "gallery": false,
+        "layout": 2,
+        "factoryPresetId": 11,
+        "elapsedSeconds": 40.7556366250883
+      },
+      {
+        "name": "factory-gallery-top-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/factory-gallery-top-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 2,
+        "factoryPresetId": 11,
+        "elapsedSeconds": 42.10174016670092
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-pearl-cloud-editor.png",
+        "width": 1100,
+        "height": 820,
+        "gallery": false,
+        "layout": 0,
+        "factoryPresetId": 0,
+        "elapsedSeconds": 43.34633475009307
+      },
+      {
+        "name": "gallery-select-pearl-cloud-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-pearl-cloud-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 0,
+        "factoryPresetId": 0,
+        "elapsedSeconds": 43.42024141672953
+      },
+      {
+        "name": "gallery-select-citrus-circuit-editor",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-citrus-circuit-editor.png",
+        "width": 1100,
+        "height": 390,
+        "gallery": false,
+        "layout": 1,
+        "factoryPresetId": 12,
+        "elapsedSeconds": 44.08892520836695
+      },
+      {
+        "name": "gallery-select-citrus-circuit-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-citrus-circuit-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 1,
+        "factoryPresetId": 12,
+        "elapsedSeconds": 44.15642687503203
+      },
+      {
+        "name": "gallery-select-quiet-geometry-editor",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-quiet-geometry-editor.png",
+        "width": 1100,
+        "height": 820,
+        "gallery": false,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 44.849878125108326
+      },
+      {
+        "name": "gallery-select-quiet-geometry-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-quiet-geometry-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 44.91377208343848
+      },
+      {
+        "name": "saved-presets-tab-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/saved-presets-tab-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 45.57291275004252
+      },
+      {
+        "name": "factory-gallery-return-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/factory-gallery-return-gallery.png",
+        "width": 760,
+        "height": 760,
+        "gallery": true,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 46.268950416720955
+      },
+      {
+        "name": "factory-gallery-compact-gallery",
+        "file": "/tmp/aurora-factory-presets-qa/factory-gallery-compact-gallery.png",
+        "width": 500,
+        "height": 520,
+        "gallery": true,
+        "layout": 3,
+        "factoryPresetId": 23,
+        "elapsedSeconds": 46.92448958340987
+      }
+    ],
+    "gpuCaptures": [
+      {
+        "name": "00-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/00-pearl-cloud-editor-gpu.png",
+        "width": 1598,
+        "height": 876,
+        "sampledColours": 16239,
+        "editorBounds": "22 118 799 438",
+        "clipBounds": "22 118 799 438",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "01-black-opal-editor",
+        "file": "/tmp/aurora-factory-presets-qa/01-black-opal-editor-gpu.png",
+        "width": 1200,
+        "height": 656,
+        "sampledColours": 12478,
+        "editorBounds": "22 118 600 328",
+        "clipBounds": "22 118 600 328",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "02-sea-glass-editor",
+        "file": "/tmp/aurora-factory-presets-qa/02-sea-glass-editor-gpu.png",
+        "width": 1374,
+        "height": 778,
+        "sampledColours": 5904,
+        "editorBounds": "22 118 687 389",
+        "clipBounds": "22 118 687 389",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "03-rose-quartz-editor",
+        "file": "/tmp/aurora-factory-presets-qa/03-rose-quartz-editor-gpu.png",
+        "width": 1198,
+        "height": 418,
+        "sampledColours": 2039,
+        "editorBounds": "22 118 599 209",
+        "clipBounds": "22 118 599 209",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "05-cobalt-night-editor",
+        "file": "/tmp/aurora-factory-presets-qa/05-cobalt-night-editor-gpu.png",
+        "width": 1636,
+        "height": 862,
+        "sampledColours": 16982,
+        "editorBounds": "22 118 818 431",
+        "clipBounds": "22 118 818 431",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "06-ultraviolet-editor",
+        "file": "/tmp/aurora-factory-presets-qa/06-ultraviolet-editor-gpu.png",
+        "width": 784,
+        "height": 656,
+        "sampledColours": 2821,
+        "editorBounds": "22 118 392 328",
+        "clipBounds": "22 118 392 328",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "07-afterglow-editor",
+        "file": "/tmp/aurora-factory-presets-qa/07-afterglow-editor-gpu.png",
+        "width": 1524,
+        "height": 752,
+        "sampledColours": 10273,
+        "editorBounds": "22 118 762 376",
+        "clipBounds": "22 118 762 376",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "08-glacier-editor",
+        "file": "/tmp/aurora-factory-presets-qa/08-glacier-editor-gpu.png",
+        "width": 1348,
+        "height": 876,
+        "sampledColours": 11196,
+        "editorBounds": "22 118 674 438",
+        "clipBounds": "22 118 674 438",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "10-supernova-editor",
+        "file": "/tmp/aurora-factory-presets-qa/10-supernova-editor-gpu.png",
+        "width": 2448,
+        "height": 652,
+        "sampledColours": 12341,
+        "editorBounds": "22 118 1224 326",
+        "clipBounds": "22 118 1224 326",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "13-moonstone-editor",
+        "file": "/tmp/aurora-factory-presets-qa/13-moonstone-editor-gpu.png",
+        "width": 1548,
+        "height": 834,
+        "sampledColours": 7633,
+        "editorBounds": "22 118 774 417",
+        "clipBounds": "22 118 774 417",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "16-abyss-editor",
+        "file": "/tmp/aurora-factory-presets-qa/16-abyss-editor-gpu.png",
+        "width": 1194,
+        "height": 1360,
+        "sampledColours": 6845,
+        "editorBounds": "22 118 597 680",
+        "clipBounds": "22 118 597 680",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "17-honeycomb-editor",
+        "file": "/tmp/aurora-factory-presets-qa/17-honeycomb-editor-gpu.png",
+        "width": 1274,
+        "height": 792,
+        "sampledColours": 4331,
+        "editorBounds": "22 118 637 396",
+        "clipBounds": "22 118 637 396",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "18-sakura-editor",
+        "file": "/tmp/aurora-factory-presets-qa/18-sakura-editor-gpu.png",
+        "width": 1196,
+        "height": 652,
+        "sampledColours": 6002,
+        "editorBounds": "22 118 598 326",
+        "clipBounds": "22 118 598 326",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "21-mercury-editor",
+        "file": "/tmp/aurora-factory-presets-qa/21-mercury-editor-gpu.png",
+        "width": 1620,
+        "height": 876,
+        "sampledColours": 1835,
+        "editorBounds": "22 118 810 438",
+        "clipBounds": "22 118 810 438",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "22-laser-bloom-editor",
+        "file": "/tmp/aurora-factory-presets-qa/22-laser-bloom-editor-gpu.png",
+        "width": 790,
+        "height": 660,
+        "sampledColours": 10294,
+        "editorBounds": "851 118 395 330",
+        "clipBounds": "851 118 395 330",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "compact-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-pearl-cloud-editor-gpu.png",
+        "width": 1336,
+        "height": 616,
+        "sampledColours": 6157,
+        "editorBounds": "22 118 668 308",
+        "clipBounds": "22 118 668 308",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "compact-black-opal-editor",
+        "file": "/tmp/aurora-factory-presets-qa/compact-black-opal-editor-gpu.png",
+        "width": 1020,
+        "height": 456,
+        "sampledColours": 4337,
+        "editorBounds": "22 118 510 228",
+        "clipBounds": "22 118 510 228",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "gallery-select-pearl-cloud-editor",
+        "file": "/tmp/aurora-factory-presets-qa/gallery-select-pearl-cloud-editor-gpu.png",
+        "width": 1336,
+        "height": 876,
+        "sampledColours": 10137,
+        "editorBounds": "22 118 668 438",
+        "clipBounds": "22 118 668 438",
+        "beforeGlError": 0,
+        "readGlError": 0
+      }
+    ],
+    "factoryPresetCount": 24,
+    "audioDeviceOpened": false,
+    "userPresetLibraryModified": false,
+    "syntheticPcmSamples": 2116800,
+    "captureMethod": "Actual production JUCE editor snapshots with direct readback of each visible OpenGL surface's presented front buffer on its GL thread, vertically oriented and composited at its real clipped editor bounds. Separate GPU PNG files retain native physical resolution. Gallery cards are illustrative previews.",
+    "sourceFixture": "Original procedural stereo music, twelve seconds of live editor warmup, then frozen measured PCM and meter history for all look comparisons."
+  },
+  "ctest": {
+    "suitesPassed": 7,
+    "suitesFailed": 0,
+    "seconds": 5.18,
+    "processorChecks": 26976,
+    "output": "Internal ctest changing into directory: /Users/joecroskey/Documents/ChatGPT/expermi/aurora-meters/build\nTest project /Users/joecroskey/Documents/ChatGPT/expermi/aurora-meters/build\n    Start 1: analysis\n1/7 Test #1: analysis .........................   Passed    0.93 sec\n    Start 2: visual_framing\n2/7 Test #2: visual_framing ...................   Passed    0.40 sec\n    Start 3: visual_reactivity\n3/7 Test #3: visual_reactivity ................   Passed    0.13 sec\n    Start 4: waveform_clock\n4/7 Test #4: waveform_clock ...................   Passed    0.00 sec\n    Start 5: waveform_projection\n5/7 Test #5: waveform_projection ..............   Passed    0.31 sec\n    Start 6: waveform_ribbon\n6/7 Test #6: waveform_ribbon ..................   Passed    0.59 sec\n    Start 7: processor\n7/7 Test #7: processor ........................   Passed    2.81 sec\n\n100% tests passed, 0 tests failed out of 7\n\nTotal Test time (real) =   5.18 sec\n"
+  },
+  "sourceSha256": {
+    "CMakeLists.txt": "a06363302491d525f56aa4feb88c3ab2e97b12e2bf9a3781d2de216e51451b97",
+    "Source/Analysis.cpp": "e27ce3f7f40134eee86c2ba4a7bce0225d3c666d62c904032db1063a1bea34f3",
+    "Source/Analysis.h": "1697233bd295ca29daa32c61a4f9a981b227ab70c3c94260fbf97457c58d4ea9",
+    "Source/Customization.h": "7f1a5f34c81dbdd82298fe8512da6f534fd3854e510ab55634a90df0790c099d",
+    "Source/CustomizationPanel.cpp": "7efd44be67e9c88a95ca38458cd61a687208ded770d11e52ca439845c76b6bcc",
+    "Source/CustomizationPanel.h": "1ca0e624c1a8e58030a3cc46021c579a9d000eee0ac936ab140830d88ce478e4",
+    "Source/FactoryPresetBrowser.cpp": "56c077a67f4724592bb0d03140218627510ae0a8244897b57874ac8af38c2783",
+    "Source/FactoryPresetBrowser.h": "9f67b22924e14d0b6658bd07462b85c705868e4af1956c1cbc092c984aa850ef",
+    "Source/FactoryPresets.cpp": "f9cbd5360d793cacca504cef6a81a476176c6b504eee7a3775841ca61622f5eb",
+    "Source/FactoryPresets.h": "00c19a76aba432973b8738be276bee97f3aa66679772d46a50f315145f2c547c",
+    "Source/Palette.h": "f2264d49098e52a61b7d2e32d40487b2b074f797f653588267a52ac1cd0118af",
+    "Source/PearlCloudShader.h": "4505b60faa83de222a9d6accfc0d7ec06b5339e0be4669f16d78c2adc886afa8",
+    "Source/PearlFlow.h": "57909cc0f72204b7793e992474382de74426ed0955c04a5826e369d41e134ae0",
+    "Source/PearlFlowMaterial.h": "cda268508d7cc772b89a6ceabacbe686de5786092fe5cf5666713e482a76eee7",
+    "Source/PluginEditor.cpp": "7598debf1019db3c5f2de0f76d0b4aa3ca94feab0b46829094e9af0fdda0b615",
+    "Source/PluginEditor.h": "8df3c8fa59591085e5f464f7c2a17d27016e84f5b0676a3cc87194dee70f696a",
+    "Source/PluginProcessor.cpp": "5c783362ac0553f0ea7f73ade1058a7878cc5c04e20828f39979e2b792db2230",
+    "Source/PluginProcessor.h": "9e2d142abeb1a9ca1364f4a71fa98a3f2bce4f9bfd6c80026bb3a630fe5c3cb2",
+    "Source/SceneMaterial.h": "b8b3ae57902311881f153074edd0077f78993ba558cae6fba073cb71856e48e7",
+    "Source/SpectralProjection.h": "390cbacdd1e2a40ce8ff5e2bf18554300b54f94531c67ccda21ab9fec5db281a",
+    "Source/VisualFraming.h": "deb850ce9aed789b835ff389eb4296de7d3b11c0df62dfe6a8184f80f66cf05b",
+    "Source/VisualPostProcess.h": "68cd607c74aa27201ab6d6119088168064709ebbe7cd83e4f0b5d221b793953b",
+    "Source/VisualReactivity.h": "9a2713185a419ca2a41e76cd58e52b9e7137a97d403d8f83ddc793319f112bdd",
+    "Source/VisualSurface.cpp": "650c8d82f421d1c0fc841614feedeec0449cc979a1f85170be4f134402325f9d",
+    "Source/VisualSurface.h": "73ec5e16bac8701b95dbdf66c9f79637334f3aa4b91daae90e976634222a1652",
+    "Source/WaveformClock.h": "d3d0681113ac4682e20ee789de07e0780f184c6e3e52766ad09fc005b35051f0",
+    "Source/WaveformProjection.h": "dbbd6f1646d1f238984106a7cc7242a51f7aa9bb29decd16f72c89fedbdb98df",
+    "Source/WaveformRibbon.h": "63462d71937b0694b17c79582dab5c89dc8e609afd4b05eb09f060cb750521fa",
+    "Tests/AnalysisTests.cpp": "c1f399d65f14c712bb4bb19eea66693b7c64507322b1b392a48ada917401830d",
+    "Tests/CustomizationRenderingTests.cpp": "1bd92c390023e052e3ca6d74e0491697a8d1fffae1ccd59a6f12ca4326aaed92",
+    "Tests/FactoryPresetRenderingTests.cpp": "3cb7ea3ff26962f72908a3d1753ddaddb88783274bd03f760ea8008f3900dae7",
+    "Tests/Preview.cpp": "a63d517c3670907ccb0221081e7500fdb3d25e0d19f321f68233a84b748c99e4",
+    "Tests/ProcessorTests.cpp": "6bf93874a48bfdf5f4c45fe80be8cc8591eefa92687658249a21c1bc14bbd930",
+    "Tests/RenderingTests.cpp": "b55b7c1dacf15a9b6d9b0aa3f3500d9f74e8ae2f30dfc7500717de916c62c41f",
+    "Tests/VisualFramingTests.cpp": "02c40e37efb55caa5e08c9f88ca58df83055c1cdec5e52022c759b288a9b8a45",
+    "Tests/VisualReactivityTests.cpp": "bdffeb673e2efbdf767824757342198349cc0df2ceba91ee12878b96bae68c6b",
+    "Tests/WaveformClockTests.cpp": "74cc817fac3b78c81d8e3c6df839b1e5a8f17d2f39fdfa514a7de98f65c20ec3",
+    "Tests/WaveformMusic.h": "3b2502466d41d5e179c03d24360c7e7822296e5d3a055793a0f0a63b65d53d25",
+    "Tests/WaveformProjectionTests.cpp": "8b24721573f5a737002489297b5efa13e929b03d6202fa03908f28fb41fa3b41",
+    "Tests/WaveformRenderingTests.cpp": "9ccbb7ce86a9b08b28ba13241ebbe33f9284907b49bef2202c99e50118a18625",
+    "Tests/WaveformRibbonTests.cpp": "3f7939b4c2ac2e660e2283c7be71c241b766ce2f817f795e4377a8db224b27f1"
+  },
+  "installed": {
+    "AU": {
+      "sha256": "0bc640588121b8f5dad3f50988eacf01ce52ee181c9b834e7204896331a0c3e2",
+      "matchesBuild": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "signatureVerified": true
+    },
+    "VST3": {
+      "sha256": "29b914108072b76e56e0ebc6fc8abaea279a3aa0ebd5bbba443bd62f02cdda67",
+      "matchesBuild": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "signatureVerified": true
+    }
+  },
+  "installationOutput": "Previous build backed up to /Users/joecroskey/Documents/ChatGPT/expermi/aurora-meters/backups/20261013-144805-Aurora.vst3\nInstalled /Users/joecroskey/Library/Audio/Plug-Ins/VST3/Aurora.vst3\nPrevious build backed up to /Users/joecroskey/Documents/ChatGPT/expermi/aurora-meters/backups/20261013-144805-Aurora.component\nInstalled /Users/joecroskey/Library/Audio/Plug-Ins/Components/Aurora.component\nIn Ableton: Preferences > Plug-Ins > enable AU or VST3 system folders, then Rescan.\n",
+  "auval": {
+    "passed": true,
+    "output": "\n    AU Validation Tool\n    Version: 1.10.0 \n    Copyright 2003-2019, Apple Inc. All Rights Reserved.\n    Specify -h (-help) for command options\n\n--------------------------------------------------\nVALIDATING AUDIO UNIT: 'aufx' - 'Auro' - 'Aucl'\n--------------------------------------------------\nManufacturer String: Soft Club\nAudioUnit Name: Aurora\nComponent Version: 0.1.0 (0x100)\n\n* * PASS\n--------------------------------------------------\nTESTING OPEN TIMES:\nCOLD:\nTime to open AudioUnit:         521.589 ms\nWARM:\nTime to open AudioUnit:         2.143  ms\nThis AudioUnit is a version 2 implementation.\nFIRST TIME:\nTime for initialization:        2.542 ms\n\n* * PASS\n--------------------------------------------------\nVERIFYING DEFAULT SCOPE FORMATS:\nInput Scope Bus Configuration:\n Default Bus Count:1\n    Bus Name: Input\n    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\n    Has Channel Layouts: 0x640001 0x650002 0x660002 0x670002 0x6A0002 \n    Default Layout:\n\tTag=0x650002, Num Chan Descs=0\n\nOutput Scope Bus Configuration:\n Default Bus Count:1\n    Bus Name: Output\n    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\n    Has Channel Layouts: 0x640001 0x650002 0x660002 0x670002 0x6A0002 \n    Default Layout:\n\tTag=0x650002, Num Chan Descs=0\n\n* * PASS\n--------------------------------------------------\nVERIFYING REQUIRED PROPERTIES:\n\n* * PASS\n--------------------------------------------------\nVERIFYING RECOMMENDED PROPERTIES:\n  VERIFYING PROPERTY: Latency\n    PASS\n  VERIFYING PROPERTY: Tail Time\n    PASS\n  VERIFYING PROPERTY: Bypass Effect\n    PASS\n\n* * PASS\n--------------------------------------------------\nVERIFYING OPTIONAL PROPERTIES:\n\n* * PASS\n--------------------------------------------------\nVERIFYING SPECIAL PROPERTIES:\n\nVERIFYING CUSTOM UI\nCocoa Views Available: 1\n  JUCE_AUCocoaViewClass_128827d4adf1708c\n    PASS\n\nHAS FACTORY PRESETS\n    ID:   0    Name: Untitled\n\nVERIFYING CLASS INFO\n    PASS\n\nTESTING HOST CALLBACKS\n    PASS\n\n* * PASS\n--------------------------------------------------\nPUBLISHED PARAMETER INFO:\nTesting that parameters retain value across reset and initialization\n  PASS\n\n* * PASS\n--------------------------------------------------\nFORMAT TESTS:\n\nReported Channel Capabilities (explicit):\n      [1, 1]  [2, 2]  \n\nInput/Output Channel Handling:\n1-1   1-2   1-4   1-5   1-6   1-7   1-8   2-2   2-4   2-5   2-6   2-7   2-8   4-4   4-5   5-5   6-6   7-7   8-8\nX                                         X                                                                       \n\n# # AudioChannelLayouts (5), Input Scope:\nChannelLayout is Writable: T\nThe Unit publishes the following Channel Layouts:\n  0x640001, 0x650002, 0x660002, 0x670002, 0x6A0002, \n\nIs Audio Channel Layout Available:\nMono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F \nX       X       X                                                                                                               \n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x640001, Success - did not reset format with mis-matched layout\n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x650002, Successsful\n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful\n\n# # AudioChannelLayouts (5), Output Scope:\nChannelLayout is Writable: T\nThe Unit publishes the following Channel Layouts:\n  0x640001, 0x650002, 0x660002, 0x670002, 0x6A0002, \n\nIs Audio Channel Layout Available:\nMono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F \nX       X       X                                                                                                               \n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x640001, Success - did not reset format with mis-matched layout\n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x650002, Successsful\n\nCurrent Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nCurrent Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful\n\n* * PASS\n--------------------------------------------------\nRENDER TESTS:\n\nInput Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nOutput Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\nRender Test at 512 frames\nSlicing Render Test at 64 frames\n  PASS\n\n\nRender Test at 64 frames, sample rate: 22050 Hz\nRender Test at 137 frames, sample rate: 96000 Hz\nRender Test at 4096 frames, sample rate: 48000 Hz\nRender Test at 4096 frames, sample rate: 192000 Hz\nRender Test at 4096 frames, sample rate: 11025 Hz\nRender Test at 512 frames, sample rate: 44100 Hz\n  PASS\n\n1 Channel Test:\nRender Test at 512 frames\n  PASS\n\nChecking connection semantics:\nConnection format:\nAudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved\n  PASS\n\nBad Max Frames - Render should fail\n  PASS\n\nTest MIDI\n  PASS\n\n* * PASS\n--------------------------------------------------\nAU VALIDATION SUCCEEDED.\n--------------------------------------------------\n"
+  },
+  "screenshots": [
+    "aurora-presets-gallery.png",
+    "aurora-presets-pearl-cloud.png",
+    "aurora-presets-black-opal.png",
+    "aurora-presets-moonstone.png",
+    "aurora-presets-cobalt-night.png",
+    "aurora-presets-amber-archive.png",
+    "aurora-presets-porcelain.png"
+  ],
+  "limits": [
+    "Tests use original procedural synthetic PCM and open no audio device.",
+    "No actual Ableton playback validation of this revision.",
+    "Native rendering tested on Apple M2 Max; Intel runtime and other GPUs unverified.",
+    "Gallery illustrations preview palette and layout; full editor captures use the actual meters and GPU scene."
+  ]
+}

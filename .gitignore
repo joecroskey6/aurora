@@ -1,0 +1,11 @@
+build/
+.tools/
+third_party/JUCE/
+.DS_Store
+dist/
+backups/
+node_modules/
+design/**/captures/
+design/**/renders/
+__pycache__/
+*.pyc

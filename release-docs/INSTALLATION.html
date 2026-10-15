@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora 0.1.0 — Installation &amp; first session</title>
+<style>
+:root{color-scheme:light;--paper:#f7f7f1;--ink:#173632;--muted:#46625a;--rule:#c7d4c8;--accent:#a6cc9f}
+*{box-sizing:border-box}body{margin:0;background:#e4ebe3;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.document{max-width:980px;margin:40px auto;background:var(--paper);padding:56px 64px 48px;box-shadow:0 10px 50px #17363212}.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}.masthead{border-bottom:2px solid var(--ink);padding-bottom:28px;margin-bottom:28px}h1{font-size:64px;line-height:1;letter-spacing:-.06em;font-weight:650;margin:0 0 20px}h2{font-size:25px;letter-spacing:-.025em;line-height:1.25;margin:30px 0 12px}h3{font-size:17px;margin:20px 0 6px}p{margin:0 0 14px}.subtitle{font-size:22px;margin:0 0 16px;line-height:1.3}.metadata{display:flex;gap:8px;flex-wrap:wrap}.metadata span{font-size:12px;font-weight:600;border:1px solid var(--rule);padding:4px 10px;border-radius:20px}.notice{border-left:4px solid #aa7953;background:#eee9d9;padding:17px 20px;margin:24px 0}.notice p:last-child{margin:0}.notice strong{color:#65452f}.card{border:1px solid var(--rule);padding:17px 20px;border-radius:4px;margin:16px 0}ol,ul{padding-left:24px;margin:10px 0 18px}li{padding-left:5px;margin:9px 0}li::marker{color:var(--muted);font-weight:650}code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em}code{overflow-wrap:anywhere}kbd{padding:2px 5px;border:1px solid var(--rule);border-radius:3px;white-space:nowrap}.path{display:block;background:#e9eee5;padding:10px 12px;margin:7px 0 10px;border-radius:3px;line-height:1.45}a{color:#245f61;text-underline-offset:3px}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--rule);padding:10px 12px 10px 0}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}td:first-child{font-weight:650;white-space:nowrap}.small{font-size:13px;color:var(--muted)}.footer{border-top:1px solid var(--rule);padding-top:18px;margin-top:32px;font-size:12px;color:var(--muted)}.page-break{break-before:page}
+@media(max-width:680px){.document{margin:0;padding:32px 22px;box-shadow:none}h1{font-size:52px}h2{font-size:23px}.subtitle{font-size:20px}.metadata{gap:6px}table{font-size:12px}td:first-child{white-space:normal}.notice{padding:14px 16px}}
+@page{size:A4;margin:17mm 17mm 18mm}@media print{body{background:white;font-size:10pt;line-height:1.5}.document{max-width:none;margin:0;padding:0;box-shadow:none;background:white}h1{font-size:40pt}h2{font-size:17pt;margin-top:19px;break-after:avoid}h3{break-after:avoid}.masthead{margin-bottom:16px;padding-bottom:16px}.subtitle{font-size:14pt}.eyebrow,.metadata span{font-size:8pt}.notice,.card,table{break-inside:avoid}.notice{padding:12px 15px;margin:15px 0}p{margin-bottom:9px}li{margin:6px 0}.small{font-size:8.5pt}.footer{font-size:8pt;margin-top:22px}a{color:inherit}table{font-size:9pt}.path{padding:7px 9px}}
+</style>
+</head>
+<body>
+<main class="document">
+<header class="masthead">
+<p class="eyebrow">Installation &amp; first session · 14 October 2026</p>
+<h1>Aurora</h1>
+<p class="subtitle">Audio metering. Fluid visuals. Your colours.</p>
+<div class="metadata"><span>0.1.0 developer preview</span><span>macOS 13.3+</span><span>Apple Silicon + Intel binaries</span><span>VST3 + AUv2</span></div>
+</header>
+<p>Aurora is a free, open-source audio effect for a compatible digital audio workstation (DAW). Add it to an audio track or your master bus to see the signal passing through it. It does not generate sound or capture system audio.</p>
+<aside class="notice"><p><strong>This build is a developer preview.</strong> The bundles are ad hoc signed, without an Apple Developer ID signature or notarization. macOS may block a downloaded copy. Read <a href="#security">If macOS blocks Aurora</a> before installing. A successful local validation does not establish that a download will load on another Mac.</p></aside>
+
+<h2>1. Unzip and choose a format</h2>
+<p>Extract <code>Aurora-0.1.0-macOS-universal.zip</code>. Keep each plug-in bundle intact; do not open its package contents.</p>
+<table>
+<thead><tr><th>Bundle</th><th>Use with</th><th>Format</th></tr></thead>
+<tbody><tr><td>Aurora.vst3</td><td>A host that accepts VST3, including Ableton Live</td><td>VST3</td></tr><tr><td>Aurora.component</td><td>A host that accepts Audio Units, including Logic Pro and Ableton Live</td><td>AUv2</td></tr></tbody>
+</table>
+<p>You only need the format your host uses. For Live, choose one format consistently within a Set. No Windows, Linux, AAX or standalone monitoring build is included. Aurora's creative scenes require a working OpenGL 3.2 context.</p>
+
+<h2>2. Copy the bundle into your Library</h2>
+<ol>
+<li><strong>Quit your DAW.</strong> If replacing Aurora, copy the old bundle to a backup folder outside the plug-in directories first.</li>
+<li>In Finder, press <kbd>⇧⌘G</kbd> (Shift–Command–G), then enter the matching folder below. The <code>~</code> means your home folder.
+<code class="path">~/Library/Audio/Plug-Ins/VST3/</code>
+Copy <strong>Aurora.vst3</strong> here.
+<code class="path">~/Library/Audio/Plug-Ins/Components/</code>
+Copy <strong>Aurora.component</strong> here.</li>
+<li>If a folder is missing, open <code>~/Library/Audio/</code> and create the required <code>Plug-Ins</code>, <code>VST3</code> or <code>Components</code> folders. Copy the individual bundle, not the ZIP or its enclosing folder.</li>
+</ol>
+<p class="small">These are the standard per-user plug-in folders documented by <a href="https://help.ableton.com/hc/en-us/articles/209068929-Using-AU-and-VST-plug-ins-on-macOS">Ableton</a>. Leave any unrelated plug-ins in place.</p>
+
+<h2>3. Scan and open Aurora</h2>
+<p>In Ableton Live, open <strong>Settings / Preferences → Plug-Ins</strong>. Enable <strong>Use VST3 Plug-In System Folders</strong> for VST3, or <strong>Use Audio Units / Audio Units v2</strong> for AU. Click <strong>Rescan</strong>; names vary by Live version. Search for <strong>Aurora</strong> in the Plug-Ins browser, usually under <strong>Soft Club</strong>, and drag it onto a track. See <a href="https://help.ableton.com/hc/en-us/articles/209068929-Using-AU-and-VST-plug-ins-on-macOS">Ableton's plug-in guide</a>.</p>
+<p>In another DAW, use its plug-in manager to scan the matching folder. Open a fresh test project first, add Aurora as an audio effect, and play audio through that track. Its output passes through unchanged.</p>
+
+<section class="page-break">
+<h2>Make it yours</h2>
+<table>
+<thead><tr><th>Control</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td>Preset menu &amp; arrows</td><td>Browse 24 complete looks with different colours, scenes and layouts.</td></tr>
+<tr><td>Layout</td><td>Switch between Studio, Meter strip, Waveform and Custom.</td></tr>
+<tr><td>Customise</td><td>Open settings inside the editor. Click again or press Escape to close. Scroll in shorter windows.</td></tr>
+<tr><td>Colour swatches</td><td>Choose your own RGB or six-digit hex colours; module palettes can be edited independently.</td></tr>
+<tr><td>Scene view</td><td>Drag to orbit, scroll or pinch to zoom, and double-click to reset the camera.</td></tr>
+<tr><td>Freeze / Reset</td><td>Freeze holds the display. Reset clears measurement integration and peak history.</td></tr>
+<tr><td>Presets → Saved</td><td>Save and exchange appearance presets as local <code>.aurora</code> files.</td></tr>
+</tbody></table>
+<p>Your DAW project stores Aurora's settings. Saved appearance presets live separately in <code>~/Library/Aurora/Presets/</code>. To reduce graphics work, use a meter-only layout or choose <strong>Customise → Scene → 15 Hz</strong>. Frame rate depends on the host, GPU, window size and number of open instances.</p>
+
+<h2 id="security">If macOS blocks Aurora</h2>
+<p>This download has not been notarized by Apple. For an unidentified-developer warning, Apple's <a href="https://support.apple.com/102445">Open apps safely on your Mac</a> guide describes a selective <strong>System Settings → Privacy &amp; Security → Open Anyway</strong> option, when available. Use it only if you trust this specific download. A DAW's plug-in scanner may not present that option.</p>
+<p>If no selective approval is offered, use the provided source to build locally, or wait for a Developer ID signed and notarized release. Do not disable Gatekeeper globally. For a damaged-file or malware warning, stop and obtain a verified replacement; do not treat it as a routine approval prompt.</p>
+<p class="small">The source ZIP includes the code, pinned JUCE source, build scripts and licence notices. Build instructions are in its <code>README.md</code>. The accompanying stack document explains the dependencies and release status.</p>
+
+<h2>Compatibility and measurement limits</h2>
+<p>The distributed binaries declare <strong>macOS 13.3 or later</strong> and contain both arm64 and x86_64 code. Local native checks ran on Apple M2 Max with macOS 26.6.2. Intel runtime, older macOS versions, other GPUs and actual Ableton playback remain unverified. Apple Audio Unit validation and the project's automated suites passed; these checks do not certify every host.</p>
+<p>Level bars show <strong>sample peaks</strong>, not true peaks. LUFS readings are estimates; no standards certification is claimed. Waveform scrolling includes an 80 ms display buffer, which does not delay audio. The spectrogram is sampled at display cadence and is not a recording. Aurora does not send audio over the network.</p>
+
+<h2>Remove or update Aurora</h2>
+<p>Quit the DAW and remove <code>Aurora.vst3</code> and/or <code>Aurora.component</code> from the folders used above, then reopen the DAW and rescan. To update, replace only Aurora's bundles after backing them up. Your <code>.aurora</code> presets can stay; deleting the bundles does not delete that library. Existing projects containing Aurora will report a missing plug-in after removal.</p>
+</section>
+<footer class="footer">Aurora 0.1.0 · Original source: GNU AGPL v3.0 or later. Third-party components retain their own licences. See LICENSE.txt in the plug-in download (LICENSE in the source archive) and THIRD_PARTY.md. This guide is self-contained and can be printed or saved as a PDF from your browser.</footer>
+</main>
+</body>
+</html>

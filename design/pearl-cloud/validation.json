@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-12",
+  "studio_version": "0.211.0",
+  "shader_sha256": "51c3fb42e386f8e92562018a4a2274aaca6c101407493064b93bd75da85725aa",
+  "renderer": "Diffusion Studio offscreen WebGL surface",
+  "fixture": {
+    "size": [
+      1440,
+      900
+    ],
+    "capture_height": 720,
+    "times_seconds": [
+      0,
+      4,
+      8
+    ],
+    "phase_rate": 0.65,
+    "energy": [
+      0.46,
+      0.32,
+      0.2
+    ],
+    "intensity": 1,
+    "theme": "Soft Club",
+    "colours": [
+      "#193f59",
+      "#70bbc4",
+      "#f0f7eb"
+    ]
+  },
+  "additional_fixtures": {
+    "freeze": "phase rate 0, times 0 and 8",
+    "gradient_stops": [
+      "#ca4879",
+      "#e6ae68",
+      "#bda2ff"
+    ],
+    "intensity": [
+      0.25,
+      4
+    ],
+    "portrait": {
+      "size": [
+        450,
+        900
+      ],
+      "theme": "Chrome",
+      "intensity": 4,
+      "time": 8
+    },
+    "wide": {
+      "size": [
+        1920,
+        300
+      ],
+      "theme": "Afterhours",
+      "intensity": 4,
+      "time": 8
+    },
+    "margin_comparison": "outer 7.9% of frame against identical background-only render"
+  },
+  "pixel_results": {
+    "motion_mean_rgb_change_0_8": 9.800500739454732,
+    "freeze_max_rgb_change": 0,
+    "default_border_max_rgb_change": 0,
+    "depth_mean_rgb_change": 2.382589859825103,
+    "body_mean_rgb_change": 2.460589875900206,
+    "light_mean_rgb_change": 9.09636501736111,
+    "gain_mean_rgb_change": 13.039113940329218,
+    "portrait_border_max_rgb_change": 0,
+    "wide_border_max_rgb_change": 0,
+    "passed": true
+  },
+  "notes": [
+    "All captures rendered locally in Diffusion Studio.",
+    "No generative API, account or credits were used.",
+    "These fixtures test artistic controls and rendering, not metering calibration."
+  ]
+}

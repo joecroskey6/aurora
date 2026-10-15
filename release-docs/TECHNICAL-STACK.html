@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aurora — Technical stack</title><meta name="description" content="Complete technical stack, architecture, build tools and validation for the Aurora audio analysis plug-in."><style>*{box-sizing:border-box}html{color-scheme:light}body{margin:0;background:#eef2f1;color:#182f34;font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1050px;margin:48px auto;padding:0 24px}.coverline{font:12px/1.5 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#416f73}.toc{background:#dce8e6;border-radius:14px;padding:24px 30px;margin-bottom:28px}.toc ol{columns:2;margin:12px 0 0;padding-left:22px}.toc a{color:#245b63;text-underline-offset:3px}.chapter{background:#fff;border:1px solid #d9e3e1;border-radius:16px;margin:24px 0;padding:42px 46px;box-shadow:0 7px 25px #17393805}h1{font-size:34px;line-height:1.12;letter-spacing:-.035em;margin:8px 0 12px}h2{font-size:20px;line-height:1.3;margin:28px 0 10px}p{margin:12px 0}.subtitle{color:#567177;font-size:15px;margin-bottom:24px}.num{color:#4c8a8b;font:13px ui-monospace,monospace;letter-spacing:.14em}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;line-height:1.5;table-layout:fixed}th,td{text-align:left;vertical-align:top;padding:11px 13px;border-bottom:1px solid #dae4e2;overflow-wrap:anywhere}th{background:#183e46;color:white;font-size:12px;letter-spacing:.04em}td:first-child{font-weight:600;color:#214b52}tbody tr:nth-child(even){background:#f1f6f5}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eaf1ef;border-left:3px solid #70a5a4;padding:16px;font:12px/1.6 ui-monospace,SFMono-Regular,monospace;border-radius:5px}footer{color:#597175;font-size:13px;text-align:center;padding:20px}@media(max-width:650px){main{margin:20px auto;padding:0 12px}.chapter{padding:25px 21px}h1{font-size:28px}.toc ol{columns:1}table{font-size:12px}th,td{padding:8px}}@media print{@page{size:A4;margin:17mm 17mm 18mm}body{background:white;font-size:10pt;line-height:1.43}main{margin:0;padding:0;max-width:none}.toc,footer{display:none}.chapter{margin:0;padding:0;border:0;box-shadow:none;border-radius:0;break-after:page}.chapter:last-child{break-after:auto}h1{font-size:24pt}h2{font-size:12pt;break-after:avoid}table{font-size:8.6pt;line-height:1.4}tr{break-inside:avoid}th,td{padding:6px 8px}pre{font-size:8.4pt}p{orphans:3;widows:3}}</style></head><body><main><div class="coverline">Aurora / Engineering record</div><nav class="toc" aria-label="Contents"><strong>Technical stack · Contents</strong><ol>
+<li><a href="#chapter-1">Aurora · Technical stack</a></li>
+<li><a href="#chapter-2">Native runtime &amp; host integration</a></li>
+<li><a href="#chapter-3">Audio &amp; analysis architecture</a></li>
+<li><a href="#chapter-4">Meter definitions &amp; accuracy</a></li>
+<li><a href="#chapter-5">Waveform &amp; instrument rendering</a></li>
+<li><a href="#chapter-6">Creative scenes &amp; GPU pipeline</a></li>
+<li><a href="#chapter-7">Appearance, presets &amp; persistence</a></li>
+<li><a href="#chapter-8">Build tools &amp; reproducible source</a></li>
+<li><a href="#chapter-9">Validation &amp; measured performance</a></li>
+<li><a href="#chapter-10">Distribution, signing &amp; installation</a></li>
+<li><a href="#chapter-11">Licenses &amp; provenance</a></li>
+<li><a href="#chapter-12">Source map &amp; further reading</a></li>
+</ol></nav>
+<section class="chapter" id="chapter-1"><div class="num">01</div><h1>Aurora · Technical stack</h1><p class="subtitle">Version 0.1.0 · Release handoff · 14 October 2026</p>
+<p>Aurora is a native, free, open-source audio analysis and reactive visual plug-in. It combines sample-derived meters with six GPU scenes, 24 complete appearance presets and detailed display controls. This document describes the code and binaries in this release, the tools used to produce them, and the limits of the measurements and validation.</p>
+<table><colgroup><col style="width:28.999999999999996%"><col style="width:71.0%"></colgroup><thead><tr><th scope="col">Release</th><th scope="col">Included implementation</th></tr></thead><tbody>
+<tr><td>Formats</td><td>macOS Audio Unit effect (.component) and VST3 effect (.vst3).</td></tr>
+<tr><td>Architectures</td><td>Universal binary: Apple Silicon arm64 and Intel x86_64.</td></tr>
+<tr><td>Minimum OS in shipped binaries</td><td>macOS 13.3. Both architectures in both plug-ins declare 13.3 in their Mach-O build metadata.</td></tr>
+<tr><td>Native framework</td><td>JUCE 8.0.6, pinned to commit 51a8a6d7aeae7326956d747737ccf1575e61e209.</td></tr>
+<tr><td>Languages</td><td>C++17 for plug-in, analysis and native UI; GLSL for GPU shaders. Objective-C++ and platform code are supplied through JUCE.</td></tr>
+<tr><td>Default appearance</td><td>Pearl Cloud scene, Flight Deck material theme, Phosphor palette, Studio layout.</td></tr>
+<tr><td>Audio behavior</td><td>Mono or stereo, matched input/output layout; host samples are left unchanged; zero reported algorithmic latency.</td></tr>
+<tr><td>Local operation</td><td>No account, online activation, runtime AI, audio upload, network requests or recording to disk in Aurora.</td></tr>
+</tbody></table>
+<h2>What is delivered</h2>
+<p>The macOS download contains both plug-in bundles and release documentation. The corresponding-source download contains Aurora source, tests, build scripts, technical records, the small editable Pearl Cloud design project and the exact vendored JUCE source with its notices. The development preview and QA applications are tools for synthetic signals; they are not standalone system-audio monitoring products.</p>
+<h2>Platform scope</h2>
+<p>This release does not include Windows, Linux, AAX, VST2 or a standalone audio capture application. A universal binary includes Intel machine code, but Intel runtime compatibility has not yet been tested. Actual Ableton playback of this revision and other GPU configurations remain unverified; the completed checks are listed later in this document.</p>
+<p>The CMake source contains an intended deployment default of macOS 11.0. The verified release was built with an empty deployment-target cache entry and macOS 13.3 SDK, so its actual minimum is 13.3. This handoff states the binary requirement rather than advertising the unverified intended default.</p>
+</section>
+<section class="chapter" id="chapter-2"><div class="num">02</div><h1>Native runtime &amp; host integration</h1><p class="subtitle">The plug-in is compiled software hosted by a DAW.</p>
+<table><colgroup><col style="width:25.0%"><col style="width:75.0%"></colgroup><thead><tr><th scope="col">Layer</th><th scope="col">Technology and responsibility</th></tr></thead><tbody>
+<tr><td>DAW interface</td><td>JUCE AudioProcessor and AudioProcessorEditor; JUCE Audio Unit and VST3 wrappers. Product Aurora, manufacturer Soft Club, bundle ID audio.softclub.aurora.</td></tr>
+<tr><td>Native interface</td><td>JUCE Components, Graphics, Paths, Images, controls and Viewports. Native 2D drawing renders the waveform, spectrum, spectrogram, stereo display and levels.</td></tr>
+<tr><td>GPU renderer</td><td>JUCE OpenGLContext requests desktop OpenGL 3.2. GLSL shaders, vertex/index buffers, floating-point textures and framebuffer passes produce the creative scenes.</td></tr>
+<tr><td>State and files</td><td>JUCE ValueTree and XML for host state and .aurora appearance files; a local preset directory. No database or server.</td></tr>
+<tr><td>Standard library</td><td>C++ arrays, vectors, algorithms, atomics, mutexes and numeric functions. The independent analysis engine has no third-party DSP dependency.</td></tr>
+<tr><td>System frameworks</td><td>Apple frameworks supply windowing, graphics, plug-in hosting and system integration. They are supplied by macOS, not shipped inside Aurora.</td></tr>
+</tbody></table>
+<h2>JUCE modules and system linkage</h2>
+<p>The CMake target links juce_audio_utils and juce_opengl plus JUCE recommended configuration flags. JUCE resolves their supporting modules, including audio processors, audio basics, audio formats/devices, GUI, graphics, events, data structures and core utilities.</p>
+<p>The verified link command includes AudioUnit, AudioToolbox, CoreAudio, CoreAudioKit, CoreMIDI, Cocoa, Foundation, IOKit, Security, Accelerate, QuartzCore, OpenGL, WebKit and DiscRecording, with weak Metal and MetalKit linkage. Some arrive transitively from JUCE. This list does not imply Aurora captures MIDI, uses a browser UI, burns discs or renders its scenes with Metal.</p>
+<h2>Build-time feature switches</h2>
+<pre><code>JUCE_WEB_BROWSER=0
+JUCE_USE_CURL=0
+JUCE_VST3_CAN_REPLACE_VST2=0
+FORMATS AU VST3
+IS_SYNTH FALSE
+NEEDS_MIDI_INPUT FALSE
+NEEDS_MIDI_OUTPUT FALSE</code></pre>
+<p>The UI uses local system typography and native widgets. There is no Electron, React web front end, embedded website, CDN, telemetry service, cloud database, machine-learning model or external shader service at plug-in runtime. A hosted download page is separate from the plug-in and requires no Aurora backend.</p>
+</section>
+<section class="chapter" id="chapter-3"><div class="num">03</div><h1>Audio &amp; analysis architecture</h1><p class="subtitle">Real-time audio, worker analysis and graphics have separate responsibilities.</p>
+<table><colgroup><col style="width:24.0%"><col style="width:76.0%"></colgroup><thead><tr><th scope="col">Stage</th><th scope="col">Data and scheduling</th></tr></thead><tbody>
+<tr><td>1 · Host callback</td><td>processBlock receives floating-point PCM and copies it into a preallocated single-producer/single-consumer FIFO. It reads host buffers without writing them.</td></tr>
+<tr><td>2 · Bounded queue</td><td>Two fixed channel arrays have capacity 32,768 frames. JUCE AbstractFifo coordinates indices. A full queue drops analysis frames instead of waiting.</td></tr>
+<tr><td>3 · Worker</td><td>A JUCE thread drains up to 1,024 frames at a time into fixed arrays and runs AudioAnalyzer. While empty, it waits 4 ms before polling again.</td></tr>
+<tr><td>4 · Snapshots</td><td>The analyzer publishes meter/FFT snapshots and continuous waveform history. Snapshot/reset access uses a mutex outside the audio callback; snapshots own their copied data.</td></tr>
+<tr><td>5 · Display</td><td>The editor consumes the latest available results. Visible, running native meters request repaint at 60 Hz; the scene has selectable 15/30/60 Hz targets, default 30.</td></tr>
+<tr><td>6 · GPU thread</td><td>The scene renderer receives a copied feature state, runs its required shader passes and presents to the editor’s own OpenGL context.</td></tr>
+</tbody></table>
+<h2>Audio callback contract</h2>
+<p>The callback performs no buffer allocation, FFT, rendering, mutex locking or operating-system event notification. It does not alter, normalize or delay the DAW’s samples. The processor reports zero latency and accepts only matching mono or stereo buses. A null right input in the standalone analyzer duplicates left visually; mono loudness counts one channel rather than two.</p>
+<h2>Discontinuities and bounded memory</h2>
+<p>FIFO overflow is counted and marks a discontinuity. The worker discards its pending backlog and resets analysis windows so missing samples are not joined into false continuous measurements. Reset or format changes also invalidate old history. The audio path remains untouched. Incoming PCM is not retained indefinitely or written to a file; fixed rings and histograms keep working storage bounded with session duration.</p>
+<h2>Timing limits</h2>
+<p>Analysis is asynchronous. Offline exports can advance faster than the worker and drop analysis data, while the exported audio remains unchanged. The 80 ms waveform display buffer affects the visual timeline only. Freeze holds the display, while audio and analysis continue. Actual frame delivery depends on the host, system load, GPU and display scale; repaint targets are not guaranteed frame rates.</p>
+</section>
+<section class="chapter" id="chapter-4"><div class="num">04</div><h1>Meter definitions &amp; accuracy</h1><p class="subtitle">Measured data and creative visual controls are kept separate.</p>
+<table><colgroup><col style="width:26.0%"><col style="width:74.0%"></colgroup><thead><tr><th scope="col">Meter</th><th scope="col">Definition</th></tr></thead><tbody>
+<tr><td>Sample peak</td><td>Maximum absolute sample in the latest complete 50 ms window, converted to dBFS. No intersample reconstruction.</td></tr>
+<tr><td>Peak hold</td><td>Maximum absolute sample since reset. Counts all delivered samples independently of FFT cadence, UI polling or display freeze.</td></tr>
+<tr><td>RMS</td><td>Unweighted mean-square amplitude over the same 50 ms window. A full-scale sine is about −3.01 dBFS.</td></tr>
+<tr><td>Correlation</td><td>Sum(L × R) / sqrt(sum(L²) × sum(R²)) over 50 ms. In-phase is +1; inverted polarity is −1; silent/empty-channel windows report 0. DC is not removed.</td></tr>
+<tr><td>Spectrum</td><td>4,096-point periodic Hann window, 1,024-sample hop, 2,049 bins including DC and Nyquist. Stereo powers are averaged before dB conversion, preserving anti-phase energy.</td></tr>
+<tr><td>Spectral calibration</td><td>Bin frequency is index × sample rate / 4,096. Coherent-gain correction makes a bin-centred full-scale sine on both channels read 0 dBFS. Off-bin tones spread over bins.</td></tr>
+<tr><td>Momentary / short-term</td><td>Two-stage K weighting; summed channel power and −0.691 offset. Windows are 400 ms and 3 s, updated every 100 ms after the first full window.</td></tr>
+<tr><td>Integrated LUFS estimate</td><td>Overlapping 400 ms blocks; −70 LUFS absolute gate and relative gate 10 LU below the absolute-gated mean. A fixed 0.1 LU histogram stores actual summed energies and counts.</td></tr>
+</tbody></table>
+<h2>What “estimate” means</h2>
+<p>Integrated gate decisions use each occupied histogram bucket’s mean energy. Blocks near the relative threshold may be included or excluded together, although the final average uses actual energies rather than rounded bucket centres. There is no fixed session-duration expiry. This implementation is not a certified BS.1770 / EBU R 128 meter and has not passed a full standards compliance suite.</p>
+<p>The analysis accepts 8–384 kHz sample rates, recalculating filter coefficients per rate. Time windows round to whole samples. Invalid formats are ignored and nonfinite analysis samples become zero; host audio is still not rewritten. Level fields use a finite −120 dB floor, also used before enough loudness samples exist.</p>
+<h2>Excluded measurements</h2>
+<p>Aurora does not currently measure true peak, loudness range or calibrated analog VU/PPM. The low/mid/high controls used for animation, visual sensitivity, waveform colours, automatic stereo display gain and scene transients are creative encodings. They do not change calibrated meter values and are not beat or tempo detectors.</p>
+</section>
+<section class="chapter" id="chapter-5"><div class="num">05</div><h1>Waveform &amp; instrument rendering</h1><p class="subtitle">The visual detail is derived from stored sample statistics.</p>
+<h2>Continuous waveform history</h2>
+<p>The worker accumulates every sanitized sample into buckets of round(sample rate / 1,000) samples. Each channel retains signed minima/maxima, the exact first sample positions of those extrema, double-precision squared-sample energy, filtered-band energy and 65 signed amplitude-occupancy counters. The ring retains at least 24.25 seconds. An unfinished bucket is published as a replaceable tail, so stopping between bucket boundaries does not erase final samples.</p>
+<p>At the actual display pixel density, the editor groups only contiguous buckets on sample-time boundaries. Energies and histogram counts are summed before deriving RMS and colours. Missing intervals stay blank. This preserves measured extrema and avoids averaging already-normalized colours. The histogram is quantized, does not preserve sample order and cannot reconstruct individual PCM samples.</p>
+<table><colgroup><col style="width:25.0%"><col style="width:75.0%"></colgroup><thead><tr><th scope="col">Display feature</th><th scope="col">Implementation</th></tr></thead><tbody>
+<tr><td>Materials</td><td>Silk emphasizes measured amplitude occupancy; Prism emphasizes filtered-band RMS contours; Trace emphasizes fine RMS/band lines. All share the same signed envelope.</td></tr>
+<tr><td>Colour</td><td>Bands uses configurable low/mid/high colours. Its 12 dB/oct Butterworth splits are 250 Hz and min(4 kHz, 0.45 × sample rate). Palette maps RMS from −60 to 0 dBFS through three RGB stops.</td></tr>
+<tr><td>Brightness</td><td>Density receives local three-bin smoothing, per-column maximum normalization and square-root contrast. This is artistic shading of measured occupancy, not calibrated probability.</td></tr>
+<tr><td>Time / amplitude</td><td>1, 3, 6, 12 or 24 s; custom 0.25–24 s. Shared 1×/2×/4× magnification and display gain produce explicit fixed axes. Raw full-scale flags still require actual samples reaching ±1.</td></tr>
+<tr><td>Cache / scrolling</td><td>A circular pixel cache reuses stable columns. A fractional sample clock uses an 80 ms display buffer and bounded correction, never scrolls beyond received audio, holds on stop and reanchors on resume.</td></tr>
+<tr><td>Scope</td><td>Separate triggered close-up: up to 768 original samples from the latest 1,024-sample snapshot. Shared, labelled adaptive amplitude range; history materials and magnification do not apply.</td></tr>
+</tbody></table>
+<h2>Other meter surfaces</h2>
+<p>The spectrogram stores a 480 × 256 cache of UI-sampled FFT history, up to 24 seconds, and recolours retained dB data through a lookup table. It is approximate wall-time history, not a lossless spectrogram recording. The stereo display accumulates mid/side sample density into a 256-square cache, with configurable persistence and display gain. Spectrum traces and trails project measured data onto a logarithmic axis and clip at Nyquist.</p>
+</section>
+<section class="chapter" id="chapter-6"><div class="num">06</div><h1>Creative scenes &amp; GPU pipeline</h1><p class="subtitle">Procedural shaders react to copied audio features.</p>
+<p>The six scenes are Folded Light, Liquid Aperture, Pearl Cloud, Night Transit, Diffraction Veil and Orbit Loom. Scene selection, camera orbit, zoom, three-stop palette, theme, exposure, bloom, saturation, speed and sensitivity are editable. VisualReactivity separates artistic response from numeric metering with adaptive normalization, 18 ms attack, 160 ms release and a 180 ms transient envelope; missing snapshots release after 250 ms.</p>
+<h2>Pearl Cloud: persistent fluid and layered material</h2>
+<p>PearlFlow uses floating-point ping-pong textures for velocity, pressure and pigment. Its bounded fixed steps perform velocity advection, curl/confinement and audio forcing, divergence, 12 pressure iterations, pressure projection and pigment transport. Limited MacCormack correction preserves fine dye structure without introducing new extrema. The production pigment canvas has a fixed 848:512 aspect; the solver’s long side is 256 cells and the dye long side is 768 texels.</p>
+<p>PearlFlowMaterial integrates three curved optical strata over 128 samples per view ray. Density, relief, transmission and highlights create the pearlescent volume; a support mask contains it. Colour channels stay palette-independent so colour edits can update the appearance immediately. Silence and Freeze stop simulation advance. A zero flow-speed control also holds motion. The fallback shader is the earlier deterministic design study.</p>
+<h2>Shared rendering and performance choices</h2>
+<p>Only Pearl Cloud initializes and advances the fluid solver. The other five scenes use their own procedural geometry/material shaders. All scenes receive a floating-point finishing pass with quarter-resolution bloom; finishing is not fed back into the simulation. Camera framing considers rotated bounds, while intentional zoom can crop the image.</p>
+<p>Uniform locations are cached after linking. Unchanged frozen scenes avoid redraws. Covered or absent scene panels skip updates, and Customise parks the existing OpenGL surface outside the visible area to preserve its context and resources. Closing the editor releases its GPU context. Palette, spectrum and stereo caching reduce repeated CPU work without reducing measured waveform resolution or Pearl Cloud’s material sampling.</p>
+<h2>Optional Diffusion Studio authoring</h2>
+<p>Diffusion Studio v0.211.0 was used to edit and render the earlier Pearl Cloud shader study. Its project is TypeScript/TSX plus GLSL, with solid-js and @diffusionstudio/jsx supplied by the editor. There is no local npm dependency installation for that project. Studio is optional and is not linked, bundled or required by Aurora. Despite its name, no diffusion model or runtime AI is part of the plug-in.</p>
+<p>design/pearl-cloud/pearl-cloud.glsl generates shader.ts for Studio and Source/PearlCloudShader.h for the native fallback. scripts/sync-pearl-cloud.py checks those embeds. The current persistent solver and material live in PearlFlow.h and PearlFlowMaterial.h; the earlier Studio renders do not demonstrate that newer engine’s performance.</p>
+</section>
+<section class="chapter" id="chapter-7"><div class="num">07</div><h1>Appearance, presets &amp; persistence</h1><p class="subtitle">Presentation settings never rewrite audio measurements.</p>
+<p>Aurora supplies 24 complete factory looks, 12 named palette choices plus Custom, four material themes and four layouts: Studio, Meter strip, Waveform and Custom. The appearance model adds 96 validated custom settings to the core selectors, colours, camera and intensity. A complete factory look sets all 112 appearance XML attributes explicitly.</p>
+<table><colgroup><col style="width:27.0%"><col style="width:73.0%"></colgroup><thead><tr><th scope="col">Area</th><th scope="col">Editable controls</th></tr></thead><tbody>
+<tr><td>Colours / interface</td><td>Arbitrary RGB sliders and six-digit hex values; three gradient stops and midpoint; interface background, text, grid, panel and clip-marker colours; independent module palettes.</td></tr>
+<tr><td>Waveform</td><td>Material, colour mode and band colours; channels; custom time window; gain, density, RMS body, crest, band detail, fill, gradient, grid and labels.</td></tr>
+<tr><td>Spectrum / spectrogram</td><td>Frequency and dBFS limits, line/fill, trails, contrast, time span, direction and grid.</td></tr>
+<tr><td>Stereo / levels</td><td>Stereo persistence, brightness, rotation and gain; levels floor, warning threshold, RMS shading, peak holds, segments and loudness visibility.</td></tr>
+<tr><td>Scene / layout</td><td>Scene, camera, motion, response, finish and frame-rate target; gaps, proportions, one/two/three columns, module visibility and order.</td></tr>
+<tr><td>Presets</td><td>Factory collection, previous/next navigation, modified-state indicator, local saved library, import/export, section reset and whole-appearance reset.</td></tr>
+</tbody></table>
+<h2>Storage contracts</h2>
+<p>Host state is a JUCE ValueTree serialized to XML and copied to the host’s binary state block. Its root is AuroraMetersState, version 1; it includes appearance and Freeze. Imported appearance presets use a separate appearance-only contract. Finite values and limits are validated, RGB values are masked to 24 bits and module positions remain a permutation. Missing older properties receive defined defaults.</p>
+<p>The local macOS library is ~/Library/Aurora/Presets/, one .aurora XML file per saved appearance. Presets contain no recorded audio, FFT history, loudness integration or measurement history. Loading/importing a preset or resetting appearance preserves current measurements and Freeze. The main Reset button separately clears measurement state.</p>
+<h2>UI behavior</h2>
+<p>Customise is a native dropdown within the editor, with scrollable content in short layouts. Toggle or Escape closes it. Header layout selection closes it and reveals the chosen meters. Controls synchronize only when their model changes, preventing timer refreshes from erasing an asynchronously delivered menu selection. Camera drag, wheel/pinch zoom and reset remain available for the 3D scene.</p>
+</section>
+<section class="chapter" id="chapter-8"><div class="num">08</div><h1>Build tools &amp; reproducible source</h1><p class="subtitle">Tools used to author and package Aurora are separate from runtime dependencies.</p>
+<table><colgroup><col style="width:25.0%"><col style="width:75.0%"></colgroup><thead><tr><th scope="col">Tool</th><th scope="col">Role / verified version</th></tr></thead><tbody>
+<tr><td>Apple toolchain</td><td>Apple Clang 14.0.3.14030022, Command Line Tools compiler and macOS 13.3 SDK produced the verified release. C++17 is required.</td></tr>
+<tr><td>CMake</td><td>3.31.6 installed locally from PyPI; project minimum is 3.22. Generates plug-in and test targets through JUCE CMake helpers.</td></tr>
+<tr><td>Ninja</td><td>Pinned Python distribution ninja==1.11.1.4. Executes generated builds.</td></tr>
+<tr><td>Python 3</td><td>Creates the local tool environment, synchronizes shader embeds and writes ZIP archives with zipfile. Not required to run the plug-in.</td></tr>
+<tr><td>Shell / Git</td><td>Bash build, signing and install scripts; Git fetches JUCE 8.0.6 when the vendored tree is absent.</td></tr>
+<tr><td>Apple release utilities</td><td>codesign signs/verifies bundles; lipo checks architectures; otool checks linked libraries and deployment metadata; auval validates Audio Units; ditto copies bundles.</td></tr>
+<tr><td>QA / capture tools</td><td>CTest and original native test runners. Optional Swift video encoder uses AVFoundation, CoreGraphics, CoreVideo, ImageIO and Accelerate to encode captured PNGs.</td></tr>
+<tr><td>Authoring assistance</td><td>OpenAI Codex assisted implementation, research, tests and packaging in this workspace. It is a development tool, not an Aurora dependency or service.</td></tr>
+<tr><td>Optional visual editor</td><td>Diffusion Studio 0.211.0 and its CLI; only needed to open the included editable design study.</td></tr>
+</tbody></table>
+<h2>Standard macOS build</h2>
+<p>Install Apple Command Line Tools and Python 3, extract the source archive, then run from aurora-meters:</p>
+<pre><code>xcode-select --install
+./scripts/build.sh</code></pre>
+<p>build.sh obtains JUCE 8.0.6 if needed, creates .tools, installs pinned CMake/Ninja, configures Release for arm64;x86_64, builds with four jobs, runs CTest and ad hoc signs macOS bundles. With the included JUCE tree it does not need a fresh JUCE clone; the first tooling install still requires internet. Nothing is automatically installed into a DAW.</p>
+<p>For a release with an explicit deployment target, pass -DCMAKE_OSX_DEPLOYMENT_TARGET=13.3 when configuring. Do not infer a binary’s minimum OS from the default in CMakeLists.txt; inspect its Mach-O metadata. Changing the target is a new build that requires validation.</p>
+<pre><code>.tools/bin/cmake -S . -B build -G Ninja \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_OSX_ARCHITECTURES=&quot;arm64;x86_64&quot; \
+  -DCMAKE_OSX_DEPLOYMENT_TARGET=13.3
+.tools/bin/cmake --build build --parallel 4
+.tools/bin/ctest --test-dir build --output-on-failure</code></pre>
+</section>
+<section class="chapter" id="chapter-9"><div class="num">09</div><h1>Validation &amp; measured performance</h1><p class="subtitle">Evidence is scoped to the fixtures and hardware actually tested.</p>
+<p>The 14 October 2026 revision built universal AU, VST3 and QA applications. Apple’s Audio Unit validator passed. Signed installed executables matched the tested build hashes. The full machine-readable record is docs/inline-controls-validation.json; the readable sequence of revisions is docs/VALIDATION.md.</p>
+<table><colgroup><col style="width:27.0%"><col style="width:73.0%"></colgroup><thead><tr><th scope="col">Check</th><th scope="col">Completed result</th></tr></thead><tbody>
+<tr><td>Headless CTest</td><td>8 suites passed in 10.89 s: analysis, visual_framing, visual_reactivity, waveform_clock, waveform_projection, waveform_ribbon, processor and editor_performance.</td></tr>
+<tr><td>Editor cache/raster</td><td>91 checks, including pixel equivalence against retained reference routines, relevant invalidation, unrelated-setting cache reuse and incremental spectrogram consistency.</td></tr>
+<tr><td>Native customization</td><td>520 checks, 53 captures, zero failures. Exercises asynchronous menu/timer races, header/embedded layouts, compact heights, scrolling, toggle, Escape and same-window behavior.</td></tr>
+<tr><td>Factory collection</td><td>1,044 checks, 42 captures and 17 actual GPU captures. All 24 looks; settings/history preservation and repeated same-context dropdown lifecycle.</td></tr>
+<tr><td>Audio Unit</td><td>auval -v aufx Auro Aucl passed. Universal architecture and strict code-signature verification were also checked.</td></tr>
+</tbody></table>
+<h2>Isolated CPU comparison</h2>
+<p>Median stereo raster work fell from 14.561 ms to 0.462 ms. Full spectrogram recolouring fell from 58.895 ms to 10.740 ms. These compare retained test-only baseline routines with the production renderer on identical synthetic data. Output pixels match exactly. They are timings of those routines, not whole-editor, DAW or audio-thread timings.</p>
+<h2>Isolated GPU comparison</h2>
+<p>On Apple M2 Max at 1,440 × 900 physical pixels, 30 synchronized frames per scene showed 64–75% lower median rendering cost for the five non-Pearl scenes: 2.357–2.900 ms before and 0.712–0.881 ms after. The baseline deliberately reinserts the previous unused fluid workload into the current renderer; it is not an old-binary comparison. GL checks passed, inactive fluid pixels stayed unchanged and Pearl Cloud still evolved. No Pearl Cloud speedup is claimed.</p>
+<h2>What these tests do not establish</h2>
+<p>Fixtures use synthetic PCM and open no audio device. Results do not establish Ableton frame rate, real-time audio guarantees, Intel runtime compatibility, every host/version/GPU combination, notarization or full ITU/EBU certification. Prior waveform tests also cover exact extrema, energy grouping, partial tails, clipping, gaps, fixed axes, freeze/resume and cache correctness. The native GUI and GPU runners require a graphical desktop and are separate from headless CTest. This handoff document is generated with Python 3 and ReportLab; pypdf checks its extracted text and Poppler renders the pages for visual inspection. These document tools are optional and not plug-in dependencies.</p>
+</section>
+<section class="chapter" id="chapter-10"><div class="num">10</div><h1>Distribution, signing &amp; installation</h1><p class="subtitle">The release can be served as ordinary downloadable files.</p>
+<h2>Release artifacts</h2>
+<p>The public binary archive is Aurora-0.1.0-macOS-universal.zip and the corresponding-source archive is Aurora-0.1.0-source.zip. Keep the matching source and dependency notices alongside the binary when publishing the release. A website can link these files directly; GitHub Releases can host them as assets. Aurora needs no server code, package manager, runtime database or account service. This handoff does not create or publish a website.</p>
+<h2>Signature status</h2>
+<p>The bundles are locally ad hoc signed with codesign --sign - and pass strict signature verification. They are not Developer ID signed or notarized. Local validation does not establish acceptance of a browser-downloaded, quarantined copy on another Mac. This is a material release property, not a notarized installer.</p>
+<h2>DAW installation locations</h2>
+<pre><code>~/Library/Audio/Plug-Ins/VST3/Aurora.vst3
+~/Library/Audio/Plug-Ins/Components/Aurora.component</code></pre>
+<p>Copy the VST3 and/or Audio Unit bundle into the corresponding user Library folder, then enable that format’s system plug-in location and rescan in the host. Look for Aurora under Soft Club and place it on a track or master bus. Actual host labels and menus depend on the host version. The source repository also provides scripts/install-macos.sh, which installs a locally built release and backs up an existing Aurora bundle.</p>
+<h2>Source packaging and shader consistency</h2>
+<pre><code>python3 scripts/sync-pearl-cloud.py --native --check
+python3 scripts/package.py</code></pre>
+<p>scripts/package-release.py wraps the validated base archives, documentation and screenshots into Aurora-0.1.0-website-kit.zip. This standard-library Python packager creates the public 0.1.0 downloads, preserves executable modes and writes checksums, with the matching source and dependency notices. It does not publish to GitHub or a website.</p>
+<p>The original package.py generates the base Aurora-0.1-macOS-universal.zip and Aurora-0.1-source.zip inputs. It first checks that the editable GLSL and generated Studio/native embeds match. It includes Aurora source, Tests, scripts, docs, CMakeLists.txt, README, LICENSE, THIRD_PARTY.md and the JUCE tree. The small Studio project is explicitly enumerated. Git metadata, build outputs, tool environments, node_modules, caches, backups and working captures are excluded from the source ZIP. The binary ZIP carries the AU/VST3 bundles and project notices.</p>
+<h2>Releasing a later revision</h2>
+<p>Build and test the new source, verify architecture and actual minimum OS, sign with the intended release identity, validate AU and representative hosts, and regenerate matching binary/source archives. Use fresh checksums for the final files. Developer ID signing and notarization would be additional release work; neither is implied by the current ad hoc signature.</p>
+</section>
+<section class="chapter" id="chapter-11"><div class="num">11</div><h1>Licenses &amp; provenance</h1><p class="subtitle">This inventory records project notices; the included license texts remain authoritative.</p>
+<table><colgroup><col style="width:28.999999999999996%"><col style="width:71.0%"></colgroup><thead><tr><th scope="col">Component / source</th><th scope="col">License and role</th></tr></thead><tbody>
+<tr><td>Aurora original code</td><td>Copyright 2026 Aurora contributors; GNU Affero General Public License v3.0 or later. Full text in LICENSE; project notice in THIRD_PARTY.md.</td></tr>
+<tr><td>JUCE 8.0.6</td><td>Pinned commit 51a8a6d7aeae7326956d747737ccf1575e61e209. JUCE modules offer AGPLv3 or commercial licensing; Aurora uses the AGPLv3 route. See third_party/JUCE/LICENSE.md.</td></tr>
+<tr><td>VST3 SDK in pinned JUCE</td><td>The vendored SDK’s notice lists the proprietary Steinberg / GPLv3 options. Aurora’s dependency record identifies the open-source GPLv3 option. Retain the exact bundled notices.</td></tr>
+<tr><td>Apple AudioUnitSDK</td><td>Apache 2.0 notice in JUCE’s Audio Unit client source. System frameworks remain macOS dependencies.</td></tr>
+<tr><td>Pearl Flow solver reference</td><td>Finite-difference GLSL informed by/adapted from Pavel Dobryakov’s WebGL Fluid Simulation; MIT, copyright 2017 Pavel Dobryakov. Full MIT notice retained in Source/PearlFlow.h.</td></tr>
+<tr><td>Original fluid additions</td><td>Aurora’s audio forcing, ribbon sources, lifecycle, optical material and post-processing. No upstream assets or preset pack are bundled.</td></tr>
+<tr><td>Bundled JUCE dependencies</td><td>Examples include FLAC, Ogg/Vorbis, zlib, PNG, JPEG, HarfBuzz, SheenBidi and OpenGL helper code. Exact licenses/notices are retained in the vendored JUCE tree. Presence in that tree is not a claim that every module is active.</td></tr>
+<tr><td>Build tools</td><td>CMake, Ninja, Python, Git, Apple tools and optional Diffusion Studio are authoring/build tools; their applications and environments are not linked into Aurora or shipped as plug-in runtime dependencies.</td></tr>
+</tbody></table>
+<h2>Research references</h2>
+<p>Ghost and MiniMeters were studied as functional and visual references. No vendor native source, binaries, graphics, presets or branding were copied into Aurora. Public open-source visualizer research also examined projectM, Butterchurn, Pulse, Prism and OpenMeters. Their renderers or preset collections are not incorporated. The solver adaptation listed above is the explicitly retained third-party implementation reference.</p>
+<p>Research links, inspected revisions and distinctions between observed demos and source inspection are recorded in docs/REFERENCE-RESEARCH.md and docs/VISUAL-RESEARCH.md. The earlier Soft Club and later Flight Deck directions are original treatments; the release does not bundle Cowboy Bebop imagery, logos or media.</p>
+<h2>Source and notices stay together</h2>
+<p>The source archive includes the exact JUCE source used for the release, its dependency notices and Aurora’s build scripts. Read LICENSE, THIRD_PARTY.md and the relevant vendored files for their actual terms. This document is an implementation inventory and does not replace those texts.</p>
+</section>
+<section class="chapter" id="chapter-12"><div class="num">12</div><h1>Source map &amp; further reading</h1><p class="subtitle">Paths below are relative to the extracted aurora-meters source folder.</p>
+<table><colgroup><col style="width:43.0%"><col style="width:56.99999999999999%"></colgroup><thead><tr><th scope="col">Path</th><th scope="col">Responsibility</th></tr></thead><tbody>
+<tr><td>CMakeLists.txt</td><td>Plug-in formats, C++17, JUCE module linkage, preview and test targets.</td></tr>
+<tr><td>Source/PluginProcessor.{h,cpp}</td><td>Audio passthrough, FIFO, analysis worker, host state, preset import/export and defaults.</td></tr>
+<tr><td>Source/Analysis.{h,cpp}</td><td>Independent DSP: FFT, peaks, RMS, correlation, K weighting, gated loudness, waveform statistics and history.</td></tr>
+<tr><td>Source/PluginEditor.{h,cpp}</td><td>Native meter drawing, display caches, controls, dropdown, layouts and editor timing.</td></tr>
+<tr><td>Source/Customization.h; CustomizationPanel.cpp</td><td>96 validated appearance settings; native section controls, colour entry, preset library and layout controls.</td></tr>
+<tr><td>Source/FactoryPresets.cpp; FactoryPresetBrowser.cpp</td><td>24 fully specified factory appearances and illustrated native gallery.</td></tr>
+<tr><td>Source/Palette.h; SpectralProjection.h</td><td>Palette definitions and frequency projection used consistently for drawing and readouts.</td></tr>
+<tr><td>Source/WaveformClock.h; WaveformProjection.h; WaveformRibbon.h</td><td>Fractional sample timeline, precise grouping and measured-material pixel caching.</td></tr>
+<tr><td>Source/VisualSurface.{h,cpp}; VisualFraming.h; VisualReactivity.h</td><td>GPU bridge, scenes/camera, fitted bounds and independent artistic music response.</td></tr>
+<tr><td>Source/PearlFlow.h; PearlFlowMaterial.h</td><td>Persistent solver, retained MIT notice and original layered ray-integrated material.</td></tr>
+<tr><td>Source/SceneMaterial.h; VisualPostProcess.h; PearlCloudShader.h</td><td>Other scene materials, floating-point finishing/bloom and generated fallback shader.</td></tr>
+<tr><td>design/pearl-cloud/</td><td>Editable optional Studio TSX/GLSL study, generated import and its capture record.</td></tr>
+<tr><td>Tests/</td><td>Independent DSP and rendering tests, native UI/GPU runners, procedural music fixtures and silent preview.</td></tr>
+<tr><td>scripts/</td><td>Build, sign, install, package, shader synchronization and optional Swift preview-video encoder.</td></tr>
+<tr><td>docs/METERING.md</td><td>Detailed meter definitions, timing, display encodings and known accuracy limits.</td></tr>
+<tr><td>docs/VALIDATION.md; inline-controls-validation.json</td><td>Human-readable verification history and exact current machine-readable results/hashes.</td></tr>
+<tr><td>LICENSE; THIRD_PARTY.md; third_party/JUCE/</td><td>Aurora license, dependency summary and pinned framework source/notices.</td></tr>
+</tbody></table>
+</section>
+</main><footer>Aurora 0.1.0 · Technical stack · 14 October 2026</footer></body></html>
