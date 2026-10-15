@@ -116,21 +116,43 @@ jobs:
         timeout-minutes: 5
         run: |
           $ErrorActionPreference = 'Stop'
-          $consoleLog = Join-Path $env:PLUGINVAL_LOG_DIR 'pluginval-console.log'
-          & $env:PLUGINVAL_EXE --strictness-level 5 --skip-gui-tests --timeout-ms 30000 `
-            --random-seed 123456 --output-dir $env:PLUGINVAL_LOG_DIR `
-            --validate $env:AURORA_PLUGIN_PATH *> $consoleLog
-          $result = $LASTEXITCODE
-          Get-Content -LiteralPath $consoleLog
+          $stdoutLog = Join-Path $env:PLUGINVAL_LOG_DIR 'pluginval-stdout.log'
+          $stderrLog = Join-Path $env:PLUGINVAL_LOG_DIR 'pluginval-stderr.log'
+          $validationLog = Join-Path $env:PLUGINVAL_LOG_DIR 'pluginval-validation.log'
+          # Start-Process needs a single quoted command line for paths containing
+          # spaces. These runner-generated paths are directories/files, not roots.
+          foreach ($path in @($env:PLUGINVAL_LOG_DIR, $env:AURORA_PLUGIN_PATH)) {
+            if ($path -match '["\r\n]' -or $path.EndsWith('\')) {
+              throw 'Unexpected validation path; refusing ambiguous command-line quoting'
+            }
+          }
+          $validationArguments = '--strictness-level 5 --skip-gui-tests --timeout-ms 30000 --random-seed 123456 --output-dir "{0}" --output-filename pluginval-validation.log --validate "{1}"' -f $env:PLUGINVAL_LOG_DIR, $env:AURORA_PLUGIN_PATH
+          # pluginval is a Windows GUI-subsystem executable. Wait explicitly;
+          # PowerShell's call operator can return before validation finishes.
+          $process = Start-Process -FilePath $env:PLUGINVAL_EXE -ArgumentList $validationArguments `
+            -Wait -PassThru -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
+          $result = $process.ExitCode
+          Get-Content -LiteralPath $stdoutLog
+          Get-Content -LiteralPath $stderrLog
+          $evidence = if (Test-Path -LiteralPath $validationLog -PathType Leaf) {
+            Get-Content -Raw -LiteralPath $validationLog
+          } else { '' }
+          if ($evidence) { Write-Output $evidence }
+          $logVerified = -not [string]::IsNullOrWhiteSpace($evidence) -and
+            $evidence -match '(?m)^Strictness level: 5\s*$' -and
+            $evidence -match '(?m)^Num plugins found: [1-9][0-9]*\s*$' -and
+            $evidence.TrimEnd() -match '(?m)^SUCCESS\z'
+          $passed = $null -ne $result -and $result -eq 0 -and $logVerified
           @{
             exitCode = $result
-            passed = ($result -eq 0)
+            passed = $passed
+            completedValidationLogVerified = $logVerified
             strictnessLevel = 5
             guiTestsEnabled = $false
             randomSeed = 123456
             inactivityTimeoutMs = 30000
           } | ConvertTo-Json | Set-Content -Path (Join-Path $env:PLUGINVAL_LOG_DIR 'result.json') -Encoding utf8
-          if ($result -ne 0) { throw "pluginval failed with exit code $result" }
+          if (-not $passed) { throw "pluginval validation failed or produced incomplete evidence (exit code: $result)" }
 
       - name: Upload validation logs
         if: always()
