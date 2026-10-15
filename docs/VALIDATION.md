@@ -25,6 +25,12 @@ the existing macOS release is unchanged.
   `SUCCESS` log. GUI tests were explicitly disabled; no external Steinberg
   validator was supplied. [Retained evidence](windows-preview-validation.json)
   includes the exact binary hash and test logs.
+- A further [Windows run with GUI tests enabled](https://github.com/joecroskey6/aurora/actions/runs/38709472491)
+  passed the same level-5 suite, including `Editor`, `Open editor whilst
+  processing` and `Editor Automation`. This exercises native editor opening,
+  reopening and operation alongside synthetic processing. The downloaded DLL
+  hash is identical to the release. It does not check the appearance of rendered
+  pixels, all controls or hardware-specific GPU behavior.
 - Independent archive verification matched all **4,339 source file hashes**:
   117 Aurora files match the build commit (81 use Windows CRLF line endings),
   and all 4,222 JUCE files byte-match the official pinned Git tree. Both ZIPs
@@ -38,8 +44,8 @@ the existing macOS release is unchanged.
   with zero GL errors; Pearl Cloud evolved and inactive fluid resources remained
   unchanged for the other five scenes. This is Mac GPU evidence only.
 
-Windows graphics-driver compatibility, actual DAW playback, visible editor
-interactions, high-DPI scaling and long sessions remain unverified. The
+Windows graphics-driver compatibility, actual DAW playback, exhaustive control
+interactions, visual output, high-DPI scaling and long sessions remain unverified. The
 [installation guide](../release-docs/WINDOWS-INSTALLATION.txt) includes a desktop
 test checklist. Automated headless results do not establish those checks or
 metering-standards compliance.

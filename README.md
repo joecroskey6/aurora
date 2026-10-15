@@ -76,7 +76,8 @@ manifest and checksums. The GitHub Actions workflow runs these same commands on
 `windows-2022` and retains the resulting download artifacts.
 
 The published preview passed all eight native suites, eight packaging tests and
-pluginval 1.0.4 at strictness level 5 with GUI tests disabled. The separate
+pluginval 1.0.4 at strictness level 5 in both headless and editor-enabled runs,
+including editor opening and operation during synthetic processing. The separate
 [host-check workflow](.github/workflows/windows-host-check.yml) validates an
 existing successful build's exact downloadable VST3 without rebuilding it.
 See the [validation record](docs/VALIDATION.md) for evidence and test limits.
