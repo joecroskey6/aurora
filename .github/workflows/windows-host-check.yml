@@ -8,6 +8,11 @@ on:
         required: true
         type: string
         default: '38705922324'
+      gui_tests:
+        description: 'Also open the native editor during validation (not a GPU or DAW certification)'
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   actions: read
@@ -17,6 +22,8 @@ jobs:
   validate-vst3:
     runs-on: windows-2022
     timeout-minutes: 15
+    env:
+      GUI_TESTS: ${{ inputs.gui_tests }}
     defaults:
       run:
         shell: pwsh
@@ -27,6 +34,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference = 'Stop'
+          if ($env:GUI_TESTS -notmatch '^(true|false)$') { throw 'gui_tests must be a boolean' }
           $logs = Join-Path $env:GITHUB_WORKSPACE 'host-check-logs'
           New-Item -ItemType Directory -Force -Path $logs | Out-Null
           if ($env:BUILD_RUN_ID -notmatch '^[1-9][0-9]{0,19}$') {
@@ -51,7 +59,8 @@ jobs:
             buildRunUrl = $run.html_url
             sourceCommit = $run.head_sha
             artifact = 'aurora-windows-x64-preview'
-            validationScope = 'Native Windows VST3 host tests with GUI tests disabled; not a GPU or DAW playback test'
+            guiTestsEnabled = ($env:GUI_TESTS -eq 'true')
+            validationScope = 'Native Windows VST3 host tests; optional editor lifecycle checks. Does not establish GPU rendering quality or real DAW playback.'
           } | ConvertTo-Json | Set-Content -Path (Join-Path $logs 'build-run.json') -Encoding utf8
 
       - name: Download the selected Windows preview
@@ -112,7 +121,7 @@ jobs:
           } | ConvertTo-Json | Set-Content -Path (Join-Path $env:PLUGINVAL_LOG_DIR 'validator.json') -Encoding utf8
           "PLUGINVAL_EXE=$executable" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
 
-      - name: Validate the native VST3 without opening its editor
+      - name: Validate the native VST3 with the selected editor checks
         timeout-minutes: 5
         run: |
           $ErrorActionPreference = 'Stop'
@@ -126,7 +135,9 @@ jobs:
               throw 'Unexpected validation path; refusing ambiguous command-line quoting'
             }
           }
-          $validationArguments = '--strictness-level 5 --skip-gui-tests --timeout-ms 30000 --random-seed 123456 --output-dir "{0}" --output-filename pluginval-validation.log --validate "{1}"' -f $env:PLUGINVAL_LOG_DIR, $env:AURORA_PLUGIN_PATH
+          $guiEnabled = $env:GUI_TESTS -eq 'true'
+          $validationArguments = '--strictness-level 5 --timeout-ms 30000 --random-seed 123456 --output-dir "{0}" --output-filename pluginval-validation.log --validate "{1}"' -f $env:PLUGINVAL_LOG_DIR, $env:AURORA_PLUGIN_PATH
+          if (-not $guiEnabled) { $validationArguments = '--skip-gui-tests ' + $validationArguments }
           # pluginval is a Windows GUI-subsystem executable. Wait explicitly;
           # PowerShell's call operator can return before validation finishes.
           $process = Start-Process -FilePath $env:PLUGINVAL_EXE -ArgumentList $validationArguments `
@@ -142,13 +153,23 @@ jobs:
             $evidence -match '(?m)^Strictness level: 5\s*$' -and
             $evidence -match '(?m)^Num plugins found: [1-9][0-9]*\s*$' -and
             $evidence.TrimEnd() -match '(?m)^SUCCESS\z'
-          $passed = $null -ne $result -and $result -eq 0 -and $logVerified
+          # These are the exact GUI test names in pluginval v1.0.4 at level 5.
+          # Require completion evidence as well as the overall success verdict.
+          $expectedGuiTests = @('Editor', 'Open editor whilst processing', 'Editor Automation')
+          $completedGuiTests = @($expectedGuiTests | Where-Object {
+            $evidence -match ('(?m)^' + [regex]::Escape("Completed tests in pluginval / $_") + '\s*$')
+          })
+          $guiLogVerified = -not $guiEnabled -or $completedGuiTests.Count -eq $expectedGuiTests.Count
+          $passed = $null -ne $result -and $result -eq 0 -and $logVerified -and $guiLogVerified
           @{
             exitCode = $result
             passed = $passed
             completedValidationLogVerified = $logVerified
             strictnessLevel = 5
-            guiTestsEnabled = $false
+            guiTestsEnabled = $guiEnabled
+            completedGuiTests = $completedGuiTests
+            guiCompletionEvidenceVerified = $guiLogVerified
+            graphicsAndDAWPlaybackCertified = $false
             randomSeed = 123456
             inactivityTimeoutMs = 30000
           } | ConvertTo-Json | Set-Content -Path (Join-Path $env:PLUGINVAL_LOG_DIR 'result.json') -Encoding utf8
