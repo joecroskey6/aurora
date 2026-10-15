@@ -1,5 +1,7 @@
 build/
+build-windows/
 .tools/
+.tools-windows/
 third_party/JUCE/
 .DS_Store
 dist/
@@ -9,3 +11,4 @@ design/**/captures/
 design/**/renders/
 __pycache__/
 *.pyc
+*.sb-*

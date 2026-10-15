@@ -22,7 +22,7 @@ namespace {
 using namespace juce;
 using namespace juce::gl;
 constexpr int outputWidth=1200, outputHeight=720;
-const File outputDirectory("/tmp/aurora-flow-qa");
+const auto outputDirectory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-flow-qa");
 using Palette=std::array<std::array<float,3>,3>;
 constexpr Palette defaultPalette {{{.24f,.44f,.58f},{.55f,.76f,.84f},{.82f,.91f,.96f}}};
 
@@ -56,7 +56,7 @@ struct Result {
         if(!outputDirectory.createDirectory().wasOk()
            || !outputDirectory.getChildFile("report.json").replaceWithText(JSON::toString(report,true))) {
             ++failures;
-            std::cerr<<"FAIL writing /tmp/aurora-flow-qa/report.json"<<std::endl;
+            std::cerr<<"FAIL writing "<<outputDirectory.getChildFile("report.json").getFullPathName()<<std::endl;
         }
         done.store(true,std::memory_order_release);
     }
@@ -301,7 +301,7 @@ private:
     }
     void captureClip(unsigned int target,const PearlFlow::Input& initial) {
         constexpr int warmupSteps=120,frames=240;
-        const File directory("/tmp/aurora-flow-clip");
+        const auto directory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-flow-clip");
         result.require("Clip output directory",directory.createDirectory().wasOk(),directory.getFullPathName());
         auto input=initial;input.resetGeneration=1001;input.dt=0;flow.update(input);
         const auto setEnergy=[&](float time,float dt) {

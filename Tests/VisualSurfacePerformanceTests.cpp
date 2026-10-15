@@ -124,7 +124,8 @@ private:
             submitted = true;
             context->executeOnGLThread([this](juce::OpenGLContext&) {
                 auto result = VisualSurfacePerformanceProbe::run(*surface, baseline);
-                const juce::File output(baseline ? "/tmp/aurora-surface-baseline.json" : "/tmp/aurora-surface-performance.json");
+                const auto output = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile(
+                    baseline ? "aurora-surface-baseline.json" : "aurora-surface-performance.json");
                 if (!output.replaceWithText(juce::JSON::toString(result))) ++failures;
                 failures += int(result.getProperty("failures", 1));
                 done.store(true);

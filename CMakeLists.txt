@@ -2,14 +2,31 @@ cmake_minimum_required(VERSION 3.22)
 project(AuroraMeters VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Minimum macOS version")
-add_subdirectory(third_party/JUCE)
+if(APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Minimum macOS version")
+endif()
+if(MSVC OR CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC")
+    # Set this before creating JUCE or Aurora targets so all linked objects use
+    # the same runtime. Release downloads do not need the VC++ redistributable.
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+    add_compile_options("$<$<COMPILE_LANGUAGE:C,CXX>:/utf-8>")
+endif()
+
+set(AURORA_JUCE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party/JUCE"
+    CACHE PATH "Path to the pinned JUCE 8.0.6 source")
+option(AURORA_BUILD_GUI_TESTS "Build interactive preview and graphical QA applications" ON)
+add_subdirectory("${AURORA_JUCE_SOURCE_DIR}" third_party/JUCE)
+
+set(aurora_plugin_formats VST3)
+if(APPLE)
+    list(PREPEND aurora_plugin_formats AU)
+endif()
 juce_add_plugin(Aurora
     COMPANY_NAME "Soft Club"
     BUNDLE_ID "audio.softclub.aurora"
     PLUGIN_MANUFACTURER_CODE Aucl
     PLUGIN_CODE Auro
-    FORMATS AU VST3
+    FORMATS ${aurora_plugin_formats}
     PRODUCT_NAME "Aurora"
     DESCRIPTION "Audio metering and reactive visuals"
     IS_SYNTH FALSE NEEDS_MIDI_INPUT FALSE NEEDS_MIDI_OUTPUT FALSE
@@ -53,6 +70,19 @@ target_include_directories(WaveformRibbonTests PRIVATE Source)
 target_link_libraries(WaveformRibbonTests PRIVATE juce::juce_graphics juce::juce_recommended_config_flags)
 add_test(NAME waveform_ribbon COMMAND WaveformRibbonTests)
 
+juce_add_console_app(ProcessorTests PRODUCT_NAME "Aurora Processor Tests")
+target_sources(ProcessorTests PRIVATE Tests/ProcessorTests.cpp)
+target_link_libraries(ProcessorTests PRIVATE Aurora)
+add_test(NAME processor COMMAND ProcessorTests)
+
+juce_add_console_app(EditorPerformanceTests PRODUCT_NAME "Aurora Editor Performance Tests")
+target_sources(EditorPerformanceTests PRIVATE Tests/EditorPerformanceTests.cpp)
+target_link_libraries(EditorPerformanceTests PRIVATE Aurora)
+add_test(NAME editor_performance COMMAND EditorPerformanceTests)
+
+# These applications require a graphical desktop and are not CTest tests.
+# Keep them available for native UI/GPU validation, but omit them in headless CI.
+if(AURORA_BUILD_GUI_TESTS)
 juce_add_gui_app(AuroraPreview PRODUCT_NAME "Aurora Preview" BUNDLE_ID "audio.softclub.aurora.preview")
 target_sources(AuroraPreview PRIVATE Tests/Preview.cpp)
 target_link_libraries(AuroraPreview PRIVATE Aurora)
@@ -74,11 +104,6 @@ juce_add_gui_app(AuroraFactoryPresetTests PRODUCT_NAME "Aurora Factory Preset Te
 target_sources(AuroraFactoryPresetTests PRIVATE Tests/FactoryPresetRenderingTests.cpp)
 target_link_libraries(AuroraFactoryPresetTests PRIVATE Aurora)
 
-juce_add_console_app(ProcessorTests PRODUCT_NAME "Aurora Processor Tests")
-target_sources(ProcessorTests PRIVATE Tests/ProcessorTests.cpp)
-target_link_libraries(ProcessorTests PRIVATE Aurora)
-add_test(NAME processor COMMAND ProcessorTests)
-
 # Explicit GPU integration runner: requires a graphical desktop, so it is not
 # part of the headless CTest suite. Writes PNGs/timing JSON to /tmp/aurora-flow-qa.
 juce_add_gui_app(AuroraRenderTests PRODUCT_NAME "Aurora Render Tests"
@@ -94,8 +119,4 @@ juce_add_gui_app(AuroraSurfacePerformanceTests PRODUCT_NAME "Aurora Surface Perf
     BUNDLE_ID "audio.softclub.aurora.surface-performance")
 target_sources(AuroraSurfacePerformanceTests PRIVATE Tests/VisualSurfacePerformanceTests.cpp)
 target_link_libraries(AuroraSurfacePerformanceTests PRIVATE Aurora)
-
-juce_add_console_app(EditorPerformanceTests PRODUCT_NAME "Aurora Editor Performance Tests")
-target_sources(EditorPerformanceTests PRIVATE Tests/EditorPerformanceTests.cpp)
-target_link_libraries(EditorPerformanceTests PRIVATE Aurora)
-add_test(NAME editor_performance COMMAND EditorPerformanceTests)
+endif()

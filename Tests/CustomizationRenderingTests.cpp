@@ -10,7 +10,7 @@
 // library writes, import dialogs or export dialogs are used by this runner.
 namespace {
 using namespace juce;
-const File outputDirectory("/tmp/aurora-customization-qa");
+const auto outputDirectory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-customization-qa");
 constexpr std::array<const char*, 9> sections {
     "Colours", "Waveform", "Spectrum", "Spectrogram", "Stereo", "Levels", "Scene", "Layout", "Presets"
 };

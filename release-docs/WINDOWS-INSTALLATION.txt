@@ -1,0 +1,103 @@
+AURORA 0.1.0 — WINDOWS x64 PREVIEW
+
+A free, open-source audio metering and reactive visualization plug-in.
+
+REQUIREMENTS
+
+This package contains a Windows x64 VST3 audio effect for a compatible 64-bit
+DAW. It is not a standalone app. Intel/AMD x64 is the target architecture;
+native Windows ARM64, 32-bit hosts, Audio Unit and AAX are not included.
+The 3D scenes need OpenGL 3.2 or later and working graphics drivers.
+
+This is an unsigned preview. Check the release's Windows test results before
+using it in an important session. Packaging checks the native DLL and the VST3
+entry point; it does not prove successful host loading, GPU compatibility or
+audio operation. Test a copy of a project first. Do not disable Windows security
+software or your DAW's plug-in protections to force a failed scan.
+
+INSTALL
+
+1. Close your DAW, then extract the downloaded ZIP with Extract All.
+2. In the extracted Aurora/VST3 folder, copy the ENTIRE Aurora.vst3 folder to:
+
+       C:\Program Files\Common Files\VST3\Aurora.vst3
+
+   Windows may request administrator permission to copy into Program Files.
+   Keep the folder structure intact. The DLL inside must remain at:
+
+       Aurora.vst3\Contents\x86_64-win\Aurora.vst3
+
+   Do not install only the inner file, rename it to .dll, or put this VST3
+   package in a VST2 folder. If updating, move the old Aurora.vst3 folder to
+   a backup outside all plug-in scan folders before copying the replacement.
+
+3. Open your DAW. Enable its VST3 system folder and rescan plug-ins if needed.
+   Find Aurora (manufacturer: Soft Club) and add it as an audio effect to a
+   track or master bus. Play audio through that track to drive the meters.
+
+The VST3 specification also defines a per-user location:
+
+    %LOCALAPPDATA%\Programs\Common\VST3
+
+Use that location only if your DAW supports/scans it. The system-wide Program
+Files location above is the recommended default. Do not keep two copies in
+different scan folders. Installation locations are documented by Steinberg:
+https://steinbergmedia.github.io/vst3_dev_portal/pages/Technical%2BDocumentation/Locations%2BFormat/Plugin%2BLocations.html
+
+USE
+
+Choose a preset, scene, material theme and palette. Customise opens inside the
+editor and contains appearance, layout and meter controls. Meter strip and
+Waveform select compact views; Studio includes the 3D scene. Drag the scene to
+orbit it, scroll to zoom, and double-click to reset its camera. Freeze holds
+the display; Reset clears measurement history. Save your DAW project to retain
+your settings, or export an .aurora appearance preset from Customise.
+
+Aurora is designed to pass audio through unchanged and add no algorithmic
+latency. Its level bars show sample peaks, not true peaks. LUFS values are
+estimates; no metering standards certification is claimed.
+
+IF IT DOES NOT APPEAR OR THE SCENE IS BLANK
+
+Confirm that your DAW is 64-bit and supports VST3, the complete folder is at the
+path above, and its VST3 scanning option is enabled. Follow your DAW's normal
+rescan/rejected-plug-in troubleshooting. For graphics problems, install the
+appropriate graphics driver from your computer/GPU manufacturer; remote desktop
+and virtual-machine graphics can differ from a physical display. Report the
+DAW version, Windows version, GPU/driver, display scaling and what happened.
+
+UNINSTALL
+
+Close your DAW and remove only the Aurora.vst3 folder you installed, then rescan.
+Existing DAW projects using Aurora will need that plug-in to restore it.
+
+WINDOWS PREVIEW CHECKLIST FOR TESTERS
+
+Record the Windows/DAW versions, CPU, GPU, driver and display scale with results.
+Do not mark these tests as passed until they have actually run on Windows.
+
+- Scan and load in a compatible x64 VST3 host; close/reopen the editor repeatedly.
+- Play mono and stereo audio at 44.1, 48 and 96 kHz and more than one buffer size.
+  Check for dropouts; compare rendered/bounced audio with a bypassed reference
+  for an unchanged audio path. A visual impression alone is not a null test.
+- Check all six scenes, camera orbit/zoom/reset, waveform history and Scope,
+  spectrogram, spectrum, stereo display and level meters.
+- Switch all four layouts and several presets. Open/close Customise; exercise
+  the scroll area in a small window. Check freeze, reset and colour editing.
+- Resize the editor and try 100%, 150% and 200% display scaling. If available,
+  move between displays with different scaling and check pointer alignment.
+- Save/reopen the DAW project; verify appearance, camera and meter settings.
+  Import/export an .aurora appearance preset and compare the restored view.
+- Check CPU/GPU use with editor visible, hidden, frozen, and several instances.
+  Verify a useful error report for any device/driver-specific graphics failure.
+
+SOURCE AND NOTICES
+
+Aurora is AGPL-3.0-or-later. Retain LICENSE.txt, THIRD_PARTY.md and licenses/.
+The release must provide Aurora-0.1.0-windows-source.zip alongside this download.
+It includes Aurora's source/build scripts and the vendored JUCE 8.0.6 sources.
+The separate Windows manifest records binary/source hashes. SHA256SUMS records
+archive checksums; these detect accidental changes, not publisher authenticity.
+
+Maintainers: publish the binary ZIP, corresponding source ZIP, Windows manifest
+and Windows SHA256SUMS together. This package script never publishes or installs.

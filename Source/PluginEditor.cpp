@@ -1,4 +1,5 @@
 #include "PluginEditor.h"
+#include "Typography.h"
 #include "SpectralProjection.h"
 #include "Palette.h"
 #include "CustomizationPanel.h"
@@ -53,11 +54,11 @@ public:
             for(auto* item:slider->getChildren())if(auto* label=dynamic_cast<Label*>(item)){
                 label->setColour(Label::textColourId,foreground);
                 label->setColour(Label::textWhenEditingColourId,foreground);
-                label->setFont(Font(FontOptions("Menlo",13,Font::plain)));
+                label->setFont(Font(FontOptions(auroraTypography::monoTypeface(),13,Font::plain)));
             }
         }
         hex.setTitle("Hex colour");
-        hex.setFont(Font(FontOptions("Menlo",13,Font::plain)));
+        hex.setFont(Font(FontOptions(auroraTypography::monoTypeface(),13,Font::plain)));
         hex.setJustification(Justification::centred);
         hex.setInputRestrictions(7,"#0123456789abcdefABCDEF");
         hex.setText("#"+initial.toDisplayString(false),false);
@@ -147,9 +148,9 @@ void SoftClubLookAndFeel::drawComboBox(Graphics& g,int w,int h,bool,int,int,int,
     g.setColour(box.findColour(ComboBox::textColourId).withAlpha(.7f));g.strokePath(arrow,PathStrokeType(1));
     if(instrumentStyle){g.setColour(box.findColour(ComboBox::outlineColourId));g.drawVerticalLine(w-28,7.f,float(h-7));}
 }
-Font SoftClubLookAndFeel::getComboBoxFont(ComboBox&) {return Font(FontOptions(instrumentStyle?"Menlo":"Helvetica Neue",instrumentStyle?11.f:12.f,Font::plain));}
+Font SoftClubLookAndFeel::getComboBoxFont(ComboBox&) {return Font(FontOptions(instrumentStyle?auroraTypography::monoTypeface():auroraTypography::sansTypeface(),instrumentStyle?11.f:12.f,Font::plain));}
 Font SoftClubLookAndFeel::getTextButtonFont(TextButton& b,int height) {
-    return instrumentStyle?Font(FontOptions("Menlo",11,Font::plain)):LookAndFeel_V4::getTextButtonFont(b,height);
+    return instrumentStyle?Font(FontOptions(auroraTypography::monoTypeface(),11,Font::plain)):LookAndFeel_V4::getTextButtonFont(b,height);
 }
 void SoftClubLookAndFeel::drawPopupMenuItemWithOptions(Graphics& g,const Rectangle<int>& area,bool highlighted,
         const PopupMenu::Item& item,const PopupMenu::Options& options) {
@@ -177,7 +178,7 @@ void SoftClubLookAndFeel::drawPopupMenuItem(Graphics& g,const Rectangle<int>& ar
     if(highlighted){g.setColour(findColour(PopupMenu::highlightedBackgroundColourId));g.fillRoundedRectangle(r,2);}
     const auto foreground=findColour(PopupMenu::textColourId);
     if(ticked){g.setColour(foreground);g.fillRect(r.getX()+5,r.getCentreY()-2,4.f,4.f);}
-    g.setColour(foreground.withAlpha(active?1.f:.4f));g.setFont(Font(FontOptions("Menlo",11,Font::plain)));
+    g.setColour(foreground.withAlpha(active?1.f:.4f));g.setFont(Font(FontOptions(auroraTypography::monoTypeface(),11,Font::plain)));
     g.drawText(label,r.withTrimmedLeft(18).withTrimmedRight(87),Justification::centredLeft);
     if(presetIndex>=0 || index!=auroraCustomPalette) {
         const auto stops=presetIndex>=0?factoryPresetColours(presetIndex):auroraPalette(index,0,0,0);
@@ -741,11 +742,11 @@ void AuroraAudioProcessorEditor::rebuildStereo() {
     }
 }
 void AuroraAudioProcessorEditor::text(Graphics& g,const String& s,Rectangle<float> r,float size,Colour c,bool bold,int align) {
-    g.setColour(c); g.setFont(Font(FontOptions("Helvetica Neue",size,bold?Font::bold:Font::plain)));
+    g.setColour(c); g.setFont(Font(FontOptions(auroraTypography::sansTypeface(),size,bold?Font::bold:Font::plain)));
     g.drawText(s,r,Justification(align),true);
 }
 void AuroraAudioProcessorEditor::digits(Graphics& g,const String& s,Rectangle<float> r,float size,Colour c,int align) {
-    g.setColour(c);g.setFont(Font(FontOptions("Menlo",size,Font::plain)));
+    g.setColour(c);g.setFont(Font(FontOptions(auroraTypography::monoTypeface(),size,Font::plain)));
     g.drawText(s,r,Justification(align),true);
 }
 String AuroraAudioProcessorEditor::number(float v,int decimals) { return std::isfinite(v)&&v>-119 ? String(v,decimals) : String(CharPointer_UTF8("\xe2\x88\x92\xe2\x88\x9e")); }
@@ -781,7 +782,7 @@ void AuroraAudioProcessorEditor::paint(Graphics& g) {
         g.setColour(rgb(0x778b79));g.fillRect(132,53,24,2);
         g.setColour(rgb(0x7d6052));g.fillRect(160,53,12,2);
         g.setColour(ink);g.drawEllipse(22,19,19,19,1.2f);g.drawEllipse(29,19,19,19,1.2f);
-        auto brand=Font(FontOptions("Helvetica Neue",24,Font::bold));brand.setExtraKerningFactor(.10f);
+        auto brand=Font(FontOptions(auroraTypography::sansTypeface(),24,Font::bold));brand.setExtraKerningFactor(.10f);
         g.setFont(brand);g.drawText("AURORA",59,11,210,35,Justification::centredLeft);
         g.setColour(line);g.drawVerticalLine(521,66,94);g.drawVerticalLine(644,66,94);
     } else {

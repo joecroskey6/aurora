@@ -1,4 +1,5 @@
 #include "CustomizationPanel.h"
+#include "Typography.h"
 #include "Customization.h"
 #include "FactoryPresetBrowser.h"
 #include "PluginProcessor.h"
@@ -88,7 +89,7 @@ public:
         selector.addChangeListener(this);
         addAndMakeVisible(selector);
         hex.setTitle("Hex RGB colour"); hex.setComponentID("colourHex");
-        hex.setFont(Font(FontOptions("Menlo", 14.f, Font::plain)));
+        hex.setFont(Font(FontOptions(auroraTypography::monoTypeface(), 14.f, Font::plain)));
         hex.setInputRestrictions(7, "#0123456789abcdefABCDEF");
         hex.setJustification(Justification::centred);
         hex.setText("#" + initial.toDisplayString(false), false);

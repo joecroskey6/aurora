@@ -27,6 +27,7 @@ public:
     bool keyPressed(const juce::KeyPress&) override;
 private:
     friend class VisualSurfacePerformanceProbe;
+    friend struct EditorPerformanceProbe;
     struct Scene {std::array<float,128> bands{},wave{},right{};float low=0,mid=0,high=0,correlation=0,phase=0,gain=1,onset=0,activity=0,yaw=0,pitch=0,zoom=1;
         float speed=1,sensitivity=1,bloom=1,exposure=1,saturation=1;
         std::array<std::uint32_t,3> colours{};int visual=2,theme=0;bool frozen=false;std::uint64_t generation=0;};

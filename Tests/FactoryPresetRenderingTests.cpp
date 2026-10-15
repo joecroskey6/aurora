@@ -11,7 +11,7 @@
 // this executable never opens an audio device or writes the user's presets.
 namespace {
 using namespace juce;
-const File outputDirectory("/tmp/aurora-factory-presets-qa");
+const auto outputDirectory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-factory-presets-qa");
 
 class FactoryPresetTestApp final : public JUCEApplication, private Timer {
 public:

@@ -291,8 +291,12 @@ private:
             glDeleteTextures(1, &sceneTexture);
         if (depthBuffer != 0)
             glDeleteRenderbuffers(1, &depthBuffer);
-        glDeleteFramebuffers(2, bloomFramebuffers);
-        glDeleteTextures(2, bloomTextures);
+        // A rejected legacy context never creates these resources, and may
+        // not expose framebuffer entry points at all.
+        if (bloomFramebuffers[0] != 0 || bloomFramebuffers[1] != 0)
+            glDeleteFramebuffers(2, bloomFramebuffers);
+        if (bloomTextures[0] != 0 || bloomTextures[1] != 0)
+            glDeleteTextures(2, bloomTextures);
         sceneFramebuffer = sceneTexture = depthBuffer = 0;
         bloomFramebuffers[0] = bloomFramebuffers[1] = 0;
         bloomTextures[0] = bloomTextures[1] = 0;

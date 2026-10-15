@@ -15,8 +15,8 @@ using namespace juce;
 constexpr double sampleRate = 48000.0;
 constexpr int blockSize = 800;
 constexpr std::uint64_t prefillSamples = 24 * 48000;
-const File outputDirectory("/tmp/aurora-waveform-qa");
-const File motionDirectory("/tmp/aurora-waveform-motion");
+const auto outputDirectory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-waveform-qa");
+const auto motionDirectory = File::getSpecialLocation(File::tempDirectory).getChildFile("aurora-waveform-motion");
 constexpr double motionWarmupSeconds = .35;
 constexpr double motionDurationSeconds = 4.0;
 constexpr int motionFramesPerSecond = 30;
@@ -552,7 +552,7 @@ private:
         report->setProperty("timingLimit", "Native GUI-thread QA capture; snapshot work can affect timer and paint timing. This is not a real-time DAW performance benchmark.");
         if (!motionDirectory.getChildFile("report.json").replaceWithText(JSON::toString(var(report), true))) ++failures;
         std::cout << "Waveform motion capture: " << savedFrames << " frames, " << failures
-                  << " failures; /tmp/aurora-waveform-motion" << std::endl;
+                  << " failures; " << motionDirectory.getFullPathName() << std::endl;
         setApplicationReturnValue(failures == 0 ? 0 : 1);
         quit();
     }
@@ -605,7 +605,7 @@ private:
             std::cerr << "FAIL writing waveform report\n";
         }
         std::cout << "Waveform rendering QA: " << failures << " failures; "
-                  << captures.size() << " captures in /tmp/aurora-waveform-qa" << std::endl;
+                  << captures.size() << " captures in " << outputDirectory.getFullPathName() << std::endl;
         setApplicationReturnValue(failures == 0 ? 0 : 1);
         quit();
     }

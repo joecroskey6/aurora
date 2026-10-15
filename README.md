@@ -2,7 +2,18 @@
 
 An original, free, open-source audio meter and reactive visual plug-in. The default **Flight Deck** design combines dark instrument panels, phosphor colour, warm technical typography and fluid 3D scenes. The earlier **Gen X Soft Club** light themes remain available.
 
-**First release target: VST3 and Audio Unit, for Ableton and other compatible hosts.** Aurora is an audio effect. Put it on a track or the master bus; its audio output is bit-for-bit unchanged. It adds zero algorithmic latency, does not generate sound, and makes no network requests. The working name and visual direction can evolve.
+[Downloads](https://github.com/joecroskey6/aurora/releases) · [Windows build](https://github.com/joecroskey6/aurora/actions/workflows/windows.yml) · [Report an issue](https://github.com/joecroskey6/aurora/issues)
+
+**AU and VST3 on macOS; VST3 on Windows.** Aurora is an audio effect. Put it on a track or the master bus; its audio output is bit-for-bit unchanged. It adds zero algorithmic latency, does not generate sound, and makes no network requests.
+
+The macOS developer preview requires macOS 13.3+ and includes Apple Silicon and
+Intel code. Windows x64 support is being validated through the automated build;
+the Windows installation guide is [here](release-docs/WINDOWS-INSTALLATION.txt).
+These are development previews, not certified across every host or graphics
+driver. Download the explicit matching source asset alongside each binary;
+GitHub's automatic source ZIP does not include the pinned JUCE dependency.
+
+![Aurora Pearl Cloud preset](docs/images/aurora-presets-pearl-cloud.png)
 
 ## What works in this prototype
 
@@ -27,7 +38,7 @@ An original, free, open-source audio meter and reactive visual plug-in. The defa
 
 This is a first working foundation, not full feature parity with Ghost or MiniMeters. There is no true-peak meter, loudness range, calibrated analog VU/PPM, reassigned spectrogram, external audio server, recording or standalone system-audio capture. The included developer preview is a silent synthetic-signal host, not a standalone monitoring product.
 
-## Build
+## Build on macOS
 
 On macOS, install Apple's Command Line Tools (`xcode-select --install`) and Python 3, then run:
 
@@ -42,6 +53,32 @@ Outputs:
 - `build/Aurora_artefacts/Release/VST3/Aurora.vst3`
 - `build/Aurora_artefacts/Release/AU/Aurora.component`
 - `build/AuroraPreview_artefacts/Release/Aurora Preview.app` (silent development preview)
+
+## Build on Windows
+
+Use a 64-bit Windows system with Visual Studio 2022 or its Build Tools, the
+**Desktop development with C++** workload and Windows SDK, Git, and Python 3.10+.
+From PowerShell in this repository:
+
+```powershell
+.\scripts\build-windows.ps1
+python Tests/WindowsPackagingTests.py
+python scripts/package-windows.py --build-dir build-windows
+```
+
+The script installs CMake 3.31.6 into `.tools-windows`, fetches and verifies the
+exact JUCE commit, builds a Release x64 VST3 with a static MSVC runtime, and runs
+the eight native test suites. It does not install a plug-in or alter a DAW.
+Output: `build-windows/Aurora_artefacts/Release/VST3/Aurora.vst3`.
+Packaging produces a Windows binary ZIP, complete corresponding-source ZIP,
+manifest and checksums. The GitHub Actions workflow runs these same commands on
+`windows-2022` and retains the resulting download artifacts.
+
+Add `-GuiTests` when building on a Windows desktop to compile the interactive
+preview and GPU/UI test apps. Actual Windows DAW scanning, graphics-driver
+behavior, high-DPI resizing and audio playback require a separate desktop smoke
+test; a successful CI compile is not evidence for those checks. An unsupported
+OpenGL context shows a scene fallback while the native meters remain available.
 
 ## Editable Diffusion Studio design
 
@@ -136,6 +173,7 @@ The sections are:
 - **Presets:** **Collection** browses the 24 built-in looks. In **Saved**, **Save as new** adds the current appearance to the library;
   **Replace selected** updates an existing entry; **Load** recalls it. On macOS
   the library is `~/Library/Aurora/Presets/`, with one `.aurora` file per preset.
+  On Windows it is `%APPDATA%\Aurora\Presets\`.
   **Export** writes the current appearance to a chosen file; **Import** applies
   an appearance file. Use **Save as new** after importing to add it to the library.
 

@@ -1,0 +1,68 @@
+name: Windows VST3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/windows.yml'
+      - 'CMakeLists.txt'
+      - 'Source/**'
+      - 'Tests/**'
+      - 'scripts/build-windows.ps1'
+      - 'scripts/package-windows.py'
+      - 'release-docs/WINDOWS-INSTALLATION.txt'
+  pull_request:
+    paths:
+      - '.github/workflows/windows.yml'
+      - 'CMakeLists.txt'
+      - 'Source/**'
+      - 'Tests/**'
+      - 'scripts/build-windows.ps1'
+      - 'scripts/package-windows.py'
+      - 'release-docs/WINDOWS-INSTALLATION.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows-x64:
+    runs-on: windows-2022
+    timeout-minutes: 45
+    steps:
+      - name: Check out Aurora
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Build Windows VST3 and run native tests
+        shell: pwsh
+        run: ./scripts/build-windows.ps1 -BuildDirectory build-windows -Jobs 4
+      - name: Test distribution packaging
+        shell: pwsh
+        run: python Tests/WindowsPackagingTests.py
+      - name: Package plug-in and matching source
+        shell: pwsh
+        run: python scripts/package-windows.py --build-dir build-windows --output dist/windows
+      - name: Upload Windows preview downloads
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: aurora-windows-x64-preview
+          path: dist/windows/*
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload test diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: windows-test-diagnostics
+          path: build-windows/Testing/Temporary/LastTest.log
+          if-no-files-found: ignore
+          retention-days: 14

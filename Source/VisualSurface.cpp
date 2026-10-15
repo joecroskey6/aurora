@@ -221,6 +221,15 @@ void VisualSurface::update(const AnalysisFrame& frame,int mode,std::array<std::u
     sceneDirty=false;
 }
 void VisualSurface::newOpenGLContextCreated(){
+    // The Windows driver may fall back to a legacy context even when 3.2 was
+    // requested. Check before JUCE calls shader functions that may be null.
+    if(!context.areShadersAvailable() || OpenGLShaderProgram::getLanguageVersion()<1.5
+        || glCreateShader==nullptr || glCreateProgram==nullptr
+        || glGenVertexArrays==nullptr || glBindVertexArray==nullptr
+        || glGenFramebuffers==nullptr || glBindFramebuffer==nullptr){
+        error="Aurora visuals require OpenGL 3.2 / GLSL 1.50 and a compatible graphics driver";
+        Logger::writeToLog(error);ready.store(false);failed.store(true);fallbackDirty.store(true);return;
+    }
     shader=std::make_unique<OpenGLShaderProgram>(context);
     const String fragment=String(pearlCloudFunctions)+pearlFlowMaterial+sceneMaterialFunctions+fragmentSource;
     if(!(shader->addVertexShader(OpenGLHelpers::translateVertexShaderToV3(vertexSource))&&shader->addFragmentShader(OpenGLHelpers::translateFragmentShaderToV3(fragment))&&shader->link())){error=shader->getLastError();Logger::writeToLog(error);shader.reset();failed.store(true);fallbackDirty.store(true);return;}

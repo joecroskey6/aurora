@@ -55,6 +55,20 @@ void record(const juce::String& name, Timing before, Timing after, const juce::S
 struct EditorPerformanceProbe {
     using Editor = AuroraAudioProcessorEditor;
     static void stop(Editor& editor) { editor.stopTimer(); }
+    static void unavailableGraphicsTests() {
+        // No window/context or driver functions are loaded here. Exercising
+        // both callbacks catches accidental GL calls in the unsupported path,
+        // including cleanup after Windows returns a legacy context.
+        VisualSurface surface;
+        surface.newOpenGLContextCreated();
+        require(surface.failed.load() && !surface.ready.load() && !surface.shader,
+                "Unavailable graphics is rejected before creating a shader");
+        require(!surface.pearlFlow.isReady() && !surface.postProcess.isReady(),
+                "Unavailable graphics creates no fluid or bloom resources");
+        surface.openGLContextClosing();
+        require(!surface.ready.load() && !surface.shader,
+                "Rejected graphics context cleans up without driver entry points");
+    }
     static void seedStereo(Editor& editor) {
         editor.stereoTrails.clear(); editor.meterTime = 4.; editor.stereoEnvelope = .72f;
         for (int trace = 0; trace < 64; ++trace) {
@@ -247,6 +261,7 @@ int main() {
         AuroraAudioProcessorEditor editor(processor);
         EditorPerformanceProbe::stop(editor);
         require(!editor.isShowing(), "CPU benchmark must never open a native editor window");
+        EditorPerformanceProbe::unavailableGraphicsTests();
         EditorPerformanceProbe::stereoTests(editor);
         EditorPerformanceProbe::spectrogramTests(editor);
         report->setProperty("passed", true);
@@ -258,7 +273,7 @@ int main() {
     report->setProperty("operatingSystem", juce::SystemStats::getOperatingSystemName());
     report->setProperty("nativeWindowOpened", false); report->setProperty("audioDeviceOpened", false);
     report->setProperty("measurementScope", "Bounded CPU-only production editor cache/raster tests; timings are local observations, not a real-time audio or end-to-end frame-rate guarantee.");
-    const juce::File directory("/tmp/aurora-editor-performance");
+    const auto directory = juce::File::getSpecialLocation(juce::File::tempDirectory).getChildFile("aurora-editor-performance");
     if (!directory.createDirectory().wasOk() || !directory.getChildFile("report.json").replaceWithText(juce::JSON::toString(ownedReport, true))) exit = 1;
     std::cout << "Editor performance regression: " << checks << " checks, exit " << exit << '\n';
     return exit;
