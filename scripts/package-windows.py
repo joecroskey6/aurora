@@ -18,7 +18,7 @@ import sys
 from tempfile import TemporaryDirectory
 from zipfile import ZipFile, ZIP_DEFLATED
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 NAME = f"Aurora-{VERSION}"
 JUCE_VERSION = (8, 0, 6)
 JUCE_COMMIT = "51a8a6d7aeae7326956d747737ccf1575e61e209"

@@ -188,6 +188,7 @@ void AuroraAudioProcessor::getStateInformation (juce::MemoryBlock& destination)
     state.setProperty ("version", 1, nullptr);
     writeAppearanceState (state);
     state.setProperty ("frozen", frozen.load(), nullptr);
+    state.setProperty ("sceneExpanded", sceneExpanded.load(), nullptr);
     if (auto xml = state.createXml())
         copyXmlToBinary (*xml, destination);
 }
@@ -205,6 +206,10 @@ void AuroraAudioProcessor::setStateInformation (const void* data, int bytes)
 
     readAppearanceState (state);
     frozen.store (static_cast<bool> (state.getProperty ("frozen", false)));
+    // XML stores booleans as text. Only explicit true values enable expansion;
+    // older sessions and malformed properties restore the normal dashboard.
+    const auto expanded = state.getProperty ("sceneExpanded", false).toString().trim();
+    sceneExpanded.store (expanded == "1" || expanded.equalsIgnoreCase ("true"));
 }
 
 void AuroraAudioProcessor::readAppearanceState (const juce::ValueTree& state)

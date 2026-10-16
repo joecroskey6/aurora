@@ -119,6 +119,17 @@ void SoftClubLookAndFeel::drawButtonBackground(Graphics& g, Button& b, const Col
 }
 void SoftClubLookAndFeel::drawButtonText(Graphics& g,TextButton& button,bool over,bool down) {
     const auto id=button.getComponentID();
+    if(id=="expandScene" && !button.getToggleState()) {
+        const auto c=button.getLocalBounds().toFloat().getCentre();
+        Path corners;
+        for(float x:{-1.f,1.f})for(float y:{-1.f,1.f}) {
+            corners.startNewSubPath(c.x+x*2.f,c.y+y*6.f);
+            corners.lineTo(c.x+x*6.f,c.y+y*6.f);
+            corners.lineTo(c.x+x*6.f,c.y+y*2.f);
+        }
+        g.setColour(button.findColour(TextButton::textColourOffId));
+        g.strokePath(corners,PathStrokeType(1.4f,PathStrokeType::curved,PathStrokeType::rounded));return;
+    }
     if(id=="factoryPresetPrevious" || id=="factoryPresetNext"){
         const float direction=id=="factoryPresetPrevious"?-1.f:1.f;
         const auto centre=button.getLocalBounds().toFloat().getCentre();
@@ -250,6 +261,8 @@ AuroraAudioProcessorEditor::AuroraAudioProcessorEditor(AuroraAudioProcessor& p) 
     factoryPresetPrevious.onClick=[this]{applyFactoryPreset(lastFactoryPreset<0?factoryPresetCount()-1:(lastFactoryPreset+factoryPresetCount()-1)%factoryPresetCount());};
     factoryPresetNext.onClick=[this]{applyFactoryPreset((lastFactoryPreset+1)%factoryPresetCount());};
     customise.onClick=[this]{showCustomization();};
+    expandScene.setComponentID("expandScene");
+    expandScene.onClick=[this]{setSceneExpanded(!processor.sceneExpanded.load());};
     customise.setComponentID("customise");
     customizationDropdown.setComponentID("customizationDropdown");
     customizationDropdown.setScrollBarsShown(true,false);customizationDropdown.setScrollBarThickness(8);
@@ -271,7 +284,7 @@ AuroraAudioProcessorEditor::AuroraAudioProcessorEditor(AuroraAudioProcessor& p) 
     freeze.setTooltip("Hold the display. Audio and analysis continue.");
     themeChoice.setTitle("Material theme"); themeChoice.setTooltip("Theme changes the material, light and atmosphere independently of colour.");
     mode.setTitle("Reactive visual"); palette.setTitle("Colour palette"); layout.setTitle("Layout"); intensity.setTitle("Visual intensity");
-    for (Component* c : std::initializer_list<Component*>{&mode,&themeChoice,&palette,&layout,&freeze,&reset,&customise,&intensity,&waveWindowChoice,&waveColourChoice,&waveStyleChoice,&waveZoomChoice,&factoryPresetChoice,&factoryPresetPrevious,&factoryPresetNext}) addAndMakeVisible(c);
+    for (Component* c : std::initializer_list<Component*>{&mode,&themeChoice,&palette,&layout,&freeze,&reset,&customise,&expandScene,&intensity,&waveWindowChoice,&waveColourChoice,&waveStyleChoice,&waveZoomChoice,&factoryPresetChoice,&factoryPresetPrevious,&factoryPresetNext}) addAndMakeVisible(c);
     for(int i=0;i<3;i++) {
         auto& swatch=colourSwatches[size_t(i)];
         swatch.setTitle(String("Gradient colour ")+String(i+1));
@@ -279,7 +292,8 @@ AuroraAudioProcessorEditor::AuroraAudioProcessorEditor(AuroraAudioProcessor& p) 
         swatch.onClick=[this,i]{editColour(i);};
         addAndMakeVisible(swatch);
     }
-    setResizable(true,true);setResizeLimits(1100,(p.layoutMode.load()==0||p.layoutMode.load()==3)?620:390,2000,1300);
+    setResizable(true,true);setResizeLimits(1100,(p.layoutMode.load()==0||p.layoutMode.load()==3)?620:390,8192,8192);
+    sceneClip.setComponentID("sceneClip");visualSurface.setComponentID("visualSurface");
     addAndMakeVisible(sceneClip);sceneClip.setInterceptsMouseClicks(false,true);sceneClip.addAndMakeVisible(visualSurface);
     visualSurface.setTooltip(CharPointer_UTF8("Drag to orbit \xc2\xb7 Scroll to zoom \xc2\xb7 Double-click to reset"));
     visualSurface.onCameraChanged=[this](float yaw,float pitch,float zoom) {
@@ -313,7 +327,31 @@ double AuroraAudioProcessorEditor::waveformSeconds() const {
     return processor.custom.get("waveCustomTime")>.5f?processor.custom.get("waveSeconds"):waveformWindowSeconds(processor.waveformWindow.load());
 }
 void AuroraAudioProcessorEditor::showCustomization() { setCustomizationOpen(!customizationOpen); }
+void AuroraAudioProcessorEditor::setSceneExpanded(bool expanded) {
+    processor.sceneExpanded.store(expanded);
+    syncSceneExpansion();
+}
+void AuroraAudioProcessorEditor::syncSceneExpansion() {
+    const bool expanded=processor.sceneExpanded.load();
+    if(observedSceneExpanded==expanded)return;
+    observedSceneExpanded=expanded;
+    if(expanded)setCustomizationOpen(false);
+    hoverPosition={-1,-1};
+    spectrumBounds=spectrogramBounds=waveformBounds=stereoBounds=levelsBounds={};
+    // Keep the same clipped GL view and its fluid resources. Only its bounds
+    // change; expansion never changes layout settings or moves the host window.
+    resized();repaint();
+    if(isShowing()) {
+        if(expanded)visualSurface.grabKeyboardFocus();
+        else expandScene.grabKeyboardFocus();
+    }
+}
+Rectangle<float> AuroraAudioProcessorEditor::contentArea() const {
+    if(processor.sceneExpanded.load())return {0,40,float(getWidth()),float(std::max(0,getHeight()-40))};
+    return {16,112,float(getWidth()-32),float(getHeight()-128)};
+}
 void AuroraAudioProcessorEditor::setCustomizationOpen(bool open) {
+    if(open && processor.sceneExpanded.load())setSceneExpanded(false);
     if(customizationOpen==open)return;
     if(open && !customizationPanel){
         Component::SafePointer<AuroraAudioProcessorEditor> safe(this);
@@ -327,21 +365,23 @@ void AuroraAudioProcessorEditor::setCustomizationOpen(bool open) {
     if(open)customizationDropdown.toFront(false);
     if(!open)rebuildStereo();
     resized();repaint();
-    if(!open)customise.grabKeyboardFocus();
+    if(!open && customise.isShowing())customise.grabKeyboardFocus();
 }
 bool AuroraAudioProcessorEditor::keyPressed(const KeyPress& key) {
     if(customizationOpen && key==KeyPress::escapeKey){setCustomizationOpen(false);return true;}
+    if(processor.sceneExpanded.load() && key==KeyPress::escapeKey){setSceneExpanded(false);return true;}
     return false;
 }
 void AuroraAudioProcessorEditor::applyLayout() {
     const int selected=processor.layoutMode.load();
     if(appliedLayout==selected)return;
     appliedLayout=selected;dashboardOffset=0;
-    setResizeLimits(1100,(selected==0||selected==3)?620:390,2000,1300);
-    setSize(getWidth(),selected==1?390:selected==2?570:820);
+    setResizeLimits(1100,(selected==0||selected==3)?620:390,8192,8192);
+    if(!processor.sceneExpanded.load())setSize(getWidth(),selected==1?390:selected==2?570:820);
     resized();
 }
 void AuroraAudioProcessorEditor::syncControls() {
+    syncSceneExpansion();
     // A ComboBox menu delivers onChange asynchronously. Only a changed model
     // value may update it, otherwise a timer can erase a user's pending click.
     const std::array<int,8> values {processor.visualMode.load(),processor.palette.load(),processor.themeMode.load(),
@@ -429,35 +469,43 @@ void AuroraAudioProcessorEditor::setPalette() {
     theme.setColour(TooltipWindow::textColourId,ink);theme.setColour(TooltipWindow::outlineColourId,line);
 }
 void AuroraAudioProcessorEditor::resized() {
+    const bool expanded=processor.sceneExpanded.load();
     const int y=65,h=30;
     mode.setBounds(20,y,178,h);themeChoice.setBounds(208,y,142,h);palette.setBounds(360,y,150,h);
     for(int i=0;i<3;i++)colourSwatches[size_t(i)].setBounds(532+i*32,y,28,23);
     intensity.setBounds(660,y,120,h);
     waveStyleChoice.setBounds(805,y,112,h);waveZoomChoice.setBounds(930,y,145,h);
     for(Component* control:std::initializer_list<Component*>{&mode,&themeChoice,&palette,&intensity,&waveStyleChoice,&waveZoomChoice})
-        control->setVisible(!customizationOpen);
-    for(auto& swatch:colourSwatches)swatch.setVisible(!customizationOpen);
+        control->setVisible(!expanded && !customizationOpen);
+    for(auto& swatch:colourSwatches)swatch.setVisible(!expanded && !customizationOpen);
+    for(Component* control:std::initializer_list<Component*>{&factoryPresetPrevious,&factoryPresetChoice,&factoryPresetNext,&customise,&layout,&freeze,&reset})
+        control->setVisible(!expanded);
+    expandScene.setToggleState(expanded,dontSendNotification);
+    expandScene.setButtonText(expanded?"Restore meters":"Expand");
+    expandScene.setTitle(expanded?"Restore meters":"Expand visual");
+    expandScene.setTooltip(expanded?"Restore the previous layout. Escape also restores the meters.":"Hide the controls and meters so the visual fills the plug-in window.");
+    expandScene.setBounds(expanded?getWidth()-142:getWidth()-503,expanded?6:17,expanded?128:32,28);
     factoryPresetPrevious.setBounds(285,17,28,28);
     factoryPresetChoice.setBounds(319,17,226,28);
     factoryPresetNext.setBounds(551,17,28,28);
     customise.setBounds(getWidth()-459,17,104,28);
     layout.setBounds(getWidth()-343,17,126,28);
     freeze.setBounds(getWidth()-201,17,77,28);reset.setBounds(getWidth()-114,17,94,28);
-    const Rectangle<float> area(16,112,float(getWidth()-32),float(getHeight()-128));
+    const auto area=contentArea();
     const bool custom=processor.layoutMode.load()==3;
     int count=0;for(const char* key:{"showScene","showSpectrum","showSpectrogram","showWaveform","showStereo","showLevels"})if(processor.custom.get(key)>.5f)++count;
     const int columns=int(processor.custom.get("layoutColumns"));const int rows=(count+columns-1)/columns;
     const float gap=processor.custom.get("layoutGap");
     const float contentHeight=std::max(area.getHeight(),float(rows)*220.f+float(std::max(0,rows-1))*gap);
-    dashboardScroll.setVisible(!customizationOpen && custom && contentHeight>area.getHeight());
-    dashboardOffset=custom?jlimit(0.,double(contentHeight-area.getHeight()),dashboardOffset):0;
+    dashboardScroll.setVisible(!expanded && !customizationOpen && custom && contentHeight>area.getHeight());
+    if(!expanded)dashboardOffset=custom?jlimit(0.,double(contentHeight-area.getHeight()),dashboardOffset):0;
     dashboardScroll.setBounds(getWidth()-13,112,10,getHeight()-128);
     dashboardScroll.setRangeLimits(0,contentHeight,dontSendNotification);
     dashboardScroll.setCurrentRange(dashboardOffset,area.getHeight(),dontSendNotification);
     sceneClip.setBounds(area.toNearestInt());
     const auto visual=moduleAreas()[0];
     if(!customizationOpen && !visual.isEmpty() && visual.intersects(area))
-        visualSurface.setBounds(visual.reduced(6).translated(-area.getX(),-area.getY()).toNearestInt());
+        visualSurface.setBounds(visual.reduced(expanded?0.f:6.f).translated(-area.getX(),-area.getY()).toNearestInt());
     else
         // Hiding a JUCE OpenGL component destroys its context. Park the native
         // view outside the host's clipped bounds instead, retaining shaders and
@@ -472,8 +520,9 @@ void AuroraAudioProcessorEditor::resized() {
     positionWaveControls();
 }
 std::array<Rectangle<float>,6> AuroraAudioProcessorEditor::moduleAreas() const {
-    Rectangle<float> area(16,112,float(getWidth()-32),float(getHeight()-128));
+    auto area=contentArea();
     const float gap=processor.custom.get("layoutGap");std::array<Rectangle<float>,6> result{};
+    if(processor.sceneExpanded.load()){result[0]=area;return result;}
     const int view=processor.layoutMode.load();
     if(view==3){
         const std::array<const char*,6> keys{"showScene","showSpectrum","showSpectrogram","showWaveform","showStereo","showLevels"};
@@ -501,7 +550,7 @@ std::array<Rectangle<float>,6> AuroraAudioProcessorEditor::moduleAreas() const {
 Rectangle<float> AuroraAudioProcessorEditor::waveformArea() const {return moduleAreas()[3];}
 void AuroraAudioProcessorEditor::positionWaveControls() {
     const auto r=waveformArea();
-    const bool visible=!customizationOpen && !r.isEmpty() && r.getY()>=112.f && r.getY()<float(getHeight()-50);
+    const bool visible=!processor.sceneExpanded.load() && !customizationOpen && !r.isEmpty() && r.getY()>=112.f && r.getY()<float(getHeight()-50);
     waveWindowChoice.setVisible(visible);
     waveWindowChoice.setBounds(int(r.getRight()-77),int(r.getY()+4),64,24);
     waveColourChoice.setVisible(visible && !usesScope());
@@ -566,8 +615,8 @@ void AuroraAudioProcessorEditor::timerCallback() {
         lastSceneTime=now;
         visualSurface.update(frame,processor.visualMode.load(),moduleColours("scene"),processor.themeMode.load(),processor.visualGain.load(),processor.frozen.load() || !processor.isReceiving.load());
     }
-    if(!customizationOpen && !processor.frozen.load())
-        repaint(16,112,getWidth()-32,getHeight()-128);
+    if(!processor.sceneExpanded.load() && !customizationOpen && !processor.frozen.load())
+        repaint(contentArea().toNearestInt());
 }
 void AuroraAudioProcessorEditor::clearVisualHistory() {
     history.clear();spectrumTrails.clear();stereoTrails.clear();spectrogramAppearanceValid=false;
@@ -775,6 +824,11 @@ void AuroraAudioProcessorEditor::panel(Graphics& g,Rectangle<float> r,const Stri
 }
 void AuroraAudioProcessorEditor::paint(Graphics& g) {
     g.fillAll(paper);
+    if(processor.sceneExpanded.load()) {
+        text(g,mode.getText(),{16,6,float(std::max(0,getWidth()-174)),28},12,ink);
+        g.setColour(line);g.drawHorizontalLine(39,0.f,float(getWidth()));
+        return;
+    }
     if(isFlightDeck()) {
         g.setGradientFill(ColourGradient(processor.custom.get("interfaceOverride")>.5f?paper.brighter(.12f):rgb(0x282e29),0,0,paper,0,110,false));g.fillRect(0,0,getWidth(),108);
         g.setColour(line);g.drawHorizontalLine(54,16.f,float(getWidth()-16));
@@ -799,7 +853,7 @@ void AuroraAudioProcessorEditor::paint(Graphics& g) {
     stops.addColour(processor.custom.get("paletteMiddle"),rgb(colours[1]));g.setGradientFill(stops);g.fillRect(532.f,92.f,92.f,3.f);
     {
         Graphics::ScopedSaveState saved(g);
-        const Rectangle<float> area(16,112,float(getWidth()-32),float(getHeight()-128));g.reduceClipRegion(area.toNearestInt());
+        const auto area=contentArea();g.reduceClipRegion(area.toNearestInt());
         spectrumBounds=spectrogramBounds=waveformBounds=stereoBounds=levelsBounds={};
         const auto modules=moduleAreas();
         for(std::size_t i=0;i<modules.size();++i){

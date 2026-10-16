@@ -4,6 +4,8 @@
 #include <array>
 #include <functional>
 #include <iostream>
+#include <set>
+#include <utility>
 #include <vector>
 
 // Developer-only native settings/editor QA. No audio device, host, preset
@@ -59,8 +61,22 @@ private:
     Component* panel = nullptr;
     Component::SafePointer<Viewport> editorSettings;
     int desktopWindowsBeforeCustomise = 0;
+    struct SceneExpansionBaseline {
+        String appearance;
+        Rectangle<int> editorBounds, windowBounds;
+        Component::SafePointer<Component> clip, surface, parent;
+        ComponentPeer* peer = nullptr;
+        OpenGLContext* context = nullptr;
+        void* nativeContext = nullptr;
+        std::vector<std::pair<Component::SafePointer<Component>, bool>> controls;
+        int layout = 0, desktopWindows = 0;
+        double scrollOffset = 0;
+        bool frozen = false, settingsOpen = false;
+        std::uint64_t meterGeneration = 0;
+    } sceneBaseline;
+    int nativeContextComparisons = 0;
     std::vector<Step> steps;
-    Array<var> checks, captures;
+    Array<var> checks, captures, gpuCaptures;
     int failures = 0, changeNotifications = 0, index = 0;
     bool waitingForPaint = false, finished = false;
     double started = 0, nextAt = 0;
@@ -187,6 +203,162 @@ private:
         check(label + " keeps its pending menu selection through a timer tick", choice->getSelectedId() == selectedId);
         startTimerHz(30);
     }
+    ScrollBar* dashboardScrollbar() const {
+        for (auto* child : editor->getChildren())
+            if (auto* scroll = dynamic_cast<ScrollBar*>(child)) return scroll;
+        return nullptr;
+    }
+    void beginSceneExpansion() {
+        sceneBaseline = {};
+        sceneBaseline.appearance = processor->createAppearancePreset();
+        sceneBaseline.layout = processor->layoutMode.load();
+        sceneBaseline.editorBounds = editor->getBounds();
+        sceneBaseline.windowBounds = editorWindow->getBounds();
+        sceneBaseline.desktopWindows = desktopWindowCount();
+        sceneBaseline.frozen = processor->frozen.load();
+        sceneBaseline.meterGeneration = processor->analyzer.snapshot().resetGeneration;
+        sceneBaseline.clip = find(*editor, "sceneClip");
+        sceneBaseline.surface = find(*editor, "visualSurface");
+        sceneBaseline.settingsOpen = editorSettings != nullptr && editorSettings->isVisible();
+        if (auto* scroll = dashboardScrollbar()) sceneBaseline.scrollOffset = scroll->getCurrentRangeStart();
+        if (auto* surface = sceneBaseline.surface.getComponent()) {
+            sceneBaseline.parent = surface->getParentComponent();
+            sceneBaseline.peer = surface->getPeer();
+            sceneBaseline.context = OpenGLContext::getContextAttachedTo(*surface);
+            if (sceneBaseline.context) sceneBaseline.nativeContext = sceneBaseline.context->getRawContext();
+        }
+        for (auto* child : editor->getChildren())
+            if (child->getComponentID() != "expandScene" && (dynamic_cast<Button*>(child)
+                || dynamic_cast<ComboBox*>(child) || dynamic_cast<Slider*>(child) || dynamic_cast<ScrollBar*>(child)))
+                sceneBaseline.controls.emplace_back(Component::SafePointer<Component>(child), child->isVisible());
+        auto* button = dynamic_cast<TextButton*>(find(*editor, "expandScene"));
+        check("Scene expansion uses the actual visible editor button", button && button->isShowing());
+        check("Scene expansion has its normal accessible title", button && button->getTitle() == "Expand visual");
+        check("Scene expansion starts from persistent clip and GPU components", sceneBaseline.clip != nullptr && sceneBaseline.surface != nullptr);
+        if (button) button->triggerClick();
+    }
+    void verifySceneIdentity(const String& label) {
+        auto* clip = find(*editor, "sceneClip");
+        auto* surface = find(*editor, "visualSurface");
+        check(label + " retains the original scene components", clip && surface
+            && clip == sceneBaseline.clip.getComponent() && surface == sceneBaseline.surface.getComponent());
+        check(label + " keeps the GPU surface parent and native peer", surface
+            && surface->getParentComponent() == sceneBaseline.parent.getComponent()
+            && surface->getPeer() == sceneBaseline.peer && surface->getPeer() == editor->getPeer());
+        check(label + " keeps the native GPU component visible", surface && surface->isVisible() && surface->isShowing());
+        check(label + " creates no additional native window", desktopWindowCount() == sceneBaseline.desktopWindows);
+        check(label + " preserves all appearance settings", processor->createAppearancePreset() == sceneBaseline.appearance);
+        check(label + " preserves the previous meter layout", processor->layoutMode.load() == sceneBaseline.layout);
+        check(label + " preserves display freeze and meter history", processor->frozen.load() == sceneBaseline.frozen
+            && processor->analyzer.snapshot().resetGeneration == sceneBaseline.meterGeneration
+            && processor->analyzer.waveformSnapshot().totalSamples == 32 * 48000);
+        if (surface && sceneBaseline.context) {
+            auto* current = OpenGLContext::getContextAttachedTo(*surface);
+            check(label + " retains the attached OpenGL context", current == sceneBaseline.context);
+            if (sceneBaseline.nativeContext) {
+                check(label + " retains the underlying native OpenGL context", current && current->getRawContext() == sceneBaseline.nativeContext);
+                ++nativeContextComparisons;
+            }
+        }
+    }
+    void verifySceneExpanded(const String& label) {
+        verifySceneIdentity(label);
+        auto* clip = find(*editor, "sceneClip");
+        auto* surface = find(*editor, "visualSurface");
+        auto* button = dynamic_cast<TextButton*>(find(*editor, "expandScene"));
+        check(label + " stores expanded view state", processor->sceneExpanded.load());
+        check(label + " fills the editor below its compact toolbar", clip
+            && clip->getBounds() == Rectangle<int>(0, 40, editor->getWidth(), editor->getHeight() - 40));
+        check(label + " removes the normal scene inset", clip && surface && surface->getBounds() == clip->getLocalBounds());
+        check(label + " exposes an accessible restore button inside the toolbar", button && button->isShowing()
+            && button->getTitle() == "Restore meters" && Rectangle<int>(0, 0, editor->getWidth(), 40).contains(button->getBounds()));
+        bool controlsHidden = true;
+        for (const auto& control : sceneBaseline.controls)
+            if (control.first != nullptr && control.first->isVisible()) controlsHidden = false;
+        check(label + " hides meter selectors, palette controls and dashboard scrolling", controlsHidden);
+        check(label + " closes the embedded Customise dropdown", editorSettings == nullptr || !editorSettings->isVisible());
+        check(label + " preserves the existing editor dimensions", editor->getBounds() == sceneBaseline.editorBounds);
+        check(label + " preserves the existing native window dimensions", editorWindow->getBounds() == sceneBaseline.windowBounds);
+    }
+    void restoreScene(bool escape) {
+        if (escape) check("Escape is handled while the visual is expanded", editor->keyPressed(KeyPress(KeyPress::escapeKey)));
+        else {
+            auto* button = dynamic_cast<TextButton*>(find(*editor, "expandScene"));
+            check("Restore uses the actual visible scene button", button && button->isShowing());
+            if (button) button->triggerClick();
+        }
+    }
+    void verifySceneRestored(const String& label) {
+        verifySceneIdentity(label);
+        auto* clip = find(*editor, "sceneClip");
+        auto* button = dynamic_cast<TextButton*>(find(*editor, "expandScene"));
+        check(label + " clears expanded view state", !processor->sceneExpanded.load());
+        check(label + " restores normal meter bounds", clip
+            && clip->getBounds() == Rectangle<int>(16, 112, editor->getWidth() - 32, editor->getHeight() - 128));
+        check(label + " restores the expansion button title", button && button->isShowing() && button->getTitle() == "Expand visual");
+        check(label + " preserves the current editor dimensions", editor->getBounds() == sceneBaseline.editorBounds);
+        check(label + " preserves the current native window dimensions", editorWindow->getBounds() == sceneBaseline.windowBounds);
+        if (!sceneBaseline.settingsOpen) {
+            bool visibilityRestored = true;
+            for (const auto& control : sceneBaseline.controls)
+                if (control.first == nullptr || control.first->isVisible() != control.second) visibilityRestored = false;
+            check(label + " restores each control's previous visibility", visibilityRestored);
+        }
+        if (sceneBaseline.layout == 3) {
+            auto* scroll = dashboardScrollbar();
+            check(label + " restores the Custom layout scroll position", scroll
+                && std::abs(scroll->getCurrentRangeStart() - sceneBaseline.scrollOffset) < .001);
+        }
+        check(label + " leaves Customise closed after returning to meters", editorSettings == nullptr || !editorSettings->isVisible());
+    }
+    void addSceneExpansionSteps() {
+        for (const int mode : {0, 1, 2, 3}) {
+            const String label = "scene-layout-" + String(mode);
+            steps.push_back({label + "-prepare", [this, mode] {
+                Process::makeForegroundProcess();
+                settingsWindow->setVisible(false); editorWindow->toFront(true);
+                processor->frozen.store(true);
+                if (mode == 3) {
+                    processor->custom.set("layoutColumns", 1);
+                    processor->custom.set("orderWaveform", 1);
+                    for (const char* key : {"showScene", "showSpectrum", "showSpectrogram", "showWaveform", "showStereo", "showLevels"})
+                        processor->custom.set(key, 1);
+                }
+                redrawEditor(mode, 1280, mode == 1 ? 390 : mode == 2 ? 570 : 820);
+            }, false, false, [this, mode] {
+                if (mode == 3) {
+                    auto* scroll = dashboardScrollbar();
+                    check("Expansion fixture has a scrollable Custom dashboard", scroll && scroll->isVisible());
+                    if (scroll) scroll->setCurrentRangeStart(scroll->getMaximumRangeLimit(), sendNotificationSync);
+                    check("Custom expansion starts from a nonzero scroll position", scroll && scroll->getCurrentRangeStart() > 0);
+                }
+            } });
+            steps.push_back({label + "-expanded", [this] { beginSceneExpansion(); }, false, true,
+                [this, label] { verifySceneExpanded(label); } });
+            steps.push_back({label + "-restored", [this, mode] { restoreScene(mode % 2 != 0); }, false, true,
+                [this, label] { verifySceneRestored(label); } });
+        }
+        steps.push_back({"scene-customise-prepare", [this] {
+            redrawEditor(0, 1280, 820);
+            if (auto* button = dynamic_cast<TextButton*>(findTitle(*editor, "Customise Aurora"))) button->triggerClick();
+        }, false, false, [this] {
+            check("Expansion fixture starts with Customise open", editorSettings != nullptr && editorSettings->isShowing());
+        } });
+        steps.push_back({"scene-customise-expanded", [this] { beginSceneExpansion(); }, false, true,
+            [this] { verifySceneExpanded("Expanded from Customise"); } });
+        steps.push_back({"scene-expanded-resize", [this] {
+            editorWindow->setContentComponentSize(1472, 900);
+            // An explicit user resize should survive Restore, rather than
+            // restoring a stale size saved before entering the expanded view.
+            sceneBaseline.editorBounds = editor->getBounds();
+            sceneBaseline.windowBounds = editorWindow->getBounds();
+        }, false, true, [this] { verifySceneExpanded("Resized expanded scene"); } });
+        steps.push_back({"scene-resized-escape", [this] { restoreScene(true); }, false, true, [this] {
+            verifySceneRestored("Escape after expanded resize");
+            processor->resetAppearance(); redrawEditor(2, 1280, 570);
+            settingsWindow->setVisible(true); settingsWindow->toFront(true);
+        } });
+    }
     void addSteps() {
         for (const int mode : {1, 2, 0, 3, 2}) {
             steps.push_back({ "header-layout-" + String(mode), [this, mode] {
@@ -267,6 +439,7 @@ private:
         steps.push_back({ "editor-customize-escape", [this] { editor->keyPressed(KeyPress(KeyPress::escapeKey)); }, false, false, [this] {
             check("Escape closes embedded Customise", editorSettings != nullptr && !editorSettings->isVisible());
         } });
+        addSceneExpansionSteps();
         steps.push_back({ "colours-top", [this] { processor->frozen.store(true); }, true, false });
         steps.push_back({ "colours-module-overrides", [this] { scrollPanel(true); }, true, false });
         for (int i = 1; i < int(sections.size()); ++i)
@@ -401,8 +574,87 @@ private:
         }, false, true });
         steps.push_back({ "restored-default", [this] { processor->resetAppearance(); redrawEditor(2, 1280, 570); navigate("Presets"); }, true, true });
     }
+    void compositeScenePixels(Component& root, Image& destination, const String& name) {
+        using namespace juce::gl;
+        auto* surface = find(root, "visualSurface");
+        auto* context = surface ? OpenGLContext::getContextAttachedTo(*surface) : nullptr;
+        check(name + " has a native OpenGL surface for capture", surface && context && context->getRawContext());
+        if (!surface || !context || !context->getRawContext()) return;
+        const auto fullArea = root.getLocalArea(surface, surface->getLocalBounds());
+        auto clippedArea = fullArea.getIntersection(root.getLocalBounds());
+        for (auto* parent = surface->getParentComponent(); parent && parent != &root; parent = parent->getParentComponent())
+            clippedArea = clippedArea.getIntersection(root.getLocalArea(parent, parent->getLocalBounds()));
+        check(name + " GPU surface intersects its real editor clip", !clippedArea.isEmpty());
+        if (clippedArea.isEmpty()) return;
+        int width = 0, height = 0;
+        GLenum beforeError = GL_NO_ERROR, readError = GL_NO_ERROR;
+        std::vector<GLubyte> rgba;
+        // Geometry stays on the message thread; framebuffer reads and restored
+        // GL pack/buffer state stay on the production surface's own GL thread.
+        context->executeOnGLThread([&](OpenGLContext& active) {
+            beforeError = glGetError();
+            GLint viewport[4] {}, previousFramebuffer = 0, previousPackBuffer = 0;
+            GLint packAlignment = 0, packRowLength = 0, packSkipRows = 0, packSkipPixels = 0;
+            glGetIntegerv(GL_VIEWPORT, viewport); width = viewport[2]; height = viewport[3];
+            if (width < 1 || height < 1 || width > 8192 || height > 8192) return;
+            glGetIntegerv(GL_READ_FRAMEBUFFER_BINDING, &previousFramebuffer);
+            glGetIntegerv(GL_PIXEL_PACK_BUFFER_BINDING, &previousPackBuffer);
+            glGetIntegerv(GL_PACK_ALIGNMENT, &packAlignment); glGetIntegerv(GL_PACK_ROW_LENGTH, &packRowLength);
+            glGetIntegerv(GL_PACK_SKIP_ROWS, &packSkipRows); glGetIntegerv(GL_PACK_SKIP_PIXELS, &packSkipPixels);
+            glBindFramebuffer(GL_READ_FRAMEBUFFER, active.getFrameBufferID());
+            GLint previousReadBuffer = 0; glGetIntegerv(GL_READ_BUFFER, &previousReadBuffer);
+            // For macOS's double-buffered native view, FRONT is the completed
+            // presented image. BACK after a swap has undefined contents.
+            glReadBuffer(active.getFrameBufferID() == 0 ? GL_FRONT : GL_COLOR_ATTACHMENT0);
+            glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
+            glPixelStorei(GL_PACK_ALIGNMENT, 1); glPixelStorei(GL_PACK_ROW_LENGTH, 0);
+            glPixelStorei(GL_PACK_SKIP_ROWS, 0); glPixelStorei(GL_PACK_SKIP_PIXELS, 0);
+            rgba.resize(std::size_t(width) * std::size_t(height) * 4);
+            glFinish(); glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, rgba.data());
+            readError = glGetError();
+            glPixelStorei(GL_PACK_ALIGNMENT, packAlignment); glPixelStorei(GL_PACK_ROW_LENGTH, packRowLength);
+            glPixelStorei(GL_PACK_SKIP_ROWS, packSkipRows); glPixelStorei(GL_PACK_SKIP_PIXELS, packSkipPixels);
+            glBindBuffer(GL_PIXEL_PACK_BUFFER, GLuint(previousPackBuffer));
+            glReadBuffer(GLenum(previousReadBuffer)); glBindFramebuffer(GL_READ_FRAMEBUFFER, GLuint(previousFramebuffer));
+        }, true);
+        const bool validRead = beforeError == GL_NO_ERROR && readError == GL_NO_ERROR && width > 0 && height > 0
+            && rgba.size() == std::size_t(width) * std::size_t(height) * 4;
+        check(name + " reads native GPU pixels without GL errors", validRead);
+        if (!validRead) return;
+        Image pixels(Image::RGB, width, height, false);
+        std::set<std::uint32_t> colours;
+        {
+            Image::BitmapData bitmap(pixels, Image::BitmapData::writeOnly);
+            for (int y = 0; y < height; ++y) for (int x = 0; x < width; ++x) {
+                const auto offset = (std::size_t(height - 1 - y) * std::size_t(width) + std::size_t(x)) * 4;
+                const Colour colour(rgba[offset], rgba[offset + 1], rgba[offset + 2]);
+                bitmap.setPixelColour(x, y, colour);
+                if (x % 8 == 0 && y % 8 == 0) colours.insert(colour.getARGB());
+            }
+        }
+        check(name + " contains rendered scene detail rather than a blank framebuffer", colours.size() >= 32);
+        {
+            Graphics composite(destination); composite.reduceClipRegion(clippedArea);
+            composite.drawImage(pixels, fullArea.toFloat());
+        }
+        const auto file = outputDirectory.getChildFile(name + "-gpu.png"); file.deleteFile();
+        bool saved = false;
+        if (auto stream = file.createOutputStream()) { saved = PNGImageFormat().writeImageToStream(pixels, *stream); stream->flush(); }
+        check(name + " native-resolution GPU PNG saved", saved);
+        auto* record = new DynamicObject; record->setProperty("name", name); record->setProperty("file", file.getFullPathName());
+        record->setProperty("width", width); record->setProperty("height", height); record->setProperty("sampledColours", int(colours.size()));
+        record->setProperty("editorBounds", fullArea.toString()); record->setProperty("clipBounds", clippedArea.toString());
+        record->setProperty("beforeGlError", int(beforeError)); record->setProperty("readGlError", int(readError));
+        gpuCaptures.add(var(record));
+    }
     void capture(Component& component, const String& name, bool settings) {
-        const auto image = component.createComponentSnapshot(component.getLocalBounds(), true, 1.f);
+        auto image = component.createComponentSnapshot(component.getLocalBounds(), true, 1.f);
+        // Read only expanded scenes and one visible Studio restore. Parked
+        // surfaces in meter-only/scrolled layouts never block this runner.
+        const bool captureGpu = !settings && &component == editor
+            && (processor->sceneExpanded.load() || name == "scene-layout-0-restored-editor");
+        const int gpuCapturesBefore = gpuCaptures.size();
+        if (captureGpu) compositeScenePixels(component, image, name);
         const auto file = outputDirectory.getChildFile(name + ".png"); file.deleteFile();
         bool saved = false;
         if (auto stream = file.createOutputStream()) { saved = PNGImageFormat().writeImageToStream(image, *stream); stream->flush(); }
@@ -425,6 +677,7 @@ private:
         auto* record = new DynamicObject; record->setProperty("name", name); record->setProperty("file", file.getFullPathName());
         record->setProperty("width", image.getWidth()); record->setProperty("height", image.getHeight());
         record->setProperty("controls", var(controls)); record->setProperty("settingsPanel", settings);
+        record->setProperty("includesNativeGpuPixels", gpuCaptures.size() > gpuCapturesBefore);
         record->setProperty("layout", processor->layoutMode.load()); record->setProperty("elapsedSeconds", Time::getMillisecondCounterHiRes() * .001 - started);
         captures.add(var(record));
     }
@@ -444,10 +697,13 @@ private:
         if (error.isNotEmpty()) check(error, false);
         check("Native controls notify the editor", changeNotifications >= 5);
         check("QA never delivers or modifies audio after prefill", processor->analyzer.waveformSnapshot().totalSamples == 32 * 48000);
+        check("Expanded scenes and a Studio restore contain native GPU captures", gpuCaptures.size() >= 7);
         auto* report = new DynamicObject; report->setProperty("passed", failures == 0); report->setProperty("failures", failures);
         report->setProperty("checks", var(checks)); report->setProperty("captures", var(captures));
         report->setProperty("audioDeviceOpened", false); report->setProperty("userPresetLibraryModified", false);
-        report->setProperty("captureMethod", "Native JUCE component snapshots of all nine settings sections and the real editor. Studio OpenGL content is not included in component snapshots; scene colours are configured but GPU pixels are not validated here.");
+        report->setProperty("nativeOpenGLContextIdentityComparisons", nativeContextComparisons);
+        report->setProperty("nativeGpuCaptureCount", gpuCaptures.size()); report->setProperty("gpuCaptures", var(gpuCaptures));
+        report->setProperty("captureMethod", "Native JUCE snapshots of all settings sections and the real editor. Expanded scenes and one Studio restore include direct readback of the production OpenGL surface's presented front buffer, vertically oriented and composited at its real clipped editor bounds. Separate GPU PNG files preserve native physical resolution; other snapshots exclude GPU pixels.");
         report->setProperty("sourceFixture", "32 seconds of original procedural stereo music, no audio output");
         report->setProperty("changeNotifications", changeNotifications);
         if (!outputDirectory.getChildFile("report.json").replaceWithText(JSON::toString(var(report), true))) ++failures;

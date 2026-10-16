@@ -1,4 +1,4 @@
-AURORA 0.1.0 — WINDOWS x64 PREVIEW
+AURORA 0.1.1 — WINDOWS x64 PREVIEW
 
 A free, open-source audio metering and reactive visualization plug-in.
 
@@ -94,7 +94,7 @@ Do not mark these tests as passed until they have actually run on Windows.
 SOURCE AND NOTICES
 
 Aurora is AGPL-3.0-or-later. Retain LICENSE.txt, THIRD_PARTY.md and licenses/.
-The release must provide Aurora-0.1.0-windows-source.zip alongside this download.
+The release must provide Aurora-0.1.1-windows-source.zip alongside this download.
 It includes Aurora's source/build scripts and the vendored JUCE 8.0.6 sources.
 The separate Windows manifest records binary/source hashes. SHA256SUMS records
 archive checksums; these detect accidental changes, not publisher authenticity.

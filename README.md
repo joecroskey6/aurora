@@ -33,6 +33,7 @@ GitHub's automatic source ZIP does not include the pinned JUCE dependency.
 - **Customise** controls for each meter, independent module palettes, interface colours, waveform materials and channels, scene finishing and dashboard arrangement.
 - Local `.aurora` appearance presets, with import/export and section or appearance resets.
 - Drag-to-orbit through 360°, scroll/pinch zoom, double-click camera reset and saved view settings.
+- One-click visual expansion: collapse the controls and meters, then restore the previous layout with the restore button or Escape.
 - Visual intensity, display freeze, meter reset, resize and saved host-state settings.
 - Essential labels and controls, with no descriptive subtitles or routine status footer.
 - Mono and stereo paths; bounded FIFO and background analysis keep DSP/rendering off the audio callback.
@@ -157,6 +158,12 @@ sessions and the Pearl Cloud scene default remain unchanged until you select one
 press Escape to close it. On shorter layouts, scroll the dropdown to reach all
 settings. Choosing **Meter strip** or **Waveform** from the header closes the
 dropdown and shows that layout immediately. Changes are saved in the host session.
+The expand icon beside **Customise** hides the dashboard and gives the visual
+the whole plug-in area below a compact restore bar. Click **Restore meters** or
+press Escape to recover the previous layout and Custom scroll position. Orbit
+and zoom still work. You can resize the existing plug-in window for a larger
+view; expansion preserves its dimensions. Expanded view is saved with the DAW
+session and remains independent of appearance presets.
 The sections are:
 
 - **Colours:** theme, three-stop gradient, reversal and meter gradient midpoint;

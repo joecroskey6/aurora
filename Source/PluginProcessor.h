@@ -60,6 +60,8 @@ public:
     std::atomic<int> waveformZoom { 0 }; // 1x, 2x, 4x vertical display scale; audio unchanged.
     std::atomic<float> visualGain { 1.0f };
     std::atomic<bool> frozen { false };
+    // Session-only view state: appearance presets leave expansion unchanged.
+    std::atomic<bool> sceneExpanded { false };
     std::atomic<float> cameraYaw { 0.0f }, cameraPitch { 0.0f }, cameraZoom { 1.0f };
 
     // Diagnostic values concern analysis only; the audio path is unaffected.

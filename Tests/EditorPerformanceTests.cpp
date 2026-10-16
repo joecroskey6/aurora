@@ -69,6 +69,44 @@ struct EditorPerformanceProbe {
         require(!surface.ready.load() && !surface.shader,
                 "Rejected graphics context cleans up without driver entry points");
     }
+    static void expandedSceneTests(Editor& e) {
+        const auto original=e.processor.createAppearancePreset();
+        e.processor.frozen.store(true);
+        e.processor.cameraYaw.store(.4f);
+        e.processor.custom.set("layoutColumns",1);
+        e.processor.custom.set("showScene",0);
+        for(int layout=0;layout<4;++layout) {
+            e.processor.layoutMode.store(layout);e.syncControls();
+            e.setSize(1280,layout==1?390:layout==2?570:820);
+            if(layout==3){e.dashboardOffset=150;e.resized();}
+            const auto appearance=e.processor.createAppearancePreset();
+            const auto modules=e.moduleAreas();const auto size=e.getBounds();
+            const auto offset=e.dashboardOffset;
+            e.setSceneExpanded(true);
+            require(e.processor.sceneExpanded.load(),"Expand must commit the presentation flag");
+            require(e.moduleAreas()[0]==e.contentArea(),"Expanded scene must occupy all available content");
+            for(std::size_t i=1;i<6;++i)require(e.moduleAreas()[i].isEmpty(),"Expanded scene must hide every meter module");
+            require(e.sceneClip.getBounds()==juce::Rectangle<int>(0,40,e.getWidth(),e.getHeight()-40),"Expanded viewport must fill the editor below the restore bar");
+            require(e.visualSurface.getBounds()==e.sceneClip.getLocalBounds(),"Expanded GPU surface must fill its viewport without dashboard insets");
+            require(e.expandScene.isVisible() && e.expandScene.getToggleState(),"Restore control must remain accessible");
+            require(!e.layout.isVisible() && !e.customise.isVisible() && !e.waveWindowChoice.isVisible()
+                    && !e.waveStyleChoice.isVisible() && !e.dashboardScroll.isVisible(),"Expanded mode must hide dashboard controls");
+            require(e.processor.createAppearancePreset()==appearance && e.processor.frozen.load()
+                    && e.processor.cameraYaw.load()==.4f,"Expansion must preserve appearance, freeze and camera");
+            require(e.getBounds()==size,"Expansion must preserve the host-owned window bounds");
+            require(e.keyPressed(juce::KeyPress(juce::KeyPress::escapeKey)),"Escape must restore the meters");
+            require(!e.processor.sceneExpanded.load() && e.moduleAreas()==modules && e.dashboardOffset==offset,
+                    "Restoring must recover the original module bounds and custom scroll");
+            require(e.layout.isVisible() && e.customise.isVisible() && !e.expandScene.getToggleState(),"Restoring must reveal dashboard controls");
+        }
+        e.processor.sceneExpanded.store(true);e.syncControls();
+        require(e.expandScene.getToggleState() && !e.layout.isVisible(),"Host-restored expansion must synchronize the live editor");
+        e.setSize(3840,2160);
+        require(e.visualSurface.getBounds()==juce::Rectangle<int>(0,0,3840,2120),"Expanded content must support a 4K-sized host window");
+        e.processor.sceneExpanded.store(false);e.syncControls();
+        require(!e.expandScene.getToggleState() && e.layout.isVisible(),"Host-restored collapse must synchronize the live editor");
+        e.processor.applyAppearancePreset(original);e.processor.frozen.store(false);e.syncControls();
+    }
     static void seedStereo(Editor& editor) {
         editor.stereoTrails.clear(); editor.meterTime = 4.; editor.stereoEnvelope = .72f;
         for (int trace = 0; trace < 64; ++trace) {
@@ -262,6 +300,7 @@ int main() {
         EditorPerformanceProbe::stop(editor);
         require(!editor.isShowing(), "CPU benchmark must never open a native editor window");
         EditorPerformanceProbe::unavailableGraphicsTests();
+        EditorPerformanceProbe::expandedSceneTests(editor);
         EditorPerformanceProbe::stereoTests(editor);
         EditorPerformanceProbe::spectrogramTests(editor);
         report->setProperty("passed", true);

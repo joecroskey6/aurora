@@ -228,6 +228,7 @@ void apply (AuroraAudioProcessor& processor, const juce::MemoryBlock& data)
 void testState()
 {
     AuroraAudioProcessor original;
+    require (!original.sceneExpanded.load(), "New instances must show the normal meter dashboard");
     require (original.visualMode.load() == 2 && original.palette.load() == auroraDefaultPalette
              && original.palette.load() == 7 && original.themeMode.load() == auroraFlightDeckTheme,
              "New instances must default to Pearl Cloud, Phosphor and Flight Deck");
@@ -254,6 +255,7 @@ void testState()
     original.waveformZoom.store (2);
     original.visualGain.store (1.75f);
     original.frozen.store (true);
+    original.sceneExpanded.store (true);
     original.cameraYaw.store (1.25f);
     original.cameraPitch.store (-0.625f);
     original.cameraZoom.store (1.875f);
@@ -274,7 +276,7 @@ void testState()
             && restored.waveformStyle.load() == 1 && restored.waveformZoom.load() == 2
             && restored.cameraYaw.load() == 1.25f && restored.cameraPitch.load() == -0.625f
             && restored.cameraZoom.load() == 1.875f
-            && restored.frozen.load();
+            && restored.frozen.load() && restored.sceneExpanded.load();
     };
     require (correct(), "Every visual setting must survive host state round trip");
     restored.setStateInformation (nullptr, 0);
@@ -289,6 +291,14 @@ void testState()
     future.setProperty ("version", 999, nullptr);
     apply (restored, encode (future));
     require (correct(), "Unrecognized state type/version must leave settings unchanged");
+    original.sceneExpanded.store (false);
+    juce::MemoryBlock contractedState;
+    original.getStateInformation (contractedState);
+    apply (restored, contractedState);
+    require (!restored.sceneExpanded.load() && restored.layoutMode.load() == 2,
+             "A collapsed host session must restore over an expanded editor without changing its layout");
+    apply (restored, stored);
+    require (correct(), "An expanded host session must restore again after a collapsed session");
 
     juce::ValueTree legacy ("AuroraMetersState");
     legacy.setProperty ("version", 1, nullptr);
@@ -309,6 +319,17 @@ void testState()
     require (restored.cameraYaw.load() == 0.0f && restored.cameraPitch.load() == 0.0f
              && restored.cameraZoom.load() == 1.0f,
              "Earlier presets without camera state must restore the default view");
+    require (!restored.sceneExpanded.load(), "Earlier host sessions without expansion state must show the dashboard");
+    legacy.setProperty ("sceneExpanded", "true", nullptr);
+    apply (restored, encode (legacy));
+    require (restored.sceneExpanded.load(), "Explicit textual true must restore an expanded session");
+    for (const auto* value : { "false", "0", "2", "-1", "1garbage", "invalid" }) {
+        restored.sceneExpanded.store (true);
+        legacy.setProperty ("sceneExpanded", value, nullptr);
+        apply (restored, encode (legacy));
+        require (!restored.sceneExpanded.load(), "False or malformed expansion values must restore the dashboard");
+    }
+    legacy.removeProperty ("sceneExpanded", nullptr);
 
     require (restored.waveformWindow.load() == 1 && restored.waveformColour.load() == 0
              && restored.waveformStyle.load() == 0 && restored.waveformZoom.load() == 0,
@@ -642,15 +663,18 @@ void testAppearancePresets()
     source.cameraPitch.store (-1.125f);
     source.cameraZoom.store (1.875f);
     source.frozen.store (true);
+    source.sceneExpanded.store (true);
     varyCustomization (source.custom, 3);
     const auto preset = source.createAppearancePreset();
     const auto xml = juce::XmlDocument::parse (preset);
     require (xml != nullptr && xml->hasTagName ("AuroraAppearancePreset")
-             && xml->getIntAttribute ("version") == 1 && !xml->hasAttribute ("frozen"),
-             "Appearance export must use its own versioned schema and omit transport freeze");
+             && xml->getIntAttribute ("version") == 1 && !xml->hasAttribute ("frozen")
+             && !xml->hasAttribute ("sceneExpanded"),
+             "Appearance export must omit session-only freeze and scene expansion");
     require (target.applyAppearancePreset (preset) && target.createAppearancePreset() == preset,
              "All old and new appearance controls must round-trip as a standalone preset");
-    require (!target.frozen.load(), "An appearance preset must not restore its author's freeze state");
+    require (!target.frozen.load() && !target.sceneExpanded.load(),
+             "An appearance preset must not restore its author's freeze or scene expansion");
 
     // Use measured history without an asynchronous worker, so any unintended
     // meter reset or buffer mutation can be distinguished from normal new audio.
@@ -673,29 +697,34 @@ void testAppearancePresets()
             && target.droppedSamples.load() == 987 && target.isReceiving.load();
     };
     for (bool frozen : { false, true })
+    for (bool expanded : { false, true })
     {
         target.frozen.store (frozen);
+        target.sceneExpanded.store (expanded);
         target.resetAppearance();
         require (target.createAppearancePreset() == defaults.createAppearancePreset(),
                  "Reset appearance must restore new-instance defaults including all custom controls");
-        require (target.frozen.load() == frozen && analysisUnchanged(),
-                 "Reset appearance must preserve freeze and measured audio history");
-        require (target.applyAppearancePreset (preset) && target.frozen.load() == frozen && analysisUnchanged(),
-                 "Applying a preset must preserve freeze, meters, history and worker diagnostics");
+        require (target.frozen.load() == frozen && target.sceneExpanded.load() == expanded && analysisUnchanged(),
+                 "Reset appearance must preserve freeze, scene expansion and measured audio history");
+        require (target.applyAppearancePreset (preset) && target.frozen.load() == frozen
+                 && target.sceneExpanded.load() == expanded && analysisUnchanged(),
+                 "Applying a preset must preserve freeze, scene expansion, meters, history and worker diagnostics");
     }
     auto withUnknown = juce::XmlDocument::parse (preset);
     withUnknown->setAttribute ("custom_futureControl", "unknown future format");
     withUnknown->setAttribute ("frozen", "0");
-    require (target.applyAppearancePreset (withUnknown->toString()) && target.frozen.load()
+    withUnknown->setAttribute ("sceneExpanded", "0");
+    require (target.applyAppearancePreset (withUnknown->toString()) && target.frozen.load() && target.sceneExpanded.load()
              && target.createAppearancePreset() == preset,
-             "Unknown preset attributes must be ignored, including freeze from another application");
+             "Unknown preset attributes must be ignored, including session-only freeze and scene expansion");
     require (target.applyAppearancePreset (juce::String ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n") + preset),
              "Presets may include a standard XML declaration");
 
     const auto beforeInvalid = target.createAppearancePreset();
     const auto reject = [&] (const juce::String& malformed) {
         require (!target.applyAppearancePreset (malformed), "Invalid appearance preset must be rejected");
-        require (target.createAppearancePreset() == beforeInvalid && target.frozen.load() && analysisUnchanged(),
+        require (target.createAppearancePreset() == beforeInvalid && target.frozen.load()
+                 && target.sceneExpanded.load() && analysisUnchanged(),
                  "Failed preset validation must not partially change any appearance or measurement state");
     };
     for (const auto* malformed : {
@@ -733,7 +762,8 @@ void testAppearancePresets()
              "Imported presets must enforce bounds and control steps consistently");
     require (target.custom.get ("sceneExposure") == 1 && target.custom.get ("waveMidColour") == 0x62ebd0,
              "Partial presets must fill missing new customization with the documented defaults");
-    require (target.frozen.load() && analysisUnchanged(), "Clamped imports must also preserve measured state");
+    require (target.frozen.load() && target.sceneExpanded.load() && analysisUnchanged(),
+             "Clamped imports must also preserve scene expansion and measured state");
 }
 
 bool sameWaveformColumn (const WaveformColumn& a, const WaveformColumn& b)
@@ -813,7 +843,8 @@ void testFactoryPresets()
         require (name.trim().isNotEmpty() && name.length() <= 32 && names.insert (name.toStdString()).second,
                  "Factory look names must be concise, nonempty and unique");
         require (xml != nullptr && xml->hasTagName ("AuroraAppearancePreset")
-                 && xml->getIntAttribute ("version") == 1 && !xml->hasAttribute ("frozen"),
+                 && xml->getIntAttribute ("version") == 1 && !xml->hasAttribute ("frozen")
+                 && !xml->hasAttribute ("sceneExpanded"),
                  "Every factory look must be a valid appearance-only preset");
         for (int attribute = 0; attribute < defaultXml->getNumAttributes(); ++attribute)
             require (xml->hasAttribute (defaultXml->getAttributeName (attribute)),
@@ -868,10 +899,11 @@ void testFactoryPresets()
             target.cameraYaw.store (2); target.cameraPitch.store (-2); target.cameraZoom.store (2.4f);
             target.visualGain.store (3.25f); target.waveformWindow.store (3); target.waveformColour.store (1);
             target.waveformStyle.store (2); target.waveformZoom.store (2); target.frozen.store (frozen);
+            target.sceneExpanded.store (frozen);
             require (target.applyAppearancePreset (factory) && target.createAppearancePreset() == canonical,
                      "Factory selection must replace a previously modified look completely and deterministically");
-            require (target.frozen.load() == frozen && unchangedAnalysis(),
-                     "Factory selection must preserve every measured value, PCM statistic, freeze and worker diagnostic");
+            require (target.frozen.load() == frozen && target.sceneExpanded.load() == frozen && unchangedAnalysis(),
+                     "Factory selection must preserve measurements, PCM statistics, freeze, scene expansion and worker diagnostics");
         }
     }
     require (palettes.size() >= 16 && layouts.size() >= 3 && scenes.size() >= 4,
@@ -879,8 +911,9 @@ void testFactoryPresets()
     for (const auto* invalid : { "", "<", "<Other/>", "<AuroraAppearancePreset version=\"999\"/>" })
         require (findFactoryPreset (invalid) == -1, "Malformed or unsupported appearance XML must have no factory identity");
     target.resetAppearance(); clean.resetAppearance();
-    require (target.createAppearancePreset() == clean.createAppearancePreset() && target.frozen.load() && unchangedAnalysis(),
-             "Reset after browsing factory looks must restore defaults without losing analysis or freeze");
+    require (target.createAppearancePreset() == clean.createAppearancePreset() && target.frozen.load()
+             && target.sceneExpanded.load() && unchangedAnalysis(),
+             "Reset after browsing factory looks must preserve analysis, freeze and scene expansion");
 }
 }
 

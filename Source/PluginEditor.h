@@ -46,6 +46,7 @@ private:
     juce::ComboBox mode, palette, layout, themeChoice, waveWindowChoice, waveColourChoice, waveStyleChoice, waveZoomChoice, factoryPresetChoice;
     VisualSurface visualSurface;
     juce::TextButton freeze{"Freeze"}, reset{"Reset"}, customise{"Customise"};
+    juce::TextButton expandScene{"Expand"};
     juce::TextButton factoryPresetPrevious{"Previous"}, factoryPresetNext{"Next"};
     int lastFactoryPreset = -1;
     double lastPresetSync = 0;
@@ -55,6 +56,7 @@ private:
     std::unique_ptr<juce::Component> customizationPanel;
     juce::Viewport customizationDropdown;
     bool customizationOpen = false;
+    bool observedSceneExpanded = false;
     std::array<int,8> observedChoices {{-1,-1,-1,-1,-1,-1,-1,-1}};
     double observedWaveSeconds = -1;
     int appliedLayout = -1;
@@ -65,6 +67,9 @@ private:
     void syncControls();
     void applyLayout();
     void setCustomizationOpen(bool);
+    void setSceneExpanded(bool);
+    void syncSceneExpansion();
+    juce::Rectangle<float> contentArea() const;
     juce::Component sceneClip;
     juce::ScrollBar dashboardScroll{true};
     double dashboardOffset=0;
