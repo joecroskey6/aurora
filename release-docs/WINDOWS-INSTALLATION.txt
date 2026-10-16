@@ -80,7 +80,7 @@ Do not mark these tests as passed until they have actually run on Windows.
 - Play mono and stereo audio at 44.1, 48 and 96 kHz and more than one buffer size.
   Check for dropouts; compare rendered/bounced audio with a bypassed reference
   for an unchanged audio path. A visual impression alone is not a null test.
-- Check all six scenes, camera orbit/zoom/reset, waveform history and Scope,
+- Check every scene and its variants, camera orbit/zoom/reset, waveform history and Scope,
   spectrogram, spectrum, stereo display and level meters.
 - Switch all four layouts and several presets. Open/close Customise; exercise
   the scroll area in a small window. Check freeze, reset and colour editing.

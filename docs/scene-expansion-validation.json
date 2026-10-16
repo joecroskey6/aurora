@@ -1,0 +1,3342 @@
+{
+  "date": "2026-10-16",
+  "product": "Aurora",
+  "version": "0.1.1",
+  "compiledProductionCommit": "853d66fd1e3bf406398861bc83a74dfab2187c39",
+  "sourceSha256": {
+    ".github/workflows/windows-host-check.yml": "d0ebcf3c15f7acda603a8b4032d38ac8fb4647c45a24b119062b7d8c68bed99c",
+    ".github/workflows/windows.yml": "8d6c8652de923a9eaaf5da13258b0d80b20a318016b6a36778b21b1cc769cd33",
+    "CMakeLists.txt": "82d7c16d7f5a8f10161c9ced53ea80ba8773142c80c1e43934990a5bc0e14e84",
+    "LICENSE": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+    "README.md": "a8fce392ec2c507ee1e376680244c37260b3ae6adf55b5295ebdd7f5d31b50e4",
+    "Source/Analysis.cpp": "e27ce3f7f40134eee86c2ba4a7bce0225d3c666d62c904032db1063a1bea34f3",
+    "Source/Analysis.h": "1697233bd295ca29daa32c61a4f9a981b227ab70c3c94260fbf97457c58d4ea9",
+    "Source/Customization.h": "7f1a5f34c81dbdd82298fe8512da6f534fd3854e510ab55634a90df0790c099d",
+    "Source/CustomizationPanel.cpp": "6410eb4998ec649172ecde7ac9acc5e241dd132a5e40bc2f39b550184ff4810e",
+    "Source/CustomizationPanel.h": "1ca0e624c1a8e58030a3cc46021c579a9d000eee0ac936ab140830d88ce478e4",
+    "Source/FactoryPresetBrowser.cpp": "56c077a67f4724592bb0d03140218627510ae0a8244897b57874ac8af38c2783",
+    "Source/FactoryPresetBrowser.h": "9f67b22924e14d0b6658bd07462b85c705868e4af1956c1cbc092c984aa850ef",
+    "Source/FactoryPresets.cpp": "f9cbd5360d793cacca504cef6a81a476176c6b504eee7a3775841ca61622f5eb",
+    "Source/FactoryPresets.h": "00c19a76aba432973b8738be276bee97f3aa66679772d46a50f315145f2c547c",
+    "Source/Palette.h": "f2264d49098e52a61b7d2e32d40487b2b074f797f653588267a52ac1cd0118af",
+    "Source/PearlCloudShader.h": "4505b60faa83de222a9d6accfc0d7ec06b5339e0be4669f16d78c2adc886afa8",
+    "Source/PearlFlow.h": "57909cc0f72204b7793e992474382de74426ed0955c04a5826e369d41e134ae0",
+    "Source/PearlFlowMaterial.h": "cda268508d7cc772b89a6ceabacbe686de5786092fe5cf5666713e482a76eee7",
+    "Source/PluginEditor.cpp": "102a56a0a23eeadd99614a4aae8d29067785d4ece26aef105ac3a25c3237ded8",
+    "Source/PluginEditor.h": "692905b94020cf67aa0537490f3ec8f1a95371170c6e691cd648a30544f8dcc1",
+    "Source/PluginProcessor.cpp": "78b57d4100341f404e000b09fb5f0bc307a085cfff2afa7eba29e0222962258f",
+    "Source/PluginProcessor.h": "d65554e4d3c7c494d8fbf83d85978689d028a5f1326ee81061ec5bbc12b3099b",
+    "Source/SceneMaterial.h": "b8b3ae57902311881f153074edd0077f78993ba558cae6fba073cb71856e48e7",
+    "Source/SpectralProjection.h": "390cbacdd1e2a40ce8ff5e2bf18554300b54f94531c67ccda21ab9fec5db281a",
+    "Source/Typography.h": "9af4d9239107334d40e86b624c9c783fa67cc36846ace8e4f4e29804f570e874",
+    "Source/VisualFraming.h": "deb850ce9aed789b835ff389eb4296de7d3b11c0df62dfe6a8184f80f66cf05b",
+    "Source/VisualPostProcess.h": "c1b7730f41571992da858a29766c235a068c06ec45b4fd00ba26b562ebb7006a",
+    "Source/VisualReactivity.h": "9a2713185a419ca2a41e76cd58e52b9e7137a97d403d8f83ddc793319f112bdd",
+    "Source/VisualSurface.cpp": "fb27b7d90fdff4e4ec0346cb2d174d71950dbbbe7cea966edad3147f2aa30626",
+    "Source/VisualSurface.h": "e7ee7ff7cfc9b3873a37baa9063e4b4788a5c1a5cf9ee8f430a3bcfa9ada0c3e",
+    "Source/WaveformClock.h": "d3d0681113ac4682e20ee789de07e0780f184c6e3e52766ad09fc005b35051f0",
+    "Source/WaveformProjection.h": "dbbd6f1646d1f238984106a7cc7242a51f7aa9bb29decd16f72c89fedbdb98df",
+    "Source/WaveformRibbon.h": "63462d71937b0694b17c79582dab5c89dc8e609afd4b05eb09f060cb750521fa",
+    "THIRD_PARTY.md": "6102146f3b4cfbbcc2bf7ff4a7ee5a25b516e61468c4b05f82314999627bedd9",
+    "Tests/AnalysisTests.cpp": "c1f399d65f14c712bb4bb19eea66693b7c64507322b1b392a48ada917401830d",
+    "Tests/CustomizationRenderingTests.cpp": "bc849fc1498acbdd2cce22eca89fa7656dad10d074c89caa1a7d90efebb81085",
+    "Tests/EditorPerformanceTests.cpp": "b8cf161b298770826460d21ad9d8d9f8856a593d07ad59b8f5bc0d54ba7ff815",
+    "Tests/FactoryPresetRenderingTests.cpp": "837a8e8dd2fdc31c115cec77249bcd8e184a28fa8f48e11d4650ad8054ddc1c0",
+    "Tests/Preview.cpp": "a63d517c3670907ccb0221081e7500fdb3d25e0d19f321f68233a84b748c99e4",
+    "Tests/ProcessorTests.cpp": "e8d7ab3e5b75e4b9430c1586c2446a44425e45332658d9e0ec8ca394a5b291c7",
+    "Tests/RenderingTests.cpp": "96a119e898533c0a8f980edbd1c8de24ce085a3e78907a723a137c2ff0d6edf9",
+    "Tests/VisualFramingTests.cpp": "02c40e37efb55caa5e08c9f88ca58df83055c1cdec5e52022c759b288a9b8a45",
+    "Tests/VisualReactivityTests.cpp": "bdffeb673e2efbdf767824757342198349cc0df2ceba91ee12878b96bae68c6b",
+    "Tests/VisualSurfacePerformanceTests.cpp": "ec4f86d4dac9c50ecbba47288aa2dcbf221114cc048850e6eb192e72678c4ab0",
+    "Tests/WaveformClockTests.cpp": "74cc817fac3b78c81d8e3c6df839b1e5a8f17d2f39fdfa514a7de98f65c20ec3",
+    "Tests/WaveformMusic.h": "3b2502466d41d5e179c03d24360c7e7822296e5d3a055793a0f0a63b65d53d25",
+    "Tests/WaveformProjectionTests.cpp": "8b24721573f5a737002489297b5efa13e929b03d6202fa03908f28fb41fa3b41",
+    "Tests/WaveformRenderingTests.cpp": "0025b5c912ec7442771f08cfa26f0b486070ce9afe5a206f77692dc96a8d8864",
+    "Tests/WaveformRibbonTests.cpp": "3f7939b4c2ac2e660e2283c7be71c241b766ce2f817f795e4377a8db224b27f1",
+    "Tests/WindowsPackagingTests.py": "e68cb822403586eb2218d4ab4fe86002a8c63828b2a3fd3b592963aaa2925ca0",
+    "release-docs/DOWNLOAD-README.txt": "a7deecf3dea7223fa5c8550adc3f1207849f4571b6e09ecf8490e1afa6cc15f3",
+    "release-docs/FLUID-LICENSE.txt": "8c8afc4c6077db2909709a1e749da691631bf715a0944a47e3c4ea4ee82adf54",
+    "release-docs/INSTALLATION.html": "dbe9bfab0a2aab686e1bb530a77539cc91e6549aa2164f0d56f0e50e32b20d8f",
+    "release-docs/WINDOWS-INSTALLATION.txt": "1ebd2f37683d62496c4e3f98f915cafc381bc85329a1ab2427cc2e02c4c512ee",
+    "scripts/build-technical-stack.py": "9b44557d41e70f375fce7499207a0d811cff1705d7de7c9d367dfe172023b41d",
+    "scripts/build-windows.ps1": "d0d70c61a22f170c7dbcd404f8c13ff065526b393052f0f5a1d4ba826fb1e562",
+    "scripts/build.sh": "2b9fe3921100909a6d7d1aed97d8b3b915a173017782ddc50516f90a9ba7c344",
+    "scripts/install-macos.sh": "d133a0957389d306478d02fec5611c03c5b28927a04a9c7c455c9d39438c5160",
+    "scripts/package-release.py": "7dda85d73124050e91e0d1a65421874c45d3ad1474cadef08d0d0914ce70f6f3",
+    "scripts/package-windows.py": "3fcdf3e2ed1567ba009faa7d454e761ce9183809c6ebc223ce23ed6c1f68afaf",
+    "scripts/package.py": "e2bcb620562f6f8d3877d39927ffd7615b714f33838964e9a64f0a371291d409",
+    "scripts/render-preview-video.swift": "a3a6e8b3996e195fc82d5c3007849051d9a3f3ad38ffa46d04f4a8d142a9f070",
+    "scripts/sign-macos.sh": "4bd0b8f744f536440056337eda325640c82339709c1161db686afe1e7d99d487",
+    "scripts/sync-pearl-cloud.py": "680dbf71bf310a40d83d6e12a14e0c3d809a66f58948cb73b78da3146abdb578"
+  },
+  "buildBundles": {
+    "AU": {
+      "sha256": "389eae0b9c42ba0affe4f8c8107c4556b4cece4f1f8da99aa516237730cdf43f",
+      "installedMatches": true
+    },
+    "VST3": {
+      "sha256": "257ed24aefd611ebc587759edc262e8d72da0d2df6d175b0efaec0a34488eb25",
+      "installedMatches": true
+    }
+  },
+  "ctest": {
+    "passed": 8,
+    "failed": 0,
+    "logSha256": "449c955ef5186cdab38db00d425eb7a8b39a75b2da97a209b159e25247d4377d"
+  },
+  "audioUnitValidation": {
+    "passed": true,
+    "logSha256": "669cfbff4e7c043bab5d32f16465f266ffaad8aa5d5932e407d416f6d8a92e98"
+  },
+  "customization": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "32 seconds of original procedural PCM analyzed",
+        "passed": true
+      },
+      {
+        "name": "Header layout 1 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Header layout 1 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Header layout 1 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "Header layout 1 resizes its editor",
+        "passed": true
+      },
+      {
+        "name": "header-layout-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "header-layout-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 resizes its editor",
+        "passed": true
+      },
+      {
+        "name": "header-layout-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "header-layout-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Header layout 0 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Header layout 0 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Header layout 0 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "Header layout 0 resizes its editor",
+        "passed": true
+      },
+      {
+        "name": "header-layout-0-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "header-layout-0-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Header layout 3 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Header layout 3 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Header layout 3 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "Header layout 3 resizes its editor",
+        "passed": true
+      },
+      {
+        "name": "header-layout-3-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "header-layout-3-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "Header layout 2 resizes its editor",
+        "passed": true
+      },
+      {
+        "name": "header-layout-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "header-layout-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Actual editor Customise button exists",
+        "passed": true
+      },
+      {
+        "name": "Editor Customise opens an embedded dropdown",
+        "passed": true
+      },
+      {
+        "name": "Customise creates no additional desktop window",
+        "passed": true
+      },
+      {
+        "name": "Customise stays inside the plugin's native peer",
+        "passed": true
+      },
+      {
+        "name": "Customise dropdown fits inside editor",
+        "passed": true
+      },
+      {
+        "name": "editor-owned-customize-dropdown native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "editor-owned-customize-dropdown visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Open dropdown layout 1 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Open dropdown layout 1 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Layout changes while Customise is open",
+        "passed": true
+      },
+      {
+        "name": "Header layout selection reveals the chosen meters",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-layout-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-layout-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Embedded dropdown stays within layout 1",
+        "passed": true
+      },
+      {
+        "name": "Small layouts preserve the full settings content",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation is reachable by scrolling layout 1",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-reopen-layout-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-reopen-layout-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Open dropdown layout 2 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Open dropdown layout 2 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Layout changes while Customise is open",
+        "passed": true
+      },
+      {
+        "name": "Header layout selection reveals the chosen meters",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-layout-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-layout-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Embedded dropdown stays within layout 2",
+        "passed": true
+      },
+      {
+        "name": "Small layouts preserve the full settings content",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation is reachable by scrolling layout 2",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-reopen-layout-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-customize-reopen-layout-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 1 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 1 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 1 updates the actual editor",
+        "passed": true
+      },
+      {
+        "name": "Embedded Layout control keeps Customise open",
+        "passed": true
+      },
+      {
+        "name": "embedded-layout-control-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-layout-control-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 2 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 2 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Embedded layout 2 updates the actual editor",
+        "passed": true
+      },
+      {
+        "name": "Embedded Layout control keeps Customise open",
+        "passed": true
+      },
+      {
+        "name": "embedded-layout-control-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "embedded-layout-control-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Customise toggles closed without closing editor",
+        "passed": true
+      },
+      {
+        "name": "Customise reuses its embedded dropdown",
+        "passed": true
+      },
+      {
+        "name": "Reopening Customise still creates no desktop window",
+        "passed": true
+      },
+      {
+        "name": "Escape closes embedded Customise",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion uses the actual visible editor button",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion has its normal accessible title",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion starts from persistent clip and GPU components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-expanded-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Restore uses the actual visible scene button",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 clears expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 restores normal meter bounds",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 restores the expansion button title",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the current editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 preserves the current native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 restores each control's previous visibility",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0 leaves Customise closed after returning to meters",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-0-restored-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion uses the actual visible editor button",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion has its normal accessible title",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion starts from persistent clip and GPU components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-expanded-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Escape is handled while the visual is expanded",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 clears expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 restores normal meter bounds",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 restores the expansion button title",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the current editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 preserves the current native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 restores each control's previous visibility",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1 leaves Customise closed after returning to meters",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-restored-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-1-restored-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion uses the actual visible editor button",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion has its normal accessible title",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion starts from persistent clip and GPU components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-expanded-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Restore uses the actual visible scene button",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 clears expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 restores normal meter bounds",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 restores the expansion button title",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the current editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 preserves the current native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 restores each control's previous visibility",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2 leaves Customise closed after returning to meters",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-restored-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-2-restored-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Expansion fixture has a scrollable Custom dashboard",
+        "passed": true
+      },
+      {
+        "name": "Custom expansion starts from a nonzero scroll position",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion uses the actual visible editor button",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion has its normal accessible title",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion starts from persistent clip and GPU components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-expanded-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Escape is handled while the visual is expanded",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 clears expanded view state",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 restores normal meter bounds",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 restores the expansion button title",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the current editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 preserves the current native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 restores each control's previous visibility",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 restores the Custom layout scroll position",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3 leaves Customise closed after returning to meters",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-layout-3-restored-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Expansion fixture starts with Customise open",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion uses the actual visible editor button",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion has its normal accessible title",
+        "passed": true
+      },
+      {
+        "name": "Scene expansion starts from persistent clip and GPU components",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "Expanded from Customise preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-customise-expanded-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene stores expanded view state",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene fills the editor below its compact toolbar",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene removes the normal scene inset",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene exposes an accessible restore button inside the toolbar",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene hides meter selectors, palette controls and dashboard scrolling",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene closes the embedded Customise dropdown",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene preserves the existing editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "Resized expanded scene preserves the existing native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor has a native OpenGL surface for capture",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor GPU surface intersects its real editor clip",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor reads native GPU pixels without GL errors",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor contains rendered scene detail rather than a blank framebuffer",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor native-resolution GPU PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-expanded-resize-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Escape is handled while the visual is expanded",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize retains the original scene components",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize keeps the GPU surface parent and native peer",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize keeps the native GPU component visible",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize creates no additional native window",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize preserves all appearance settings",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize preserves the previous meter layout",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize preserves display freeze and meter history",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize retains the attached OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize retains the underlying native OpenGL context",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize clears expanded view state",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize restores normal meter bounds",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize restores the expansion button title",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize preserves the current editor dimensions",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize preserves the current native window dimensions",
+        "passed": true
+      },
+      {
+        "name": "Escape after expanded resize leaves Customise closed after returning to meters",
+        "passed": true
+      },
+      {
+        "name": "scene-resized-escape-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scene-resized-escape-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "colours-top-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "colours-top-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceTheme control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearancePalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop0 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop1 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop2 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "interfaceOverride control fits its row",
+        "passed": true
+      },
+      {
+        "name": "backgroundColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panelColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "textColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gridColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "clipColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "paletteMiddle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "paletteReverse control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "colours-module-overrides-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "colours-module-overrides-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceTheme control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearancePalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop0 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop1 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gradientStop2 control fits its row",
+        "passed": true
+      },
+      {
+        "name": "interfaceOverride control fits its row",
+        "passed": true
+      },
+      {
+        "name": "backgroundColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panelColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "textColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "gridColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "clipColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "paletteMiddle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "paletteReverse control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneOwnPalette control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourA control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourB control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneColourC control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Waveform navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-waveform-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-waveform-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveStyle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveWindow control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveZoom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLowColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveMidColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveHighColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveDensity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCore control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCrest control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveBands control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveFill control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGradient control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveSeconds control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLabels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveChannels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Spectrum navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-spectrum-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-spectrum-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "spectrumFloor control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumCeiling control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumMinHz control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumMaxHz control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumLine control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumFill control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumTrail control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrumGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Spectrogram navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-spectrogram-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-spectrogram-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "spectrogramFloor control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramCeiling control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramSeconds control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramContrast control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "spectrogramReverse control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Stereo navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-stereo-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-stereo-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "stereoTrail control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoBrightness control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoAutoGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "stereoRotation control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Levels navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-levels-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-levels-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "levelsFloor control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsWarning control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsRms control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsHold control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsSegments control fits its row",
+        "passed": true
+      },
+      {
+        "name": "levelsLoudness control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Scene navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-scene-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-scene-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceIntensity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceCameraYaw control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceCameraPitch control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceCameraZoom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneSpeed control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneSensitivity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneBloom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneExposure control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneSaturation control fits its row",
+        "passed": true
+      },
+      {
+        "name": "sceneFrameRate control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Layout navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-layout-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-layout-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation exists",
+        "passed": true
+      },
+      {
+        "name": "tab-presets-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "tab-presets-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation exists",
+        "passed": true
+      },
+      {
+        "name": "Preset status fits the minimum settings window",
+        "passed": true
+      },
+      {
+        "name": "presets-minimum-window-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "presets-minimum-window-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Waveform navigation exists",
+        "passed": true
+      },
+      {
+        "name": "waveform-controls-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-controls-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveStyle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveWindow control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveZoom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLowColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveMidColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveHighColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveDensity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCore control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCrest control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveBands control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveFill control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGradient control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveSeconds control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLabels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveChannels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveStyle selector exists",
+        "passed": true
+      },
+      {
+        "name": "waveDensity slider exists",
+        "passed": true
+      },
+      {
+        "name": "waveGain slider exists",
+        "passed": true
+      },
+      {
+        "name": "Native controls write waveform state",
+        "passed": true
+      },
+      {
+        "name": "waveform-live-edits-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-live-edits-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveStyle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveWindow control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveZoom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLowColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveMidColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveHighColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveDensity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCore control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCrest control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveBands control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveFill control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGradient control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveSeconds control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLabels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveChannels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveform-live-edits-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-live-edits-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Waveform low-band colour button exists",
+        "passed": true
+      },
+      {
+        "name": "Native RGB picker opens its hex editor",
+        "passed": true
+      },
+      {
+        "name": "Native hex input stores arbitrary exact RGB",
+        "passed": true
+      },
+      {
+        "name": "native-rgb-picker native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "native-rgb-picker visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Frozen Scope redraw is identical",
+        "passed": true
+      },
+      {
+        "name": "Scope renders waveGrid changes",
+        "passed": true
+      },
+      {
+        "name": "Scope renders waveLabels changes",
+        "passed": true
+      },
+      {
+        "name": "Scope renders waveCrest changes",
+        "passed": true
+      },
+      {
+        "name": "Scope fill changes a downsampled min/max envelope",
+        "passed": true
+      },
+      {
+        "name": "Scope display gain changes measured geometry",
+        "passed": true
+      },
+      {
+        "name": "Scope channel view 1 differs from stereo",
+        "passed": true
+      },
+      {
+        "name": "Scope channel view 2 differs from stereo",
+        "passed": true
+      },
+      {
+        "name": "Scope channel view 3 differs from stereo",
+        "passed": true
+      },
+      {
+        "name": "Scope Left and Right show their distinct measured PCM",
+        "passed": true
+      },
+      {
+        "name": "Custom time overrides Scope rendering",
+        "passed": true
+      },
+      {
+        "name": "Custom-time history is independent of stored Scope selector",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveGrid",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveLabels",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveChannels",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveGain",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveFill",
+        "passed": true
+      },
+      {
+        "name": "Scope common control remains applicable: waveCrest",
+        "passed": true
+      },
+      {
+        "name": "Scrolling-only density is visibly disabled in Scope",
+        "passed": true
+      },
+      {
+        "name": "scope-common-controls-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "scope-common-controls-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime toggle exists",
+        "passed": true
+      },
+      {
+        "name": "Panel custom-time toggle leaves Scope for history",
+        "passed": true
+      },
+      {
+        "name": "waveSeconds slider exists",
+        "passed": true
+      },
+      {
+        "name": "History material controls re-enable with custom time",
+        "passed": true
+      },
+      {
+        "name": "panel-custom-time-enables-history-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-custom-time-enables-history-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveStyle control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveWindow control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveZoom control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLowColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveMidColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveHighColour control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveDensity control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCore control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCrest control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveBands control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveFill control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGradient control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGain control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveSeconds control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveGrid control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveLabels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "waveChannels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panel-custom-time-enables-history-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-custom-time-enables-history-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceWaveWindow selector exists",
+        "passed": true
+      },
+      {
+        "name": "Panel explicit Scope choice disables custom time",
+        "passed": true
+      },
+      {
+        "name": "waveCustomTime toggle exists",
+        "passed": true
+      },
+      {
+        "name": "Editor waveform time selector exists",
+        "passed": true
+      },
+      {
+        "name": "Editor explicit time choice disables custom time",
+        "passed": true
+      },
+      {
+        "name": "editor-explicit-window-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "editor-explicit-window-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "all-module-palettes-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "all-module-palettes-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "ranges-and-interface-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "ranges-and-interface-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-0-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-0-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-3-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "waveform-channel-3-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Layout navigation exists",
+        "passed": true
+      },
+      {
+        "name": "layout-controls-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "layout-controls-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 1 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 1 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 1 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-1-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-1-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-1-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-1-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 2 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 2 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 2 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-2-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-2-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-2-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-2-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 0 selector exists",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 0 keeps its pending menu selection through a timer tick",
+        "passed": true
+      },
+      {
+        "name": "Settings layout 0 commits after asynchronous delivery",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-0-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-0-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-0-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "panel-layout-0-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns slider exists",
+        "passed": true
+      },
+      {
+        "name": "Column edits automatically choose Custom layout",
+        "passed": true
+      },
+      {
+        "name": "custom-three-columns-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-three-columns-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns slider exists",
+        "passed": true
+      },
+      {
+        "name": "custom-two-columns-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-two-columns-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns slider exists",
+        "passed": true
+      },
+      {
+        "name": "custom-one-column-top-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-one-column-top-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "One-column custom layout exposes a scrollbar",
+        "passed": true
+      },
+      {
+        "name": "custom-one-column-bottom-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-one-column-bottom-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform slider exists",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns slider exists",
+        "passed": true
+      },
+      {
+        "name": "Module order edit is stored",
+        "passed": true
+      },
+      {
+        "name": "custom-reordered-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-reordered-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "appearanceLayout control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutColumns control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutGap control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutSceneWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutTopHeight control fits its row",
+        "passed": true
+      },
+      {
+        "name": "layoutLevelWidth control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "orderLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showScene control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrum control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showSpectrogram control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showWaveform control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showStereo control fits its row",
+        "passed": true
+      },
+      {
+        "name": "showLevels control fits its row",
+        "passed": true
+      },
+      {
+        "name": "custom-reordered-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-reordered-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "custom-hidden-modules-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "custom-hidden-modules-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Presets navigation exists",
+        "passed": true
+      },
+      {
+        "name": "restored-default-settings native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "restored-default-settings visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "restored-default-editor native PNG saved",
+        "passed": true
+      },
+      {
+        "name": "restored-default-editor visible top-level controls fit",
+        "passed": true
+      },
+      {
+        "name": "Native controls notify the editor",
+        "passed": true
+      },
+      {
+        "name": "QA never delivers or modifies audio after prefill",
+        "passed": true
+      },
+      {
+        "name": "Expanded scenes and Studio/Custom restores contain native GPU captures",
+        "passed": true
+      }
+    ],
+    "captureCount": 64,
+    "nativeGpuCaptureCount": 8,
+    "nativeOpenGLContextIdentityComparisons": 11,
+    "gpuCaptures": [
+      {
+        "name": "scene-layout-0-expanded-editor",
+        "width": 2560,
+        "height": 1560,
+        "sampledColours": 8246,
+        "editorBounds": "0 40 1280 780",
+        "clipBounds": "0 40 1280 780",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-layout-0-restored-editor",
+        "width": 1474,
+        "height": 848,
+        "sampledColours": 3452,
+        "editorBounds": "22 118 737 424",
+        "clipBounds": "22 118 737 424",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-layout-1-expanded-editor",
+        "width": 2560,
+        "height": 700,
+        "sampledColours": 2488,
+        "editorBounds": "0 40 1280 350",
+        "clipBounds": "0 40 1280 350",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-layout-2-expanded-editor",
+        "width": 2560,
+        "height": 1060,
+        "sampledColours": 4847,
+        "editorBounds": "0 40 1280 530",
+        "clipBounds": "0 40 1280 530",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-layout-3-expanded-editor",
+        "width": 2560,
+        "height": 1560,
+        "sampledColours": 8246,
+        "editorBounds": "0 40 1280 780",
+        "clipBounds": "0 40 1280 780",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-layout-3-restored-editor",
+        "width": 2448,
+        "height": 416,
+        "sampledColours": 1005,
+        "editorBounds": "22 134 1224 208",
+        "clipBounds": "22 134 1224 208",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-customise-expanded-editor",
+        "width": 2560,
+        "height": 1560,
+        "sampledColours": 8246,
+        "editorBounds": "0 40 1280 780",
+        "clipBounds": "0 40 1280 780",
+        "beforeGlError": 0,
+        "readGlError": 0
+      },
+      {
+        "name": "scene-expanded-resize-editor",
+        "width": 2944,
+        "height": 1720,
+        "sampledColours": 9397,
+        "editorBounds": "0 40 1472 860",
+        "clipBounds": "0 40 1472 860",
+        "beforeGlError": 0,
+        "readGlError": 0
+      }
+    ],
+    "logSha256": "e4d2775d35219d045c7e145134c9c35cf2b000908eafe646f6c08f438fd87732"
+  },
+  "realDAWPlaybackTested": false,
+  "intelRuntimeTested": false,
+  "limitations": [
+    "Mac native UI/GPU checks ran in a dedicated synthetic-signal host on Apple Silicon.",
+    "Real DAW playback and Intel Mac runtime testing remain outstanding.",
+    "Ad hoc signed Mac preview; not Apple notarized."
+  ],
+  "testHarnessCorrection": "The restore screenshot now captures the restored window before fixture cleanup; all control containment checks remain enabled."
+}

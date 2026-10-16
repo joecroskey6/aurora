@@ -160,7 +160,7 @@ settings. Choosing **Meter strip** or **Waveform** from the header closes the
 dropdown and shows that layout immediately. Changes are saved in the host session.
 The expand icon beside **Customise** hides the dashboard and gives the visual
 the whole plug-in area below a compact restore bar. Click **Restore meters** or
-press Escape to recover the previous layout and Custom scroll position. Orbit
+press Escape with the plug-in focused to recover the previous layout and Custom scroll position. Orbit
 and zoom still work. You can resize the existing plug-in window for a larger
 view; expansion preserves its dimensions. Expanded view is saved with the DAW
 session and remains independent of appearance presets.

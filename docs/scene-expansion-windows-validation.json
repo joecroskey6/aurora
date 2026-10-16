@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-16",
+  "product": "Aurora",
+  "version": "0.1.1",
+  "platform": "Windows x64 VST3",
+  "sourceCommit": "853d66fd1e3bf406398861bc83a74dfab2187c39",
+  "build": {
+    "runId": 38831594790,
+    "url": "https://github.com/joecroskey6/aurora/actions/runs/38831594790",
+    "conclusion": "success",
+    "runner": "windows-2022",
+    "artifact": "aurora-windows-x64-preview"
+  },
+  "ctest": {
+    "passed": 8,
+    "failed": 0,
+    "seconds": 11.27,
+    "logSha256": "466b48cde3aee07fb6a8261055d2b70d3ae162bf10d3d8339f2d72426a037b3d"
+  },
+  "packagingTests": {
+    "passed": 8,
+    "failed": 0,
+    "seconds": 0.199
+  },
+  "binary": {
+    "format": "PE32+",
+    "machine": "AMD64",
+    "vst3FactoryExport": true,
+    "sha256": "11b7f36b7f8d23cff85cf53c017c7934aae308431f167e139bf7dcbb53bfb3f8",
+    "bytes": 5188096
+  },
+  "archives": {
+    "Aurora-0.1.1-windows-x64.zip": {
+      "sha256": "9265d4e884497a64bb766dc82255afb17748c3a7e1b80c6fe7b8a779d36fdc6c",
+      "bytes": 2276060
+    },
+    "Aurora-0.1.1-windows-source.zip": {
+      "sha256": "bbc689b36b7efa26b2b6f16e816cb4b53e22eb7c2726f3b037050e406944c022",
+      "bytes": 37481019
+    }
+  },
+  "artifactVerification": {
+    "passed": true,
+    "allChecksumsMatch": true,
+    "zipCRCPathsAndDuplicatesChecked": true,
+    "moduleVersion": "0.1.1",
+    "sourceManifestFilesVerified": 4341,
+    "auroraSourceFilesComparedWithCommit": 119,
+    "sourceComparison": {
+      "byteIdentical": 36,
+      "onlyCRLFvsLFDifferent": 83,
+      "note": "All archive manifest hashes use exact bytes. Git content comparison permits only CRLF checkout conversion for text, never binary differences."
+    },
+    "juceFilesComparedWithOfficialGitBlobs": 4222,
+    "juceReferenceCommit": "51a8a6d7aeae7326956d747737ccf1575e61e209",
+    "juceMissingFiles": [],
+    "excludedCachesAndCredentialPatternsFound": false
+  },
+  "pluginval": {
+    "runId": 38832826450,
+    "url": "https://github.com/joecroskey6/aurora/actions/runs/38832826450",
+    "conclusion": "success",
+    "version": "1.0.4",
+    "validatorArchiveSha256": "c08e61ce3b96db41636f8ec7e76f4c7e2c13ebdac7fa1b5a1f52b4f32ec715ab",
+    "result": {
+      "completedGuiTests": [
+        "Editor",
+        "Open editor whilst processing",
+        "Editor Automation"
+      ],
+      "guiTestsEnabled": true,
+      "inactivityTimeoutMs": 30000,
+      "guiCompletionEvidenceVerified": true,
+      "exitCode": 0,
+      "passed": true,
+      "graphicsAndDAWPlaybackCertified": false,
+      "completedValidationLogVerified": true,
+      "strictnessLevel": 5,
+      "randomSeed": 123456
+    },
+    "testedArtifact": {
+      "archiveSha256": "9265d4e884497a64bb766dc82255afb17748c3a7e1b80c6fe7b8a779d36fdc6c",
+      "binarySha256": "11b7f36b7f8d23cff85cf53c017c7934aae308431f167e139bf7dcbb53bfb3f8",
+      "archive": "Aurora-0.1.1-windows-x64.zip"
+    },
+    "logSha256": "2f8c61ad99ddcc356522147505f7ec3d0a8555cb231c0cd9f4419fd73686223a",
+    "reportedPluginVersion": "0.1.1",
+    "reportedLatencySamples": 0
+  },
+  "limitations": [
+    "Unsigned Windows preview.",
+    "GitHub Windows runner validation covers native VST3 loading, processing and editor lifecycle.",
+    "Real DAW playback, sustained GPU performance, GPU image quality and mixed-DPI displays require separate Windows desktop testing.",
+    "83 text files in the Windows source ZIP use CRLF checkout line endings; normalized contents exactly match the release commit."
+  ],
+  "realDAWPlaybackTested": false,
+  "windowsGPUVisualQualityTested": false,
+  "windowsMixedDPITested": false
+}

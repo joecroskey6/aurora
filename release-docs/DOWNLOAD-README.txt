@@ -1,4 +1,4 @@
-AURORA 0.1.0
+AURORA 0.1.1
 Free, open-source audio metering and reactive visuals for your DAW.
 
 macOS 13.3 or later • Apple Silicon + Intel • AU + VST3
@@ -32,11 +32,12 @@ matching source can be built locally, or use a future notarized release.
 DOCUMENTATION AND SOURCE
 
 INSTALLATION.html — installation, host scanning, controls, troubleshooting.
-TECHNICAL-STACK.html / .pdf — complete implementation and tooling document.
+TECHNICAL-STACK.html / .pdf — historical 0.1.0 implementation reference.
+The source README and current release notes describe later additions.
 LICENSE.txt — Aurora's AGPL-3.0-or-later license text.
 THIRD_PARTY.md and licenses/ — dependency/provenance notices.
 
-The corresponding source download is Aurora-0.1.0-source.zip, distributed
+The corresponding source download is Aurora-0.1.1-source.zip, distributed
 alongside this binary download. It includes the pinned JUCE source and build
 scripts. No paid license, login, network service or runtime AI is required.
 

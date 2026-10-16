@@ -355,6 +355,11 @@ private:
         }, false, true, [this] { verifySceneExpanded("Resized expanded scene"); } });
         steps.push_back({"scene-resized-escape", [this] { restoreScene(true); }, false, true, [this] {
             verifySceneRestored("Escape after expanded resize");
+        } });
+        // Capture the restored 1472x900 editor before cleaning up the fixture.
+        // Resetting here in the previous step's verify callback captured a
+        // different layout and an old tooltip before its next layout tick.
+        steps.push_back({"scene-expansion-fixture-reset", [this] {
             processor->resetAppearance(); redrawEditor(2, 1280, 570);
             settingsWindow->setVisible(true); settingsWindow->toFront(true);
         } });
@@ -649,10 +654,11 @@ private:
     }
     void capture(Component& component, const String& name, bool settings) {
         auto image = component.createComponentSnapshot(component.getLocalBounds(), true, 1.f);
-        // Read only expanded scenes and one visible Studio restore. Parked
+        // Read only expanded scenes and visible Studio/Custom restores. Parked
         // surfaces in meter-only/scrolled layouts never block this runner.
         const bool captureGpu = !settings && &component == editor
-            && (processor->sceneExpanded.load() || name == "scene-layout-0-restored-editor");
+            && (processor->sceneExpanded.load() || name == "scene-layout-0-restored-editor"
+                || name == "scene-layout-3-restored-editor");
         const int gpuCapturesBefore = gpuCaptures.size();
         if (captureGpu) compositeScenePixels(component, image, name);
         const auto file = outputDirectory.getChildFile(name + ".png"); file.deleteFile();
@@ -697,13 +703,13 @@ private:
         if (error.isNotEmpty()) check(error, false);
         check("Native controls notify the editor", changeNotifications >= 5);
         check("QA never delivers or modifies audio after prefill", processor->analyzer.waveformSnapshot().totalSamples == 32 * 48000);
-        check("Expanded scenes and a Studio restore contain native GPU captures", gpuCaptures.size() >= 7);
+        check("Expanded scenes and Studio/Custom restores contain native GPU captures", gpuCaptures.size() >= 8);
         auto* report = new DynamicObject; report->setProperty("passed", failures == 0); report->setProperty("failures", failures);
         report->setProperty("checks", var(checks)); report->setProperty("captures", var(captures));
         report->setProperty("audioDeviceOpened", false); report->setProperty("userPresetLibraryModified", false);
         report->setProperty("nativeOpenGLContextIdentityComparisons", nativeContextComparisons);
         report->setProperty("nativeGpuCaptureCount", gpuCaptures.size()); report->setProperty("gpuCaptures", var(gpuCaptures));
-        report->setProperty("captureMethod", "Native JUCE snapshots of all settings sections and the real editor. Expanded scenes and one Studio restore include direct readback of the production OpenGL surface's presented front buffer, vertically oriented and composited at its real clipped editor bounds. Separate GPU PNG files preserve native physical resolution; other snapshots exclude GPU pixels.");
+        report->setProperty("captureMethod", "Native JUCE snapshots of all settings sections and the real editor. Expanded scenes and Studio/Custom restores include direct readback of the production OpenGL surface's presented front buffer, vertically oriented and composited at its real clipped editor bounds. Separate GPU PNG files preserve native physical resolution; other snapshots exclude GPU pixels.");
         report->setProperty("sourceFixture", "32 seconds of original procedural stereo music, no audio output");
         report->setProperty("changeNotifications", changeNotifications);
         if (!outputDirectory.getChildFile("report.json").replaceWithText(JSON::toString(var(report), true))) ++failures;
